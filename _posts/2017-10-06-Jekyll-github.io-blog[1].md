@@ -7,8 +7,6 @@ author: Jekyll
 cover: 'http://on2171g4d.bkt.clouddn.com/jekyll-banner.png'
 tags: jekyll
 ---
-
-
 ## Requirements
 > - GNU/Linux, Unix, or macOS
 > - Ruby version 2.1 or above, including all development headers

@@ -2,7 +2,8 @@
 title: "Heee's Develpment Blog"
 description: 'description test'
 keyword: 'key, word, test'
-url: 'http://liaokeyu.com' # your host
+#url: 'http://liaokeyu.com' # your host
+url: 'http://gmlwjd9405.github.io' # your host
 baseurl: '/'
 
 # Navigation links
@@ -13,14 +14,14 @@ nav:
 # Author 配置博主信息
 author: 'HeeJeong Kwon'
 nickname: 'Heee'
-bio: 'computer programmers'
+bio: 'computer programmer'
 avatar: 'assets/img/heee.png'
 
 # Search
 search: true
 
 # Night mode
-nightMode: true
+nightMode: false
 
 # Comments
 disqus: false

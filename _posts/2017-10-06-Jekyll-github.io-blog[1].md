@@ -58,10 +58,10 @@ $ sudo gem install jekyll
 ~~~
 이 명령으로 <span style="background-color: #e1e1e1">'[github 사용자명].github.io'</span> 디렉터리 하위에 \_site 디렉터리를 생성하여 그 안에 실제 웹에서 표현되는 html파일을 만든다. 이를 통해 로컬상에서 브라우저로 접속하여 **사이트가 어떻게 생성될지 미리 살펴볼 수 있다.**  
 (GitHub에 호스팅할 경우 \_site 디렉터리는 없어도 되므로 .gitignore에 넣는다.)
-![](/images/JekyllStart1/스크린샷 2017-09-29 오후 12.18.36.png)
+![](/images/JekyllStart1/JekyllStart1-directory-structure.png)
 
 브라우저에 [127.0.0.1:4000](http://127.0.0.1:4000/)나 [localhost:4000](http://localhost:4000/)를 입력한 후 아래와 같은 화면이 나오면 Jekyll의 기본테마 블로그는 정상적으로 완료되었음을 알 수 있다.
-![](/images/JekyllStart1/스크린샷 2017-09-29 오후 12.18.28.png)
+![](/images/JekyllStart1/JekyllStart1-success-page.png)
 
 ---
 <mark>Error</mark>  

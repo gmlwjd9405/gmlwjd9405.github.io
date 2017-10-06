@@ -4,7 +4,7 @@ title: '[GitHub] .gitignore 설정하기'
 subtitle: '.gitignore의 개념, github에 이미 올라가 있는 파일 삭제하기'
 date: 2017-10-06
 author: heejeong Kwon
-cover: '/images/gitignore/스크린샷 2017-10-06 오후 5.32.39.png'
+cover: '/images/gitignore/gitignore-main.png'
 tags: github gitignore
 ---
 

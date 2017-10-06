@@ -19,7 +19,7 @@ tags: jekyll github
 GitHub Pages에 .github.io 블로그를 만드는 방법은 단순히 <span style="background-color: #e1e1e1">'[github 사용자명].github.io'</span>라는 이름의 원격 저장소(Repository)를 만들면 된다.  
 방법은 [GitHub Pages](https://pages.github.com/)에 있는 ①번을 참고하자. 우선 ②~④번은 수행하지 않는다. 또한 Initialize this repository with a README도 체크하지 않는 것으로 설정한다.   
 
-![](/images/JekyllStart3/스크린샷 2017-10-06 오전 11.37.32.png)
+![](/images/JekyllStart3/JekyllStart3-create-repository.png)
 
 이때, Jekyll 블로그를 로컬에서 실행시킨 사람은 이미 <span style="background-color: #e1e1e1">'[github 사용자명].github.io'</span>라는 디렉터리가 있기 때문에 github 원격 저장소(Repository)를 clone 하지 않는다.
 아래에서 자세하게 설명한다.
@@ -61,7 +61,7 @@ Gemfile.lock
 
 ## .github.io 블로그의 로컬 저장소와 github 저장소를 연결하기
 이미 로컬 <span style="background-color: #e1e1e1">'[github 사용자명].github.io'</span> 디렉터리에 아래의 그림과 같은 내용이 있는지 없는지에 따라 다음으로 수행할 작업이 달라진다.
-  ![](/images/JekyllStart3/스크린샷 2017-09-29 오후 12.15.11.png)
+  ![](/images/JekyllStart3/JekyllStart3-directory-structure.png)
 
 #### [1.으로 이동]
 - <span style="background-color: #e1e1e1">'[github 사용자명].github.io'</span> 디렉터리 안에 위와 같은 내용이 이미 존재하는 사용자
@@ -106,7 +106,7 @@ $ git push origin master // 원격 저장소에 변경 내용을 올린다.
 
 ## .github.io 블로그 확인하기
 브라우저에서 <span style="background-color: #e1e1e1">'[github 사용자명].github.io'</span>라고 주소를 입력하면 자신의 .github.io 블로그를 확인할 수 있다.
-![](/images/JekyllStart3/스크린샷 2017-10-06 오후 4.51.57.png)
+![](/images/JekyllStart3/JekyllStart3-heejeong-blog-main.png)
 
 
 ## 관련된 Post

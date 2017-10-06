@@ -19,7 +19,7 @@ tags: jekyll
 ## Jekyll Theme 고르기
 **아래의 사이트에서 자신이 원하는 Jekyll Theme를 선택한다.**  
 [http://jekyllthemes.org/](http://jekyllthemes.org/)
-![](/images/JekyllStart2/스크린샷 2017-10-06 오후 4.28.10.png)
+![](/images/JekyllStart2/JekyllStart2-jekyll-theme.png)
 
 
 ## Jekyll 적용하기
@@ -30,7 +30,7 @@ tags: jekyll
 1. Jekyll 블로그를 저장한 로컬 디렉터리에 압축 푼 내용을 모두 복사하여 넣는다.
   * ex. ~/blog/[github 사용자명].github.io
   * Gemfile, Gemfile.lock은 삭제한다.
-   ![](/images/JekyllStart2/스크린샷 2017-09-29 오후 12.21.49.png)
+   ![](/images/JekyllStart2/JekyllStart2-directory-structure.png)
 1. 아래 명령어를 통해 적용된 테마를 확인할 수 있다.
 ~~~javascript
 ~/blog/[github 사용자명].github.io$ jekyll serve
@@ -41,13 +41,13 @@ tags: jekyll
 * 자동으로 내용의 변화를 감지하고 재생성해준다.
 * 블로그 사이트가 제대로 구성되어 있는지 로컬에서 미리 확인할 수 있다.  
 
-![](/images/JekyllStart2/스크린샷 2017-09-29 오후 12.23.52.png)
+![](/images/JekyllStart2/JekyllStart2-jekyll-H2OTheme.png)
 
 ---
 <mark>Error</mark>  
 <span style="color:#4d0000">*만약 아래와 같이 빈 화면이 나타난다면*</span>  
-![](/images/JekyllStart2/스크린샷 2017-09-29 오후 12.23.07.png)
-![](/images/JekyllStart2/스크린샷 2017-09-29 오후 12.23.19.png)
+![](/images/JekyllStart2/JekyllStart2-empty-screen.png)
+![](/images/JekyllStart2/JekyllStart2-directory-structure2.png)
 => index.md를 삭제한 후 다시 진행한다.
 
 ---
@@ -57,7 +57,7 @@ tags: jekyll
 
 
 ## Jekyll 기본 디렉터리 구조
-![](/images/JekyllStart2/스크린샷 2017-10-06 오후 4.45.20.png)
+![](/images/JekyllStart2/JekyllStart2-directory-structure3.png)
 * \_config.yml  
   * 환경설정 정보를 보관한다.
 * \_layouts  

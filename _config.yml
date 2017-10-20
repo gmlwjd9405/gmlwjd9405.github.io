@@ -7,7 +7,7 @@ url: 'http://gmlwjd9405.github.io' # your host
 baseurl: '/'
 
 plugins:
-  - jekyll-feed
+#  - jekyll-feed
 #  - jekyll-sitemap
 
 # Navigation links

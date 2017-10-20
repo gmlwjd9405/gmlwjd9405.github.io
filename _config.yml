@@ -6,9 +6,11 @@ keyword: 'key, word, test'
 url: 'http://gmlwjd9405.github.io' # your host
 baseurl: '/'
 
-plugins:
-#  - jekyll-feed
-#  - jekyll-sitemap
+# plugins:
+#   - jekyll-sitemap
+#
+# gems:
+#   - jekyll-feed
 
 # Navigation links
 nav:

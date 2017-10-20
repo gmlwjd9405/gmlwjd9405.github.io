@@ -6,6 +6,9 @@ date: 2017-10-06
 author: heejeong Kwon
 cover: '/images/gitignore/gitignore-main.png'
 tags: github gitignore
+sitemap :
+  changefreq : daily
+  priority : 1.0
 ---
 
 

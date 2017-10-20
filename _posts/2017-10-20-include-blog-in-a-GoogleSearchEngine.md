@@ -6,6 +6,9 @@ date: 2017-10-20
 author: heejeong Kwon
 cover: '/images/GoogleSearchEngine/GoogleSearchEngine-main.png'
 tags: google 검색엔진 Jekyll
+sitemap :
+  changefreq : daily
+  priority : 1.0
 ---
 
 
@@ -51,8 +54,8 @@ $ git push origin master // 원격 저장소에 변경 내용을 올린다.
 Jekyll에는 sitemap.xml 파일을 만들 수 있는 ***두 가지 방법*** 이 있다. 두 가지 방법 중 원하는 방법을 선택하여 적용하면 된다. (필자는 두 번째 방법인 수동으로 sitemap.xml을 작성하였다.)   
 
   1. 플러그인 사용
-    - RSS Feed(feed.xml), Sitemap(sitemap.xml)을 자동으로 생성하려면 GitHub Jekyll 블로그의 *\_config.yml* 파일에 아래의 내용을 추가한다.
-    - ![](/images/GoogleSearchEngine/GoogleSearchEngine-config-plugin-check.png)
+    - Sitemap(sitemap.xml)을 자동으로 생성하려면 GitHub Jekyll 블로그의 *\_config.yml* 파일에 아래의 내용을 추가한다.
+    - ![](/images/GoogleSearchEngine/GoogleSearchEngine-config-sitemap-plugin-check.png)
     - 플러그인 사용을 위한 추가적인 [참고 사이트](https://github.com/jekyll/jekyll-sitemap)
 
 
@@ -67,6 +70,22 @@ Jekyll에는 sitemap.xml 파일을 만들 수 있는 ***두 가지 방법*** �
   - jekyll serve 명령어를 이용하여 로컬 서버를 실행한다.
   - [http://127.0.0.1:4000/sitemap.xml](http://127.0.0.1:4000/sitemap.xml) 에 접속하여 내용을 확인한다.
 
+- sitemap 설정하기
+  - 포스트를 작성할 때 해당 포스트의 변경 주기나 우선순위 정보 등을 변경하고 싶으면, 아래와 같이 lastmod, sitemap.chagefreq, sitemap.priority 등의 태그 정보를 추가한다.
+  - 각 포스트의 맨 위에 아래와 같이 sitemap의 옵션을 추가하여 설정할 수 있다.
+  - 설정이 없을 때의 default 설정은 sitemap.xml에 정의되어 있다.
+  - sitemap의 changefreq를 너무 짧게 하면 빈번한 접속으로 안좋은 영향을 미칠 수도 있으니 중요한 변동이 없는 포스트는 일주일 정도로 잡아준다.
+  ~~~javascript
+  ---
+  layout: post
+  title: '제목'
+  date: 2017-10-20
+  lastmod : 2017-10-20 12:00:00
+  sitemap :
+    changefreq : daily
+    priority : 1.0
+  ---
+~~~
 
   ---
   <mark>주의사항</mark>  
@@ -104,7 +123,7 @@ Jekyll에는 sitemap.xml 파일을 만들 수 있는 ***두 가지 방법*** �
 
 
 
-## 구글 웹마스터 도구(Search Console)에 sitemap.xml 제출
+## 구글 웹마스터 도구(Search Console)에 sitemap.xml 제출하기
 Google이 내 블로그를 크롤링하는 방식을 판단하고 검색하기 위해서는 sitemap.xml을 제출해야 한다.
 1. [구글 웹마스터 도구](https://www.google.com/webmasters/tools/home?hl=ko)에 접속한다.
 2. 자신이 추가한 속성(블로그)을 선택한다.

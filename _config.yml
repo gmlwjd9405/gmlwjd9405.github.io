@@ -8,7 +8,7 @@ baseurl: '/'
 
 plugins:
   - jekyll-feed
-  - jekyll-sitemap
+#  - jekyll-sitemap
 
 # Navigation links
 nav:
@@ -60,6 +60,8 @@ exclude: ['node_modules', 'dev', 'package.json', 'gulpfile.js', '.gitignore', 'R
 # Markdown
 markdown: kramdown
 highlighter: rouge
+redcarpet:
+    extensions: ["no_intra_emphasis", "fenced_code_blocks", "autolink", "strikethrough", "superscript", "with_toc_data", "tables"]
 kramdown:
   input: GFM
 

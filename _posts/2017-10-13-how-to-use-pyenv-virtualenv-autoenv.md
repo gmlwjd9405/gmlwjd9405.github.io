@@ -6,6 +6,7 @@ date: 2017-10-13
 author: heejeong Kwon
 cover: '/images/pyenv-virtualenv-autoenv/pyenv-main.png'
 tags: python 개발환경 pyenv virtualenv autoenv
+comments: true
 sitemap :
   changefreq : daily
   priority : 1.0

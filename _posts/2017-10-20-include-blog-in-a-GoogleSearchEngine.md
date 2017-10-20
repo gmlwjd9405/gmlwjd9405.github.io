@@ -6,6 +6,7 @@ date: 2017-10-20
 author: heejeong Kwon
 cover: '/images/GoogleSearchEngine/GoogleSearchEngine-main.png'
 tags: google 검색엔진 Jekyll
+comments: true
 sitemap :
   changefreq : daily
   priority : 1.0

@@ -6,6 +6,7 @@ date: 2017-10-06
 author: Jekyll
 cover: 'http://on2171g4d.bkt.clouddn.com/jekyll-banner.png'
 tags: jekyll
+comments: true
 sitemap :
   changefreq : daily
   priority : 1.0

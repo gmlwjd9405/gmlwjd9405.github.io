@@ -6,6 +6,7 @@ date: 2017-10-21
 author: heejeong Kwon
 cover: '/images/NaverSearchEngine/NaverSearchEngine-main.png'
 tags: naver 검색엔진 Jekyll
+comments: true
 sitemap :
   changefreq : daily
   priority : 1.0

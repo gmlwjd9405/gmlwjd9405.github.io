@@ -14,9 +14,9 @@ tags: google 검색엔진 Jekyll
 > - Jekyll을 이용한 .github.io 블로그를 'Google 검색엔진'에 노출하기
 
 
-## 구글 웹 마스터 도구(Search Console)에 속성 추가(블로그 등록)
-1. [구글 웹 마스터 도구](https://www.google.com/webmasters/tools/home?hl=ko)에 접속한다.  
-Google에 등록하기 위해서는 우선, 구글 웹 마스터 도구에 접속하고 Google 계정으로 로그인한다.
+## 구글 웹마스터 도구(Search Console)에 속성 추가(블로그 등록)
+1. [구글 웹마스터 도구](https://www.google.com/webmasters/tools/home?hl=ko)에 접속한다.  
+Google에 등록하기 위해서는 우선, 구글 웹마스터 도구에 접속하고 Google 계정으로 로그인한다.
 2. [속성추가] 버튼을 선택한다.
 3. 자신의 jekyll 블로그 주소를 입력하여 속성에 추가한다. (ex.http://[github 사용자명].github.io/)
 
@@ -104,9 +104,9 @@ Jekyll에는 sitemap.xml 파일을 만들 수 있는 ***두 가지 방법*** �
 
 
 
-## 구글 웹 마스터 도구(Search Console)에 sitemap.xml 제출
+## 구글 웹마스터 도구(Search Console)에 sitemap.xml 제출
 Google이 내 블로그를 크롤링하는 방식을 판단하고 검색하기 위해서는 sitemap.xml을 제출해야 한다.
-1. [구글 웹 마스터 도구](https://www.google.com/webmasters/tools/home?hl=ko)에 접속한다.
+1. [구글 웹마스터 도구](https://www.google.com/webmasters/tools/home?hl=ko)에 접속한다.
 2. 자신이 추가한 속성(블로그)을 선택한다.
 3. 대시보드의 왼쪽에 위치한 🔽 크롤링을 선택한 후 하위메뉴 [Sitemaps]를 선택한다.  
 4. 우측 상단의 [SITEMAP 추가/테스트] 버튼을 선택한다.

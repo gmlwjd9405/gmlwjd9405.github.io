@@ -5,7 +5,7 @@ subtitle: 'Jekyll 블로그를 Naver 검색엔진에 노출하기'
 date: 2017-10-21
 author: heejeong Kwon
 cover: '/images/NaverSearchEngine/NaverSearchEngine-main.png'
-tags: naver 검색엔진 Jekyll
+tags: naver 검색엔진 jekyll
 comments: true
 sitemap :
   changefreq : daily

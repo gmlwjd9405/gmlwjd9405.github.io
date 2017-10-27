@@ -5,7 +5,7 @@ subtitle: 'Jekyll 블로그를 Google 검색엔진에 노출하기'
 date: 2017-10-20
 author: heejeong Kwon
 cover: '/images/GoogleSearchEngine/GoogleSearchEngine-main.png'
-tags: google 검색엔진 Jekyll
+tags: google 검색엔진 jekyll
 comments: true
 sitemap :
   changefreq : daily

@@ -35,6 +35,7 @@ sitemap :
 ![](/images/github-collaboration1/github-collaboration-9.png)
 ![](/images/github-collaboration1/github-collaboration-10.png)
 ![](/images/github-collaboration1/github-collaboration-11.png)
+![](/images/github-collaboration1/github-collaboration-12.png)
 
 ## References
 > - [http://blog.appkr.kr/learn-n-think/comparing-workflows/](http://blog.appkr.kr/learn-n-think/comparing-workflows/)

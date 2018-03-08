@@ -1,1 +1,1 @@
-### Heee's Develpment Blog
+### Heee's Development Blog

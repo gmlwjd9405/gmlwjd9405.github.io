@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
 {% include head.html %}
-{% include adsense_main_bottom.html %}
 
 <body>
     <!--[if lt IE 10]>
@@ -9,6 +8,8 @@
 <![endif]-->
     <input id="nm-switch" type="hidden" value="{{ site.nightMode }}">
     {{ content }}
+    {% include adsense_main_bottom.html %}
+    
     <script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
     <script src="{{ site.baseurl }}assets/js/prism.js"></script>
     <script src="{{ site.baseurl }}assets/js/index.min.js"></script>

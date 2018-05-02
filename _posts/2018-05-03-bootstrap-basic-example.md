@@ -2,7 +2,7 @@
 layout: post
 title: '[Bootstrap] Bootstrap 사용 예제'
 subtitle: 'Bootstrap 예제: Bootstrap의 간단한 사용 예제를 통해 기본적인 개념을 이해한다.'
-date: 2018-05-02
+date: 2018-05-03
 author: heejeong Kwon
 cover: '/images/bootstrap-download-and-setting/bootstrap-download-and-setting-main.png'
 tags: Bootstrap 예제

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: '[MeetUp] 우아한 Tech MeetUp 참여'
+title: '[MeetUp] 우아한 Tech MeetUp 참여 후기'
 subtitle: '대상: 우아한형제들에 관심이 있고, 우아한테크캠프에 참가하고 싶은 개발자'
 date: 2018-04-27
 author: heejeong Kwon

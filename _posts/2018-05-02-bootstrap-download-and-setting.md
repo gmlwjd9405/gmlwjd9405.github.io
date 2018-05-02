@@ -100,9 +100,9 @@ sitemap :
       </body></html>
       ~~~
 
-<!--
+
 # 관련된 Post
-* Bootstrap의 간단한 예제를 알고싶으시면 [Bootstrap 간단한 예제](http://woowabros.github.io/woowabros/2018/04/15/developer-relations.html) 를 참고하시기 바랍니다. -->
+* Bootstrap의 간단한 예제를 알고 싶으시면 [Bootstrap 사용 예제](https://gmlwjd9405.github.io/2018/05/03/bootstrap-basic-example.html) 를 참고하시기 바랍니다.
 
 
 # References

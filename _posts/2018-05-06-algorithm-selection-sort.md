@@ -1,7 +1,7 @@
 ---
 layout: post
 title: '[알고리즘] 선택 정렬(selection sort)'
-subtitle: '제자리 정렬(in-place sorting)알고리즘의 하나'
+subtitle: '제자리 정렬(in-place sorting) 알고리즘의 하나'
 date: 2018-05-06
 author: heejeong Kwon
 cover: '/images/algorithm-selection-sort/algorithm-selection-sort-main2.png'
@@ -17,6 +17,7 @@ sitemap :
 > - 선택 정렬(selection sort) 알고리즘을 이해한다.
 <!-- > - 선택 정렬(selection sort) 알고리즘을 java와 c언어로 구현한다. -->
 > - 선택 정렬(selection sort) 알고리즘을 c언어로 구현한다.
+> - 선택 정렬(selection sort) 알고리즘의 특징
 > - 선택 정렬(selection sort) 알고리즘의 시간복잡도를 이해한다.
 
 
@@ -25,7 +26,7 @@ sitemap :
 
 
 ## 선택 정렬(selection sort) 알고리즘 개념 요약
-* 제자리 정렬(in-place sorting)알고리즘의 하나
+* 제자리 정렬(in-place sorting) 알고리즘의 하나
   * 입력 배열(정렬되지 않은 값들) 이외에 다른 추가 메모리를 요구하지 않는 정렬 방법
 * 해당 순서에 원소를 넣을 위치는 이미 정해져 있고, 어떤 원소를 넣을지 선택하는 알고리즘
   * 첫 번째 순서에는 첫 번째 위치에 가장 최솟값을 넣는다.
@@ -71,6 +72,7 @@ sitemap :
 # define SWAP(x, y, temp) ( (temp)=(x), (x)=(y), (y)=(temp) )
 # define MAX_SIZE 5
 
+// 선택 정렬
 void selection_sort(int list[], int n){
   int i, j, least, temp;
 
@@ -93,10 +95,11 @@ void selection_sort(int list[], int n){
 
 void main(){
   int i;
-  int list[MAX_SIZE] = {9, 6, 7, 3, 5};
+  int n = MAX_SIZE;
+  int list[n] = {9, 6, 7, 3, 5};
 
   // 선택 정렬 수행
-  selection_sort(list, MAX_SIZE);
+  selection_sort(list, n);
 
   // 정렬 결과 출력
   for(i=0; i<n; i++){
@@ -105,8 +108,15 @@ void main(){
 }
 ~~~
 
+## 선택 정렬(selection sort) 알고리즘의 특징
+* 장점
+  * 자료 이동 횟수가 미리 결정된다.
+* 단점
+  * 안정성을 만족하지 않는다.
+  * 즉, 값이 같은 레코드가 있는 경우에 상대적인 위치가 변경될 수 있다.
+
 ## 선택 정렬(selection sort)의 시간복잡도
-시간 복잡도를 계산한다면
+시간복잡도를 계산한다면
 * 비교 횟수
   * 두 개의 for 루프의 실행 횟수
   * 외부 루프: (n-1)번
@@ -134,4 +144,4 @@ void main(){
 
 # References
 > - [https://jongmin92.github.io/2017/11/06/Algorithm/Concept/basic-sort/](https://jongmin92.github.io/2017/11/06/Algorithm/Concept/basic-sort/)
-> - [https://ko.wikipedia.org/wiki/%EC%84%A0%ED%83%9D_%EC%A0%95%EB%A0%AC](https://ko.wikipedia.org/wiki/%EC%84%A0%ED%83%9D_%EC%A0%95%EB%A0%AC)
+> - [선택 정렬 - 위키백과](https://ko.wikipedia.org/wiki/%EC%84%A0%ED%83%9D_%EC%A0%95%EB%A0%AC)

@@ -177,8 +177,8 @@ sitemap :
     * @Repository
     * 에 해당하는 클래스들을 spring ioc container에 **bean으로 등록한다.**
   * @Controller, @Service, @Repository의 차이
-    * 하나의 약속이다.
-    * 컨트롤러는 @Controller, 서비스는 @Service, DAO(DB에 접근하는 클래스)는 @Repository로 선언한다.
+    * 세 개 모두 특수화된 @Component이다. 기능적 차이는 거의 없다.
+    * 하나의 약속처럼 컨트롤러는 @Controller, 서비스는 @Service, DAO(DB에 접근하는 클래스)는 @Repository로 선언한다.
 
 
 ## 4. @Controller의 의미를 이해한다.
@@ -198,3 +198,4 @@ sitemap :
 > - [http://addio3305.tistory.com/36](http://addio3305.tistory.com/36)
 > - [http://kamang-it.tistory.com/100](http://kamang-it.tistory.com/100)
 > - [http://all-record.tistory.com/156](http://all-record.tistory.com/156)
+> - [https://code.i-harness.com/ko/q/682ee8](https://code.i-harness.com/ko/q/682ee8)

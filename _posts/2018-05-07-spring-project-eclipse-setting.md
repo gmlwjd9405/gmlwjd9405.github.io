@@ -157,14 +157,15 @@ sitemap :
   </beans:bean>
 ~~~
   * view의 logical name(Controller에서 return한 string값)을 prefix 와 suffix 를 이용하여 pysical object로 바꿔준다.
-  * logical name -> pysical object
+  * 즉, logical name -> pysical object
 
 * base-package 설정 확인
 ~~~javascript
   <context:component-scan base-package="kr.ac.hansung" />
 ~~~
   * 만약 base-package가 처음 설정과 동일하지 않으면 변경한다.
-  * src/main/java의 kr.ac.hansung 패키지 우클릭 - refactor - rename - kr.ac.hansung.cse 로 변경
+  * src/main/java의 kr.ac.hansung 패키지 우클릭 > refactor > rename을 선택
+    * kr.ac.hansung.cse 로 변경
 
 * component-scan
 ~~~javascript
@@ -174,7 +175,18 @@ sitemap :
     * @Controller
     * @Service
     * @Repository
-    * 에 해당하는 클래스들을 spring ioc container에 bean으로 등록한다.
+    * 에 해당하는 클래스들을 spring ioc container에 **bean으로 등록한다.**
+  * @Controller, @Service, @Repository의 차이
+    * 하나의 약속이다.
+    * 컨트롤러는 @Controller, 서비스는 @Service, DAO(DB에 접근하는 클래스)는 @Repository로 선언한다.
+
+
+## 4. @Controller의 의미를 이해한다.
+* @Controller
+![](/images/spring-project-eclipse-setting/controller-example.png){: width="400" height="250"}
+  * @RequestMapping(value = "/", method = RequestMethod.GET)
+    * "/" 로 오는 것은 이 Method에 Mapping시킨다.
+    * 이 메서드에서 return 한 string인 "home"에 의해 view인 "home.jsp"가 수행된다. (logical name -> pysical object)
 
 
 <!--

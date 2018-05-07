@@ -142,11 +142,12 @@ void main(){
 * 단순(구현 간단)하지만 비효율적인 방법
   * **삽입 정렬**, 선택 정렬, 버블 정렬
 * 복잡 하지만 효율적인 방법
-  * 정렬, 히프 정렬, 합병 정렬, 기수 정렬
+  * 퀵 정렬, 히프 정렬, 합병 정렬, 기수 정렬
 
 
-<!-- # 관련된 Post
-1. 삽입 정렬(insertion sort): [삽입 정렬(insertion sort)](https://gmlwjd9405.github.io/2017/10/06/Jekyll-github.io-blog-1.html) 를 참고하시기 바랍니다. -->
+# 관련된 Post
+* 선택 정렬(selection sort): [선택 정렬(selection sort)](https://gmlwjd9405.github.io/2018/05/06/algorithm-selection-sort.html) 을 참고하시기 바랍니다.
+* 버블 정렬(bubble sort): [버블 정렬(bubble sort)](https://gmlwjd9405.github.io/2018/05/06/algorithm-bubble-sort.html) 을 참고하시기 바랍니다.
 
 
 # References

@@ -1,7 +1,7 @@
 ---
 layout: post
-title: '[Spring, Eclipse] Eclipse 스프링 프로젝트 생성하기'
-subtitle: 'Eclipse에서 Spring MVC Project 시작하기'
+title: '[Spring, Eclipse] Eclipse에서 스프링 프로젝트 생성하기'
+subtitle: 'Eclipse에서 Spring MVC Project 생성하기, pom.xml 설정하기'
 date: 2018-05-07
 author: heejeong Kwon
 cover: '/images/spring-project-eclipse-setting/spring-project-eclipse-setting-main.png'

@@ -5,7 +5,7 @@ subtitle: 'Bootstrap 개요: Bootstrap 설치 및 기본 개념과 템플릿 예
 date: 2018-05-02
 author: heejeong Kwon
 cover: '/images/bootstrap-download-and-setting/bootstrap-download-and-setting-main.png'
-tags: Bootstrap 설치 다운로드
+tags: Bootstrap 설치 다운로드 PlugIn
 comments: true
 sitemap :
   changefreq : daily

@@ -141,7 +141,7 @@ void main(){
 
 <!-- * 단순(구현 간단)하지만 비효율적인 방법
   * 삽입 정렬, 선택 정렬, 버블 정렬
-* 복잡 하지만 효율적인 방법
+* 복잡하지만 효율적인 방법
   * 퀵 정렬, 히프 정렬, 합병 정렬, 기수 정렬 -->
 
 
@@ -149,7 +149,7 @@ void main(){
 * 선택 정렬(selection sort): [선택 정렬(selection sort)](https://gmlwjd9405.github.io/2018/05/06/algorithm-selection-sort.html) 을 참고하시기 바랍니다.
 * 삽입 정렬(insertion sort): [삽입 정렬(insertion sort)](https://gmlwjd9405.github.io/2018/05/06/algorithm-insertion-sort.html) 을 참고하시기 바랍니다.
 * 버블 정렬(bubble sort): [버블 정렬(bubble sort)](https://gmlwjd9405.github.io/2018/05/06/algorithm-bubble-sort.html) 을 참고하시기 바랍니다.
-<!-- * 셸 정렬(shell sort): [셸 정렬(shell sort)](https://gmlwjd9405.github.io/2018/05/08/algorithm-shell-sort.html) 을 참고하시기 바랍니다. -->
+* 합병 정렬(merge sort): [합병 정렬(merge sort)](https://gmlwjd9405.github.io/2018/05/08/algorithm-merge-sort.html) 을 참고하시기 바랍니다.
 
 
 # References

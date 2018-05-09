@@ -128,6 +128,11 @@ $ git pull upstream master
 ![](/images/github-collaboration2/github-collaboration-11.png)
 
 
+
+# 관련된 Post
+* 소규모의 프로젝트에서 많이 사용하는 방식의 Github 협업 방법을 알고 싶으시면 [Feature Branch Workflow 방법](https://gmlwjd9405.github.io/2017/10/27/how-to-collaborate-on-GitHub-1.html) 을 참고하시기 바랍니다.
+
+
 # References
 > - [http://blog.appkr.kr/learn-n-think/comparing-workflows/](http://blog.appkr.kr/learn-n-think/comparing-workflows/)
 > - [https://www.atlassian.com/git/tutorials/comparing-workflows/forking-workflow](https://www.atlassian.com/git/tutorials/comparing-workflows/forking-workflow)

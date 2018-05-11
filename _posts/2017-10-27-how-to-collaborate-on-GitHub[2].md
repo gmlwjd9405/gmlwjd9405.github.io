@@ -1,6 +1,6 @@
 ---
 layout: post
-title: '[GitHub] GitHub로 협업하는 방법[2]'
+title: '[GitHub] GitHub로 협업하는 방법[2] - Forking Workflow'
 subtitle: 'GitHub에서 Forking Workflow를 이용하여 협업하는 방법'
 date: 2017-10-28
 author: heejeong Kwon
@@ -131,6 +131,8 @@ $ git pull upstream master
 
 # 관련된 Post
 * 소규모의 프로젝트에서 많이 사용하는 방식의 Github 협업 방법을 알고 싶으시면 [Feature Branch Workflow 방법](https://gmlwjd9405.github.io/2017/10/27/how-to-collaborate-on-GitHub-1.html) 을 참고하시기 바랍니다.
+<!-- * 대규모의 프로젝트에서 사용하는 엄격한 방식(git branch 종류를 모두 사용) Github 협업 방법을 알고 싶으시면 [Gitflow Workflow 방법](https://gmlwjd9405.github.io/2018/05/11/how-to-collaborate-on-GitHub-3.html) 을 참고하시기 바랍니다. -->
+* branch의 종류에 대해 자세히 알고 싶으시면 [branch의 종류](https://gmlwjd9405.github.io/2015/05/11/types-of-git-branch.html) 를 참고하시기 바랍니다.
 
 
 # References

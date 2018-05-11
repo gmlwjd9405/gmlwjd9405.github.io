@@ -1,6 +1,6 @@
 ---
 layout: post
-title: '[GitHub] GitHub로 협업하는 방법[1]'
+title: '[GitHub] GitHub로 협업하는 방법[1] - Feature Branch Workflow'
 subtitle: 'GitHub에서 Feature Branch Workflow를 이용하여 협업하는 방법'
 date: 2017-10-27
 author: heejeong Kwon
@@ -21,7 +21,7 @@ sitemap :
 * Feature Branch Workflow의 핵심 컨셉은 **기능별 브랜치를** 만들어서 작업하는 것이다.  
 * 다수의 팀 구성원이 메인 코드 베이스(master)를 중심으로 해서 안전하게 새로운 기능을 개발할 수 있다.
 * Feature Branch Workflow와 풀 리퀘스트를 결합하면 팀 구성원간에 변경 내용에 대한 소통을 촉진해서 코드 품질을 높일 수 있다.  
-* 유연성은 큰 협업 방법
+* 유연성이 큰 협업 방법
 * **소규모 인원의 프로젝트에서** 사용하는 협업 방법
 
 
@@ -166,9 +166,10 @@ $ git pull origin master
 
 # 관련된 Post
 * 오픈 소스 프로젝트에서 많이 사용하는 방식의 Github 협업 방법을 알고 싶으시면 [Forking Workflow 방법](https://gmlwjd9405.github.io/2017/10/28/how-to-collaborate-on-GitHub-2.html) 을 참고하시기 바랍니다.
+<!-- * 대규모의 프로젝트에서 사용하는 엄격한 방식(git branch 종류를 모두 사용) Github 협업 방법을 알고 싶으시면 [Gitflow Workflow 방법](https://gmlwjd9405.github.io/2018/05/11/how-to-collaborate-on-GitHub-3.html) 을 참고하시기 바랍니다. -->
+* branch의 종류에 대해 자세히 알고 싶으시면 [branch의 종류](https://gmlwjd9405.github.io/2015/05/11/types-of-git-branch.html) 를 참고하시기 바랍니다.
 
-
-## References
+# References
 > - [http://blog.appkr.kr/learn-n-think/comparing-workflows/](http://blog.appkr.kr/learn-n-think/comparing-workflows/)
 > - [https://www.atlassian.com/git/tutorials/comparing-workflows/feature-branch-workflow](https://www.atlassian.com/git/tutorials/comparing-workflows/feature-branch-workflow)
 > - [https://github.com/Taeung/git-training](https://github.com/Taeung/git-training)

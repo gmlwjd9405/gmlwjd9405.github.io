@@ -221,7 +221,7 @@ $ git branch -d feature/login
 
 
 ## 11. 배포하기
-<!-- Preparing a Release
+Preparing a Release
 
 철이가 여전히 기능 개발에 몰두하고 있는 와중에, 미애는 첫 공식 릴리스를 준비하고 있다. 기능 개발과 마찬가지로 릴리스 과정을 캡슐화할 새로운 브랜치를 만들어야 한다. 이 과정에서 버전 번호를 부여한다.
 
@@ -244,10 +244,10 @@ $ git branch -d release-0.1
 
 $ git tag -a 0.1 -m "Initial public release" master
 $ git push --tags
-Git은 저장소에 어떤 이벤트가 발생할 때 미리 짜 놓은 스크립트를 자동으로 실행할 수 있는 훅(hook) 기능을 가지고 있다. 중앙 저장소의 master 브랜치에 푸시하거나 태그를 푸시할 때, 자동으로 공개 릴리스를 빌드하는 훅을 거는 등의 자동화도 가능하다. -->
+Git은 저장소에 어떤 이벤트가 발생할 때 미리 짜 놓은 스크립트를 자동으로 실행할 수 있는 훅(hook) 기능을 가지고 있다. 중앙 저장소의 master 브랜치에 푸시하거나 태그를 푸시할 때, 자동으로 공개 릴리스를 빌드하는 훅을 거는 등의 자동화도 가능하다.
 
 ## 12. 버그 수정하기
-<!-- Maintenance Branch
+Maintenance Branch
 
 릴리스를 배포한 후에, 미애는 철이와 함께 다음 릴리스를 준비하기 위해 일상으로 돌아갔다. 그런데 사용자가 현재 릴리스에 버그가 있다고 보고해왔다. 버그를 해결 하기 위해 미애(또는 철이)는 작업하던 기능 개발을 잠시 미뤄두고, master 브랜치를 기준으로 유지 보수 브랜치를 만들고, 버그를 수정하고 커밋한다. 버그 수정이 끝나면 master 브랜치에 바로 병합한다.
 
@@ -262,7 +262,7 @@ $ git push
 $ git checkout develop
 $ git merge issue-#001
 $ git push
-$ git branch -d issue-#001 -->
+$ git branch -d issue-#001
 
 
 

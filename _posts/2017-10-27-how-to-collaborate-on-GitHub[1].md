@@ -167,7 +167,7 @@ $ git pull origin master
 # 관련된 Post
 * 오픈 소스 프로젝트에서 많이 사용하는 방식의 Github 협업 방법을 알고 싶으시면 [Forking Workflow 방법](https://gmlwjd9405.github.io/2017/10/28/how-to-collaborate-on-GitHub-2.html) 을 참고하시기 바랍니다.
 * 대규모의 프로젝트에서 사용하는 엄격한 방식(git branch 종류를 모두 사용) Github 협업 방법을 알고 싶으시면 [Gitflow Workflow 방법](https://gmlwjd9405.github.io/2018/05/12/how-to-collaborate-on-GitHub-3.html) 을 참고하시기 바랍니다.
-* branch의 종류에 대해 자세히 알고 싶으시면 [branch의 종류](https://gmlwjd9405.github.io/2015/05/11/types-of-git-branch.html) 를 참고하시기 바랍니다.
+* branch의 종류에 대해 자세히 알고 싶으시면 [branch의 종류](https://gmlwjd9405.github.io/2018/05/11/types-of-git-branch.html) 를 참고하시기 바랍니다.
 
 # References
 > - [http://blog.appkr.kr/learn-n-think/comparing-workflows/](http://blog.appkr.kr/learn-n-think/comparing-workflows/)

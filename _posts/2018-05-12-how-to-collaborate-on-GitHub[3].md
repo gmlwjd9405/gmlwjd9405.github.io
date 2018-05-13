@@ -23,7 +23,7 @@ sitemap :
 * Gitflow Workflow의 핵심 컨셉은 중앙 원격 저장소에서 **master와 develop, 두 개의 메인 브랜치** 를 이용한다는 것이다.
   * <span style="color:#4d0000">**master branch**</span>: 릴리스 이력을 관리하기 위해 사용. 즉, 배포 가능한 상태만을 관리한다.
   * <span style="color:#4d0000">**develop branch**</span>: 기능 개발을 위한 브랜치들을 병합하기 위해 사용.(모든 기능이 추가되고 버그가 수정되어 배포 가능한 상태라면 'master' 브랜치에 merge 한다.) 평소에는 이 브랜치를 기반으로 개발을 진행한다.
-  * 다른 종류의 branch에 대한 이해는 다음의 POST를 참고하자. [<mark>branch의 종류</mark>](https://gmlwjd9405.github.io/2017/10/27/how-to-collaborate-on-GitHub-1.html)
+  * 다른 종류의 branch에 대한 이해는 다음의 POST를 참고하자. [<mark>branch의 종류</mark>](https://gmlwjd9405.github.io/2018/05/11/types-of-git-branch.html)
 * Gitflow Workflow도 Feature Branch Workflow와 같이 팀 구성원 간의 협업을 위한 창구로 중앙 원격 저장소를 사용한다. 즉, 다른 Workflow와 마찬가지로 로컬 브랜치에서 작업하고 중앙 원격 저장소에 푸시한다.
 
 
@@ -269,7 +269,7 @@ $ git branch -d issue-#001 -->
 # 관련된 Post
 * 소규모의 프로젝트에서 많이 사용하는 방식의 Github 협업 방법을 알고 싶으시면 [Feature Branch Workflow 방법](https://gmlwjd9405.github.io/2017/10/27/how-to-collaborate-on-GitHub-1.html) 을 참고하시기 바랍니다.
 * 오픈 소스 프로젝트에서 많이 사용하는 방식의 Github 협업 방법을 알고 싶으시면 [Forking Workflow 방법](https://gmlwjd9405.github.io/2017/10/28/how-to-collaborate-on-GitHub-2.html) 을 참고하시기 바랍니다.
-* branch의 종류에 대해 자세히 알고 싶으시면 [branch의 종류](https://gmlwjd9405.github.io/2015/05/11/types-of-git-branch.html) 를 참고하시기 바랍니다.
+* branch의 종류에 대해 자세히 알고 싶으시면 [branch의 종류](https://gmlwjd9405.github.io/2018/05/11/types-of-git-branch.html) 를 참고하시기 바랍니다.
 
 
 # References

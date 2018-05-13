@@ -1,6 +1,6 @@
 ---
 layout: post
-title: '[GitHub] Git Branch 종류 (5가지)'
+title: '[GitHub] Git 브랜치의 종류 및 사용법 (5가지)'
 subtitle: 'Gitflow Workflow에서 사용하는 Git Branch 종류를 이해한다.'
 date: 2018-05-11
 author: heejeong Kwon
@@ -15,9 +15,12 @@ sitemap :
 
 ## Goal
 > - Gitflow Workflow에서 사용하는 Git Branch 종류를 이해한다.
-
+> - Gitflow Workflow에서 사용하는 Git Branch 사용법을 이해한다.
 
 # Git Branch 종류 (5가지)
+Gitflow Workflow에서는 항상 유지되는 메인 브랜치들(master, develop)과 일정 기간 동안만 유지되는 보조 브랜치들(feature, release, hotfix)을 포함하여 총 5가지의 브랜치를 사용한다.
+<br>
+아래는 [Gitflow Workflow 방법](https://gmlwjd9405.github.io/2018/05/12/how-to-collaborate-on-GitHub-3.html)에서 사용하는 브랜치의 흐름이다.
 ![](/images/types-of-git-branch/total-branch.png)
 
 ## 1. Master Branch
@@ -193,7 +196,7 @@ $ git merge --no-ff hotfix-1.2.1
 # 관련된 Post
 * 소규모의 프로젝트에서 많이 사용하는 방식(간단한 협업 방법)의 Github 협업 방법을 알고 싶으시면 [Feature Branch Workflow 방법](https://gmlwjd9405.github.io/2017/10/27/how-to-collaborate-on-GitHub-1.html) 을 참고하시기 바랍니다.
 * 오픈 소스 프로젝트에서 많이 사용하는 방식의 Github 협업 방법을 알고 싶으시면 [Forking Workflow 방법](https://gmlwjd9405.github.io/2017/10/28/how-to-collaborate-on-GitHub-2.html) 을 참고하시기 바랍니다.
-<!-- * 대규모의 프로젝트에서 사용하는 엄격한 방식(git branch 종류를 모두 사용) Github 협업 방법을 알고 싶으시면 [Gitflow Workflow 방법](https://gmlwjd9405.github.io/2018/05/12/how-to-collaborate-on-GitHub-3.html) 을 참고하시기 바랍니다. -->
+* 대규모의 프로젝트에서 사용하는 엄격한 방식(git branch 종류를 모두 사용) Github 협업 방법을 알고 싶으시면 [Gitflow Workflow 방법](https://gmlwjd9405.github.io/2018/05/12/how-to-collaborate-on-GitHub-3.html) 을 참고하시기 바랍니다.
 
 
 # References

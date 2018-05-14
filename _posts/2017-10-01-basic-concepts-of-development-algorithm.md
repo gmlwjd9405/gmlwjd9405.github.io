@@ -15,16 +15,19 @@ sitemap :
 ## <mark>알고리즘(Algorithm)편</mark>  
 <span style="color:#4d0000">알고리즘(Algorithm)과 관련된 기본적인 개념을 이해하고 기술 면접에 대비하자!</span>  
 
+<br> <span style="background-color: #e1e1e1">계속해서 추가할 예정입니다!<span>
+
 ### 정렬
-* 정렬 중
+<!-- * 정렬 중 가장 시간복잡도가 효율적인 방법은? -->
 
 > - 관련 POST
 > - [선택 정렬(selection sort)](https://gmlwjd9405.github.io/2018/05/06/algorithm-selection-sort.html)
 > - [삽입 정렬(insertion sort)](https://gmlwjd9405.github.io/2018/05/06/algorithm-insertion-sort.html)
 > - [버블 정렬(bubble sort)](https://gmlwjd9405.github.io/2018/05/06/algorithm-bubble-sort.html)
+> - [합병 정렬(merge sort)](https://gmlwjd9405.github.io/2018/05/08/algorithm-merge-sort.html)
 > - [셸 정렬(shell sort)](https://gmlwjd9405.github.io/2018/05/08/algorithm-shell-sort.html)
-
-
+> - [퀵 정렬(quick sort)](https://gmlwjd9405.github.io/2018/05/10/algorithm-quick-sort.html)
+> - [힙 정렬(heap sort)](https://gmlwjd9405.github.io/2018/05/10/algorithm-heap-sort.html)
 
 
 

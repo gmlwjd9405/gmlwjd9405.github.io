@@ -12,6 +12,8 @@ sitemap :
   priority : 1.0
 ---
 
+이 POST와 관련된 <mark>PDF 자료는</mark> [https://github.com/gmlwjd9405/git-collaboration](https://github.com/gmlwjd9405/git-collaboration)에서 다운받을 수 있습니다.
+<br>(You can download the PDF file related to this POST from the following link.)
 
 ## Goal
 > - Gitflow Workflow의 개념을 파악한다.
@@ -221,48 +223,102 @@ $ git branch -d feature/login
 
 
 ## 11. 배포하기
-<!-- Preparing a Release
+만약 ‘develop’ 브랜치에서 버전 1.2에 대한 기능이 모두 구현이 되었으면 배포를 위한 전용 브랜치를 사용하여 배포 과정을 캡슐화한다. 이렇게 함으로써 한 팀이 해당 배포를 준비하는 동안 다른 팀은 다음 배포를 위한 기능 개발을 계속할 수 있다.
+<br>
+버전 번호를 부여한 새로운 'release' branch를 'develop' branch로부터 생성한다.
 
-철이가 여전히 기능 개발에 몰두하고 있는 와중에, 미애는 첫 공식 릴리스를 준비하고 있다. 기능 개발과 마찬가지로 릴리스 과정을 캡슐화할 새로운 브랜치를 만들어야 한다. 이 과정에서 버전 번호를 부여한다.
+![](/images/github-collaboration3/github-collaboration-17-1.png)
+~~~javascript
+// 'develop' 브랜치로부터 release 브랜치(release-1.2)를 생성
+$ git checkout -b release-1.2 develop
+~~~
+* 이렇게 release 브랜치를 만드는 순간부터 배포 사이클이 시작된다.
+  * release 브랜치에서는 배포를 위한 최종적인 버그 수정, 문서 추가 등 릴리스와 직접적으로 관련된 작업을 수행한다.
+  * 직접적으로 관련된 작업들을 제외하고는 release 브랜치에 새로운 기능을 추가로 병합(merge)하지 않는다.
 
-$ git checkout -b release-0.1 develop
-이 브랜치는 최종 테스트를 하거나, 문서를 수정하는 등 릴리스와 관련된 여러 가지 작업들을 처리하기 위한 격리 공간이다. 미애가 이 브랜치를 만든 이후에 develop 브랜치에 병합된 기능은 릴리스 대상에서 제외된다. 이번에 포함되지 않은 기능들은 다음 릴리스에 포함된다.
+![](/images/github-collaboration3/github-collaboration-17-2.png)
+![](/images/github-collaboration3/github-collaboration-17-3.png)
+* ‘release’ 브랜치에서 배포 가능한 상태가 되면(배포 준비가 완료되면),
+  * 배포 가능한 상태: 새로운 기능을 포함한 상태로 모든 기능이 정상적으로 동작 하는 상태
 
-3.6.5. 미애의 릴리스 완료
-Merging Release into Master
+1. ‘master’ 브랜치에 병합한다. (이때, 병합한 커밋에 Release 버전 태그를 부여!)
+2. 배포를 준비하는 동안 release 브랜치가 변경되었을 수 있으므로 배포 완료 후 ‘develop’ 브랜치에도 병합한다.
+3. 작업했던 release 브랜치는 삭제한다.
+이때, 다음 번 배포(Release)를 위한 개발 작업은 ‘develop’ 브랜치에서 계속 진행해 나간다.
 
-릴리스 준비가 끝나면, 릴리스 브랜치를 master와 develop 브랜치에 병합하고, 릴리스 브랜치는 삭제한다. develop 브랜치에도 병합하는 이유는 릴리스를 준비하면서 개발 중인 다른 기능에 영향을 줄 수 있는 작업을 했을 수도 있기 때문이다. 미애의 팀이 코드 리뷰를 하는 규칙을 가지고 있다면, 병합을 요청하는 풀 리퀘스트를 보낼 수도 있다.
-
+### 방법 [1]: 팀이 "풀 리퀘스트(pull request)"를 이용하지 않는 경우,
+~~~javascript
+/* release 브랜치에서 배포 가능한 상태가 되면 */
+// 'master' 브랜치로 이동한다.
 $ git checkout master
-$ git merge release-0.1
-$ git push
-$ git checkout develop
-$ git merge release-0.1
-$ git push
-$ git branch -d release-0.1
-릴리스 브랜치는 기능 개발(develop)과 프로젝트의 공식 릴리스 사이의 가교 역할을 한다. master 브랜치에 병합할 때는 태그를 부여하는 것이 나중을 위해서 여러 모로 편리하다.
+// 'master' 브랜치에 release-1.2 브랜치 내용을 병합(merge)한다.
+# --no-ff 옵션: 위의 추가 설명 참고
+$ git merge --no-ff release-1.2
+// 병합한 커밋에 Release 버전 태그를 부여한다.
+$ git tag -a 1.2
+// 'master' 브랜치를 중앙 원격 저장소에 올린다.
+$ git push origin master
 
-$ git tag -a 0.1 -m "Initial public release" master
-$ git push --tags
-Git은 저장소에 어떤 이벤트가 발생할 때 미리 짜 놓은 스크립트를 자동으로 실행할 수 있는 훅(hook) 기능을 가지고 있다. 중앙 저장소의 master 브랜치에 푸시하거나 태그를 푸시할 때, 자동으로 공개 릴리스를 빌드하는 훅을 거는 등의 자동화도 가능하다. -->
+/* 'release' 브랜치의 변경 사항을 'develop' 브랜치에도 적용 */
+// 'develop' 브랜치로 이동한다.
+$ git checkout develop
+// 'develop' 브랜치에 release-1.2 브랜치 내용을 병합(merge)한다.
+$ git merge --no-ff release-1.2
+// 'develop' 브랜치를 중앙 원격 저장소에 올린다.
+$ git push origin develop
+
+// -d 옵션: release-1.2에 해당하는 브랜치를 삭제한다.
+$ git branch -d release-1.2
+~~~
+
+### 방법 [2]: 팀이 "풀 리퀘스트(pull request)"를 이용하는 경우,
+팀이 풀 리퀘스트를 통한 코드 리뷰하는 방식을 사용한다면 release 브랜치를 그대로 중앙 원격 저장소에 올린 후 다른 팀원들의 확인을 거쳐 'master'와 'develop' branch에 병합한다.
+
+
 
 ## 12. 버그 수정하기
-<!-- Maintenance Branch
 
-릴리스를 배포한 후에, 미애는 철이와 함께 다음 릴리스를 준비하기 위해 일상으로 돌아갔다. 그런데 사용자가 현재 릴리스에 버그가 있다고 보고해왔다. 버그를 해결 하기 위해 미애(또는 철이)는 작업하던 기능 개발을 잠시 미뤄두고, master 브랜치를 기준으로 유지 보수 브랜치를 만들고, 버그를 수정하고 커밋한다. 버그 수정이 끝나면 master 브랜치에 바로 병합한다.
+배포한 버전에 긴급하게 수정을 해야 할 필요가 있을 경우, ‘master’ 브랜치에서 직접 브랜치('hotfix' 브랜치)를 만들어 필요한 부분만을 수정한 후 다시 ‘master’브랜치에 병합하여 이를 배포해야 한다.
+<br>
+‘develop’ 브랜치에서 문제가 되는 부분을 수정하여 배포 가능한 버전을 만들기에는 시간도 많이 소요되고 안정성을 보장하기도 어렵기 때문이다.
 
-$ git checkout -b issue-#001 master
+![](/images/github-collaboration3/github-collaboration-18-1.png)
+![](/images/github-collaboration3/github-collaboration-18-2.png)
+~~~javascript
+// release 브랜치(hotfix-1.2.1)를 'master' 브랜치(유일!)에서 분기
+$ git checkout -b hotfix-1.2.1 master
 
-* Fix the bug
+/* ~ 문제가 되는 부분만을 빠르게 수정 ~ */
+
+/* 필요한 부분을 수정한 후 */
+// 'master' 브랜치로 이동한다.
 $ git checkout master
-$ git merge issue-#001
-$ git push
-릴리스 브랜치와 마찬가지로, 유지 보수 브랜치에서의 변경 사항은 개발 중인 기능에도 반영되어야 하므로 develop 브랜치에도 병합해야 한다. 병합이 끝나면 유지 보수 브랜치는 삭제해도 좋다.
+// 'master' 브랜치에 hotfix-1.2.1 브랜치 내용을 병합(merge)한다.
+$ git merge --no-ff hotfix-1.2.1
+// 병합한 커밋에 새로운 버전 이름으로 태그를 부여한다.
+$ git tag -a 1.2.1
+// 'master' 브랜치를 중앙 원격 저장소에 올린다.
+$ git push origin master
 
+/* 'hotfix' 브랜치의 변경 사항을 'develop' 브랜치에도 적용 */
+// 'develop' 브랜치로 이동한다.
 $ git checkout develop
-$ git merge issue-#001
-$ git push
-$ git branch -d issue-#001 -->
+// 'develop' 브랜치에 hotfix-1.2.1 브랜치 내용을 병합(merge)한다.
+$ git merge --no-ff hotfix-1.2.1
+// 'develop' 브랜치를 중앙 원격 저장소에 올린다.
+$ git push origin develop
+
+// -d 옵션: hotfix-1.2.1에 해당하는 브랜치를 삭제한다.
+$ git branch -d hotfix-1.2.1
+~~~
+
+1. 배포한 버전에 긴급하게 수정을 해야 할 필요가 있을 경우,
+  * ‘master’ 브랜치에서 hotfix 브랜치를 분기한다. (‘hotfix’ 브랜치만 master에서 바로 딸 수 있다.)
+2. 문제가 되는 부분만을 빠르게 수정한다.
+3. 다시 ‘master’ 브랜치에 병합(merge)하여 이를 안정적으로 다시 배포한다.
+4. 새로운 버전 이름으로 태그를 매긴다.
+5. hotfix 브랜치에서의 변경 사항은 ‘develop’ 브랜치에도 병합(merge)한다.
+6. 작업했던 hotfix 브랜치는 삭제한다.
 
 
 

@@ -12,6 +12,8 @@ sitemap :
   priority : 1.0
 ---
 
+이 POST와 관련된 <mark>PDF 자료는</mark> [https://github.com/gmlwjd9405/git-collaboration](https://github.com/gmlwjd9405/git-collaboration)에서 다운받을 수 있습니다.
+<br>(You can download the PDF file related to this POST from the following link.)
 
 ## Goal
 > - Forking Workflow의 개념을 파악한다.

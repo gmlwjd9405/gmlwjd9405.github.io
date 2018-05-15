@@ -15,6 +15,8 @@ sitemap :
 ## <mark>데이터베이스(DB)편</mark>  
 <span style="color:#4d0000">데이터베이스(DB)와 관련된 기본적인 개념을 이해하고 기술 면접에 대비하자!</span>  
 
+<br> <span style="background-color: #e1e1e1">계속해서 추가할 예정입니다!<span>
+
 ### SQL 쿼리
 
 

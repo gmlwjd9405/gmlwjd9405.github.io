@@ -15,6 +15,8 @@ sitemap :
 ## <mark>디자인패턴(Design Pattern)편</mark>  
 <span style="color:#4d0000">디자인패턴(design pattern)과 관련된 기본적인 개념을 이해하고 기술 면접에 대비하자!</span>  
 
+<br> <span style="background-color: #e1e1e1">계속해서 추가할 예정입니다!<span>
+
 ### 디자인 패턴의 이해
 
 ### 스트래티지 패턴

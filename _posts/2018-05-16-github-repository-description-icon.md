@@ -27,7 +27,7 @@ sitemap :
 
 * Github 저장소의 Readme.md(markdown file)
 ![](/images/github-repository-description-icon/readme-before.png)
-![](/images/github-repository-description-icon/readme-after.png)
+![](/images/github-repository-description-icon/readme-total.png)
 
 
 ## 그림 아이콘(emoji)의 종류
@@ -39,20 +39,27 @@ sitemap :
 ## 그림 아이콘(emoji)의 사용
 * 그림 아이콘은 github에서 markdown 형식으로 작성하는 곳에서는 모두 사용할 수 있다.
 
-1. Github 저장소 설명(Repository's description)
-  * ![](/images/github-repository-description-icon/desctiption-total2.png)
-2. Github 저장소의 Readme.md(markdown file)
-  *
-  ~~~javascript
-  :bulb:  :blush:  :seedling:  :bell:  :balloon:  :octocat:
-  ~~~
-  * :seedling:
-3. 자신의 profile 설명
-  * ![](/images/github-repository-description-icon/profile-total.png)
-4. Commit Message 관리
-  * 아이콘마다 자신만의 구분법을 설정하여 Commit Message를 관리할 수 있다.
-  * ![](/images/github-repository-description-icon/commit-message-after.png)
-  * EX) [https://gist.github.com/parmentf/035de27d6ed1dce0b36a](https://gist.github.com/parmentf/035de27d6ed1dce0b36a)
+### 1. Github 저장소 설명(Repository's description)
+* ![](/images/github-repository-description-icon/desctiption-total2.png)
+
+### 2. Github 저장소의 Readme.md(markdown file)
+*
+~~~javascript
+:bulb:  :blush:  :seedling:  :bell:  :balloon:  :octocat:
+~~~
+* ![](/images/github-repository-description-icon/readme-total.png)
+
+### 3. 자신의 profile 설명
+* ![](/images/github-repository-description-icon/profile-total.png)
+
+### 4. Commit Message 관리
+* 아이콘마다 자신만의 구분법을 설정하여 Commit Message를 관리할 수 있다.
+*
+~~~javascript
+git commit -m ":seedling: Write about setting github markdown icon"
+~~~
+* ![](/images/github-repository-description-icon/commit-message-after.png)
+* EX) [https://gist.github.com/parmentf/035de27d6ed1dce0b36a](https://gist.github.com/parmentf/035de27d6ed1dce0b36a)
 
 
 # References

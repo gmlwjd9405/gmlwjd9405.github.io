@@ -30,10 +30,13 @@ git으로 프로젝트를 관리할 때, 그 프로젝트 안의 특정파일들
 1. 우선 .git 파일이 있는 최상위 디렉터리로 이동한다. (.gitignore 파일은 종류에 상관없이 자신이 사용하는 에디터로, .git 파일이 존재하는 곳과 같은 디렉터리에 만들어 주면 된다.)
 2. 터미널에서 아래의 명령어를 통해 .gitignore 파일을 만든다.
   * ~~~javascript
-  $ touch .gitignore //.gitignore 파일을 생성한다.
-  $ ls -a // .gitignore은 숨김파일이므로 -a 옵션으로 확인할 수 있다.  
-  /* 위의 단계를 건너뛰고 바로 .gitignore 파일을 생성하고 수정할 수 있다. */
-  $ vi .gitignore // .gitignore 파일을 수정한다.
+  // .gitignore 파일을 생성한다.
+  $ touch .gitignore
+  // .gitignore은 숨김 파일이므로 아래의 2가지 방법으로 제대로 생성됐는지를 확인한다.
+  $ la
+  $ ls -a
+  // .gitignore 파일을 수정한다.
+  $ vi .gitignore
   ~~~
 3. .gitignore 파일에 내용 채우기
 * GitHub에서 거의 모든 언어에 대한 .gitignore 파일을 미리 만들어서 제공하고 있다. [github/gitignore](https://github.com/github/gitignore)를 참고하여 .gitignore 안의 내용을 채우면 된다.
@@ -46,13 +49,25 @@ git으로 프로젝트를 관리할 때, 그 프로젝트 안의 특정파일들
 이미 버전 관리에 포함되어 있는 파일들을 .gitigore 파일에 기록한다고 해서 Git이 알아서 버전 관리에서 제외 하지는 않는다. 즉 Git이 계속해서 해당 파일을 track 하고 있다는 것이다. 예를 들어, 이미 자신의 github에 올라가 있는 파일을 삭제하고 더 이상 track 하고 싶지 않은 경우에는 수동으로 해당 파일들을 버전 관리에서 제외시켜줘야 한다.  
 아래의 명령어를 사용하여 Git 버전 관리에서 수동으로 파일을 제외한다.
 ~~~javascript
-$ git rm -r --cached . // 현재 Repository의 cache를 모두 삭제한다.
-$ git add . // .gitignore의 파일을 제외하고 다시 track하도록 설정한다.
+// 현재 Repository의 cache를 모두 삭제한다.
+$ git rm -r --cached .
+
+// [File Name]에 해당하는 파일을 원격 저장소에서 삭제한다.
+// (로컬 저장소에 있는 파일은 삭제하지 않는다.)
+$ git rm -r --cached [File Name]
+~~~
+
+~~~javascript
+// .gitignore에 넣은 파일 목록들을 제외하고 다른 모든 파일을 다시 track하도록 설정한다.
+$ git add .
 ~~~
 위의 작업 이후에 commit을 하지 않으면 아직 staged 상태로 남아있어, Git 버전 관리에서 완전히 빠지지 않으므로 아래의 명령어를 반드시 수행한다.
 ~~~javascript
 $ git commit -m "Fixed untracked files"
 ~~~
+
+## 관련된 Post
+* github에 이미 올라가 있는 파일을 삭제하는 방법에 대해 더 자세히 알고 싶으시면 [github에 잘못 올라간 파일 삭제하기](https://gmlwjd9405.github.io/2018/05/18/git-delete-incorrect-files.html)를 참고하시기 바랍니다.
 
 ## References
 > - [https://www.git-scm.com/book/en/v2/Git-Basics-Recording-Changes-to-the-Repository/](https://www.git-scm.com/book/en/v2/Git-Basics-Recording-Changes-to-the-Repository)

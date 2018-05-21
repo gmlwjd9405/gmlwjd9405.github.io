@@ -87,7 +87,7 @@ sitemap :
 // 2. 피벗보다 작은 값은 모두 왼쪽 부분 리스트로, 큰 값은 오른쪽 부분 리스트로 옮긴다.
 /* 2개의 비균등 배열 list[left...pivot-1]와 list[pivot+1...right]의 합병 과정 */
 /* (실제로 숫자들이 정렬되는 과정) */
-void partition(int list[], int left, int right){
+int partition(int list[], int left, int right){
   int pivot, temp;
   int low, high;
 

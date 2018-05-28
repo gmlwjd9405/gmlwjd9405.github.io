@@ -131,8 +131,8 @@ sitemap :
 * 학습은 실험, 질문, 검색 등이 모두 포함된다.
 
 
-<!-- # 관련된 Post
-* Eclipse에서 Spring MVC 프로젝트 생성하기에 대해 알고 싶으시면 [Eclipse에서 Spring MVC 프로젝트 생성하기](https://gmlwjd9405.github.io/2018/05/07/spring-project-eclipse-setting.html)를 참고하시기 바랍니다. -->
+# 관련된 Post
+* 애자일 자격증의 종류와 그 효용 가치에 대해 알고 싶으시면 [애자일 자격증](https://gmlwjd9405.github.io/2018/05/27/agile-certification.html)을 참고하시기 바랍니다.
 
 <br>
 # References

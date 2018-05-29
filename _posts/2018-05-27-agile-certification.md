@@ -35,7 +35,7 @@ sitemap :
   * 공식적인 문서에도 자격이 반드시 있어야 팀의 코치 역할을 할 수 있다고 나와있지 않다.
   * CSM은 인증서(Certification)의 개념 + 약간의 수료증(Certificate)적인 느낌이 있다. (하지만 면허증(Licence)은 아니다.)
 
-* 즉, CSM는 Scrum Alliance에서 <span style="background-color: #e1e1e1">'Scrum Master로서 이런 수준은 된다.'라는 정도의 확인서이다.</span>
+* 즉, CSM는 Scrum Alliance에서 만든 <span style="background-color: #e1e1e1">'Scrum Master로서 이런 수준은 된다.'라는 정도의 확인서이다.</span>
 * 애자일 초보자들은 CSM을 취득하면 애자일 방법론 분야에서 알아줄거라고 생각하지만, **아니다!!**
 
 <mark>TIP</mark> 자격증(Certified)의 3가지 정의

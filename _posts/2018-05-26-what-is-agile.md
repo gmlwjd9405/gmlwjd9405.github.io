@@ -133,6 +133,9 @@ sitemap :
 
 # 관련된 Post
 * 애자일 자격증의 종류와 그 효용 가치에 대해 알고 싶으시면 [애자일 자격증](https://gmlwjd9405.github.io/2018/05/27/agile-certification.html)을 참고하시기 바랍니다.
+* 애자일 데일리 스크럼의 개념과 도입 방법에 대해 알고 싶으시면 [데일리 스크럼이란](https://gmlwjd9405.github.io/2018/06/01/agile-dailyscrum.html)을 참고하시기 바랍니다.
+* TDD(테스트 주도 개발)의 개념과 효과에 대해 알고 싶으시면 [TDD(테스트 주도 개발)란](https://gmlwjd9405.github.io/2018/06/03/agile-tdd.html)을 참고하시기 바랍니다.
+
 
 <br>
 # References

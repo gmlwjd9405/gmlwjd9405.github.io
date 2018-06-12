@@ -170,7 +170,7 @@ $ git clean -f -d -x // 무시된 파일까지 삭제
 
 <br>
 # 관련된 Post
-* .gitignore을 설정하지 않고 github remote에 push한 경우, [Github에 잘 못 올라간 파일 삭제하기](https://gmlwjd9405.github.io/2018/05/17/git-delete-incorrect-files.html)를 참고하시기 바랍니다.
+* .gitignore을 설정하지 않고 github remote에 push한 경우, [Github에 잘못 올라간 파일 삭제하기](https://gmlwjd9405.github.io/2018/05/17/git-delete-incorrect-files.html)를 참고하시기 바랍니다.
 
 
 # References

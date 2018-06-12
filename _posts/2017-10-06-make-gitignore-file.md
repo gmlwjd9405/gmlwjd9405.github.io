@@ -67,7 +67,7 @@ $ git commit -m "Fixed untracked files"
 ~~~
 
 ## 관련된 Post
-* github에 이미 올라가 있는 파일을 삭제하는 방법에 대해 더 자세히 알고 싶으시면 [github에 잘못 올라간 파일 삭제하기](https://gmlwjd9405.github.io/2018/05/18/git-delete-incorrect-files.html)를 참고하시기 바랍니다.
+* github에 이미 올라가 있는 파일을 삭제하는 방법에 대해 더 자세히 알고 싶으시면 [github에 잘못 올라간 파일 삭제하기](https://gmlwjd9405.github.io/2018/05/17/git-delete-incorrect-files.html)를 참고하시기 바랍니다.
 
 ## References
 > - [https://www.git-scm.com/book/en/v2/Git-Basics-Recording-Changes-to-the-Repository/](https://www.git-scm.com/book/en/v2/Git-Basics-Recording-Changes-to-the-Repository)

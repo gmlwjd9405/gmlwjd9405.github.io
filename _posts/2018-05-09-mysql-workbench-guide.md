@@ -95,7 +95,7 @@ sitemap :
 
 
 # 관련된 Post
-* MySQL 설치방법 등을 알고 싶으시면 [MySQL 설치](https://gmlwjd9405.github.io/2018/05/11/mysql-download.html) 를 참고하시기 바랍니다.
+* MySQL 설치방법 등을 알고 싶으시면 [MySQL 설치](https://gmlwjd9405.github.io/2018/05/09/mysql-download.html) 를 참고하시기 바랍니다.
 
 
 # References

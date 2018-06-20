@@ -55,7 +55,7 @@ sitemap :
 
 
 ## 관련된 Post
-* MySQL Workbench 사용법을 알고 싶으시면 [MySQL Workbench 사용법](https://gmlwjd9405.github.io/2018/05/11/mysql-workbench-guide.html) 을 참고하시기 바랍니다.
+* MySQL Workbench 사용법을 알고 싶으시면 [MySQL Workbench 사용법](https://gmlwjd9405.github.io/2018/05/09/mysql-workbench-guide.html) 을 참고하시기 바랍니다.
 
 
 # References

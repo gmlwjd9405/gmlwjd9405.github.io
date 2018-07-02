@@ -78,9 +78,11 @@ sitemap :
   * 1) java resources > libraries > JRE System Library > 우클릭 > Properties > Execution environment 선택
     * JavaSE-1.8(jre 1.8.0_73)로 변경
     * (해당 프로젝트에서는 1.8로 진행하기 때문)
+    * ![](/images/spring-project-eclipse-setting/add-setting1.png)
   * 2) 프로젝트 우클릭 > Properties > Project Facets 선택
     * Dynamic Web Module: 3.1로 변경
     * Java: 1.8로 변경
+    <!-- * ![](/images/spring-project-eclipse-setting/add-setting2.png) -->
   * 3) Web Project Settings > **Context root** 를 프로젝트명('eStore')으로 변경
     * URL을 줄 때 프로젝트명('eStore')으로 주기 위해서
 

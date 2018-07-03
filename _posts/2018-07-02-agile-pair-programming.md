@@ -214,3 +214,4 @@ sitemap :
 > - [애자일 키워드 - 김창준, 강재영 진행](http://www.podbbang.com/ch/14757)
 > - [https://developer.atlassian.com/blog/2015/05/try-pair-programming/](https://developer.atlassian.com/blog/2015/05/try-pair-programming/)
 > - [https://medium.com/@weblab_tech/pair-programming-guide-a76ca43ff389](https://medium.com/@weblab_tech/pair-programming-guide-a76ca43ff389)
+> - [http://pairprogrammingisfun.com/](http://pairprogrammingisfun.com/)

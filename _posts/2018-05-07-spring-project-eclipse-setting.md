@@ -75,7 +75,7 @@ sitemap :
     * ![](/images/spring-project-eclipse-setting/5.png)
 
 * 추가 설정
-  * 1) java resources > libraries > JRE System Library > 우클릭 > Properties > Execution environment 선택
+  * 1) Java Resources > Libraries > JRE System Library > 우클릭 > Properties > Execution environment 선택
     * JavaSE-1.8(jre 1.8.0_73)로 변경
     * (해당 프로젝트에서는 1.8로 진행하기 때문)
     * ![](/images/spring-project-eclipse-setting/add-setting1.png)

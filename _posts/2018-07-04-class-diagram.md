@@ -4,7 +4,7 @@ title: '[UML] 클래스 다이어그램 작성법'
 subtitle: '클래스 다이어그램 작성법'
 date: 2018-07-04
 author: heejeong Kwon
-cover: '/images/java-programming/java-programming-main2.png'
+cover: '/images/class-diagram/java-main.png'
 tags: Java
 comments: true
 sitemap :
@@ -42,6 +42,8 @@ sitemap :
 1. 동일한 속성과 행위를 수행하는 객체의 집합
 2. 객체를 생성하는 설계도
   * 즉, 클래스는 공통의 속성과 책임을 갖는 객체들의 집합이자 실제 객체를 생성하는 설계도이다.
+* 클래스는 <span style="background-color: #e1e1e1">**"변화의 기본 단위"**</span>
+  * 디자인 패턴을 제대로 이해하려면 만들어진 프로그램을 흔들어보고 어떤 것이 변화되는지를 잘 살펴봐야 한다.
 
 <!-- ~~~Java
 public class Cat {
@@ -215,7 +217,7 @@ public class Cat {
 
 ### 5. 인터페이스와 실체화 관계
 * 인터페이스란
-  * **책임이다.**
+  * <span style="background-color: #e1e1e1">**책임이다.**</span>
   * 어떤 객체의 책임이란 객체가 해야 하는 일 또는 객체가 할 수 있는 일
   * 즉, 객체가 외부에 제공하는 서비스나 기능은 객체가 수행하는 책임으로 본다.
   * 어떤 공통되는 능력이 있는 것들을 대표하는 관점

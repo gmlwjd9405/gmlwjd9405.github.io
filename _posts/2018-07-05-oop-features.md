@@ -5,7 +5,7 @@ subtitle: 'OOP(객체지향 프로그래밍)의 원리를 이해한다.'
 date: 2018-07-05
 author: heejeong Kwon
 cover: '/images/oop-features/java-main.png'
-tags: Java
+tags: java oop
 comments: true
 sitemap :
   changefreq : daily
@@ -155,7 +155,7 @@ end switch
 
 ## 3. 일반화 관계(Generalization)
 일반화는 여러 개체들이 가진 공통된 특성을 부각시켜 하나의 개념이나 법칙으로 성립시키는 과정이다.
-* 일반화 관계는 객체지향 프로그래밍 관점에서는 상속 관계라 한다.
+* 일반화 관계는 객체지향 프로그래밍 관점에서는 ***상속 관계*** 라 한다.
 * 따라서 속성이나 기능의 재사용만 강조해서 사용하는 경우가 많다.
 * 하지만 이는 일반화 관계를 극히 한정되게 바라보는 시각이다.
 
@@ -325,8 +325,8 @@ public class Main {
 
 * ![](/images/oop-features/etc.png)
 
-<!-- # 관련된 Post -->
-
+# 관련된 Post
+* OOP(객체지향 프로그래밍) 설계 원칙에 대해 알고 싶으시면 [OOP 설계 원칙](https://gmlwjd9405.github.io/2018/07/05/oop-solid.html)을 참고하시기 바랍니다.
 
 # References
 > - [JAVA 객체지향 디자인 패턴, 한빛미디어](http://www.kyobobook.co.kr/product/detailViewKor.laf?mallGb=KOR&ejkGb=KOR&barcode=9788968480911&orderClick=JAj)

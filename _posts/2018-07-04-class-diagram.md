@@ -4,8 +4,8 @@ title: '[UML] 클래스 다이어그램 작성법'
 subtitle: '클래스 다이어그램 작성법'
 date: 2018-07-04
 author: heejeong Kwon
-cover: '/images/class-diagram/java-main.png'
-tags: Java
+cover: '/images/class-diagram/uml-main.png'
+tags: java uml class-diagram
 comments: true
 sitemap :
   changefreq : daily

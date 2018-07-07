@@ -5,7 +5,7 @@ subtitle: '기술 면접 예상 질문 대비하기 - 디자인패턴(Design Pat
 date: 2017-10-01
 author: heejeong Kwon
 cover: '/images/basic-concepts-of-development/basic-concepts-of-development-main.png'
-tags: 면접 기본개념 디자인패턴 DesignPattern
+tags: 면접 기본개념 디자인패턴 design-pattern
 comments: true
 sitemap :
   changefreq : daily
@@ -16,6 +16,9 @@ sitemap :
 <span style="color:#4d0000">디자인패턴(design pattern)과 관련된 기본적인 개념을 이해하고 기술 면접에 대비하자!</span>  
 
 <br> <span style="background-color: #e1e1e1">계속해서 추가할 예정입니다!<span>
+
+### 클래스 다이어그램 작성법
+> - 관련 POST  [https://gmlwjd9405.github.io/2018/07/05/oop-features.html](https://gmlwjd9405.github.io/2018/07/05/oop-features.html)
 
 ### 디자인 패턴의 이해
 

@@ -18,7 +18,8 @@ sitemap :
 <br> <span style="background-color: #e1e1e1">계속해서 추가할 예정입니다!<span>
 
 ### 클래스 다이어그램 작성법
-> - 관련 POST  [https://gmlwjd9405.github.io/2018/07/04/class-diagram.html](https://gmlwjd9405.github.io/2018/07/04/class-diagram.html)
+> - 관련 POST
+> - [https://gmlwjd9405.github.io/2018/07/04/class-diagram.html](https://gmlwjd9405.github.io/2018/07/04/class-diagram.html)
 
 ### 디자인 패턴의 이해
 * 디자인 패턴이란
@@ -30,7 +31,8 @@ sitemap :
   * 에리히 감마(Erich Gamma), 리차드 헬름(Richard Helm), 랄프 존슨(Ralph Johnson), 존 블리시디스(John Vissides)
 * GoF 디자인 패턴의 종류
 ![](/images/design-pattern/types-of-designpattern.png)
-> - 관련 POST  [https://gmlwjd9405.github.io/2018/07/06/design-pattern.html](https://gmlwjd9405.github.io/2018/07/06/design-pattern.html)
+> - 관련 POST
+> - [https://gmlwjd9405.github.io/2018/07/06/design-pattern.html](https://gmlwjd9405.github.io/2018/07/06/design-pattern.html)
 
 ### 스트래티지 패턴
 * **행위를 클래스로 캡슐화해** 동적으로 행위를 자유롭게 바꿀 수 있게 해주는 패턴
@@ -50,9 +52,19 @@ sitemap :
   * Context
     * 스트래티지 패턴을 이용하는 역할을 수행한다.
     * 필요에 따라 동적으로 구체적인 전략을 바꿀 수 있도록 setter 메서드('집약 관계')를 제공한다.
-> - 관련 POST  [https://gmlwjd9405.github.io/2018/07/06/strategy-pattern.html](https://gmlwjd9405.github.io/2018/07/06/strategy-pattern.html)
+> - 관련 POST
+> - [https://gmlwjd9405.github.io/2018/07/06/strategy-pattern.html](https://gmlwjd9405.github.io/2018/07/06/strategy-pattern.html)
+
 
 ### 싱글턴 패턴
+* 전역 변수를 사용하지 않고 **객체를 하나만 생성** 하도록 하며, 생성된 객체를 **어디에서든지 참조할 수 있도록** 하는 패턴
+  * '생성(Creational) 패턴'의 하나 (*아래 참고*)
+* ![](/images/design-pattern-singleton/singleton-example.png){: width="150" height="100"}
+* 역할이 수행하는 작업
+  * Singleton
+    * 하나의 인스턴스만을 생성하는 책임이 있으며 getInstance 메서드를 통해 모든 클라이언트에게 동일한 인스턴스를 반환하는 작업을 수행한다.
+> - 관련 POST
+> -  [https://gmlwjd9405.github.io/2018/07/06/singleton-pattern.html](https://gmlwjd9405.github.io/2018/07/06/singleton-pattern.html)
 
 ### 스테이트 패턴
 

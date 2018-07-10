@@ -58,7 +58,7 @@ sitemap :
 
 ### 싱글턴 패턴
 * 전역 변수를 사용하지 않고 **객체를 하나만 생성** 하도록 하며, 생성된 객체를 **어디에서든지 참조할 수 있도록** 하는 패턴
-  * '생성(Creational) 패턴'의 하나 (*아래 참고*)
+  * '생성(Creational) 패턴'의 하나
 * ![](/images/design-pattern-singleton/singleton-example.png){: width="150" height="100"}
 * 역할이 수행하는 작업
   * Singleton
@@ -66,9 +66,29 @@ sitemap :
 > - 관련 POST
 > -  [https://gmlwjd9405.github.io/2018/07/06/singleton-pattern.html](https://gmlwjd9405.github.io/2018/07/06/singleton-pattern.html)
 
-### 스테이트 패턴
 
 ### 커맨드 패턴
+* **실행될 기능을 캡슐화함으로써** 주어진 여러 기능을 실행할 수 있는 재사용성이 높은 클래스를 설계하는 패턴
+  * 즉, 이벤트가 발생했을 때 실행될 기능이 다양하면서도 변경이 필요한 경우에 이벤트를 발생시키는 클래스를 변경하지 않고 재사용하고자 할 때 유용하다.
+  * '행위(Behavioral) 패턴'의 하나
+* ![](/images/design-pattern-command/command-pattern.png){: width="370" height="200"}
+* 실행될 기능을 캡슐화함으로써 기능의 실행을 요구하는 호출자(Invoker) 클래스와 실제 기능을 실행하는 수신자(Receiver) 클래스 사이의 의존성을 제거한다.
+* 따라서 **실행될 기능의 변경에도 호출자 클래스를 수정 없이 그대로 사용** 할 수 있도록 해준다.
+* 역할이 수행하는 작업
+  * Command
+    * 실행될 기능에 대한 인터페이스
+    * 실행될 기능을 execute 메서드로 선언함
+  * ConcreteCommand
+    * 실제로 실행되는 기능을 구현
+    * 즉, Command라는 인터페이스를 구현함
+  * Invoker
+    * 기능의 실행을 요청하는 호출자 클래스
+  * Receiver
+    * ConcreteCommand에서 execute 메서드를 구현할 때 필요한 클래스
+    * 즉, ConcreteCommand의 기능을 실행하기 위해 사용하는 수신자 클래스
+> - 관련 POST
+> -  [https://gmlwjd9405.github.io/2018/07/07/command-pattern.html](https://gmlwjd9405.github.io/2018/07/07/command-pattern.html)
+
 
 ### 옵서버 패턴
 

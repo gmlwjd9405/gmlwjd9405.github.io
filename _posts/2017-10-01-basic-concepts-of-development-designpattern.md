@@ -91,8 +91,54 @@ sitemap :
 
 
 ### 옵서버 패턴
+* 한 객체의 상태 변화에 따라 다른 객체의 상태도 연동되도록 **일대다 객체 의존 관계를 구성** 하는 패턴
+  * 데이터의 변경이 발생했을 경우 **상대 클래스나 객체에 의존하지 않으면서 데이터 변경을 통보하고자 할 때** 유용하다.
+    * Ex) 새로운 파일이 추가되거나 기존 파일이 삭제되었을 때 탐색기는 다른 탐색기에게 즉시 변경을 통보해야 한다.
+    * Ex) 차량 연료량 클래스는 연료량이 부족한 경우 연료량에 관심을 가지는 구체적인 클래스(연료량 부족 경고 클래스, 주행 가능 거리 출력 클래스)에 직접 의존하지 않는 방식으로 연료량 변화를 통보해야 한다.
+  * '행위(Behavioral) 패턴'의 하나
+* ![](/images/design-pattern-observer/observer-pattern.png)
+* 옵저버 패턴은 통보 대상 객체의 관리를 Subject 클래스와 Obaserver 인터페이스로 일반화한다.
+  * 이를 통해 데이터 변경을 통보하는 클래스(ConcreteSubject)는 통보 대상 클래스나 객체(ConcreteObserver)에 대한 의존성을 없앨 수 있다.
+  * 결과적으로 통보 대상 클래스나 대상 객체의 변경에도 **통보하는 클래스(ConcreteSubject)를 수정 없이 그대로 사용할 수 있다.**
+* 역할이 수행하는 작업
+  * Observer
+    * 데이터의 변경을 통보 받는 인터페이스
+    * 즉, Subject에서는 Observer 인터페이스의 update 메서드를 호출함으로써 ConcreteSubject의 데이터 변경을 ConcreteObserver에게 통보한다.
+  * Subject
+    * ConcreteObserver 객체를 관리하는 요소
+    * Observer 인터페이스를 참조해서 ConcreteObserver를 관리하므로 ConcreteObserver의 변화에 독립적일 수 있다.
+  * ConcreteSubject
+    * 변경 관리 대상이 되는 데이터가 있는 클래스(통보하는 클래스)
+    * 데이터 변경을 위한 메서드인 setState가 있다.
+    * setState 메서드에서는 자신의 데이터인 subjectState를 변경하고 Subject의 notifyObservers 메서드를 호출해서 ConcreteObserver 객체에 변경을 통보한다.
+  * ConcreteObserver
+    * ConcreteSubject의 변경을 통보받는 클래스
+    * Observer 인터페이스의 update 메서드를 구현함으로써 변경을 통보받는다.
+    * 변경된 데이터는 ConcreteSubject의 getState 메서드를 호출함으로써 변경을 조회한다.
+
+> - 관련 POST
+> -  [https://gmlwjd9405.github.io/2018/07/08/observer-pattern.html](https://gmlwjd9405.github.io/2018/07/08/observer-pattern.html)
 
 ### 데커레이터 패턴
+* **객체의 결합** 을 통해 **기능을 동적으로 유연하게 확장** 할 수 있게 해주는 패턴
+  * 즉, 기본 기능에 추가할 수 있는 기능의 종류가 많은 경우에 **각 추가 기능을 Decorator 클래스로 정의** 한 후 필요한 Decorator 객체를 조합함으로써 **추가 기능의 조합을 설계** 하는 방식이다.
+    * Ex) 기본 도로 표시 기능에 차선 표시, 교통량 표시, 교차로 표시, 단속 카메라 표시의 4가지 추가 기능이 있ㅇ을 때 추가 기능의 모든 조합은 15가지가 된다. 데코레이터 패턴을 이용하여 필요 추가 기능의 조합을 동적으로 생성할 수 있다.
+  * '구조(Structural) 패턴'의 하나
+* ![](/images/design-pattern-decorator/decorator-pattern.png)
+* 기본 기능에 추가할 수 있는 많은 종류의 부가 기능에서 파생되는 다양한 조합을 동적으로 구현할 수 있는 패턴이다.
+* 역할이 수행하는 작업
+  * Component
+    * 기본 기능을 뜻하는 ConcreteComponent와 추가 기능을 뜻하는 Decorator의 공통 기능을 정의
+    * 즉, 클라이언트는 Component를 통해 실제 객체를 사용함
+  * ConcreteComponent
+    * 기본 기능을 구현하는 클래스
+  * Decorator
+    * 많은 수가 존재하는 구체적인 Decorator의 공통 기능을 제공
+  * ConcreteDecoratorA, ConcreteDecoratorB
+    * Decorator의 하위 클래스로 기본 기능에 추가되는 개별적인 기능을 뜻함
+
+> - 관련 POST
+> -  [https://gmlwjd9405.github.io/2018/07/09/decorator-pattern.html](https://gmlwjd9405.github.io/2018/07/09/decorator-pattern.html)
 
 ### 템플릿 메서드 패턴
 

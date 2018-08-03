@@ -30,6 +30,11 @@ sitemap :
 > - [힙 정렬(heap sort)](https://gmlwjd9405.github.io/2018/05/10/algorithm-heap-sort.html)
 
 
+### 자료 구조
+> - 관련 POST
+> - [스택(Stack)이란](https://gmlwjd9405.github.io/2018/08/03/data-structure-stack.html)
+> - [큐(Queue)란](https://gmlwjd9405.github.io/2018/08/02/data-structure-queue.html)
+> - [힙(heap)이란](https://gmlwjd9405.github.io/2018/05/10/data-structure-heap.html)
 
 ---
 

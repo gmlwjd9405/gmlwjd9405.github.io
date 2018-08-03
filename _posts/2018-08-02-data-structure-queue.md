@@ -120,7 +120,7 @@ public class MyQueue {
   * remove()와 동일한 기능
   * 만약 Queue가 비어있으면 null을 반환
 
-* Methods inherited from interface java.util.Collection
+* Methods inherited from interface ***java.util.Collection***
   * addAll, clear, contains, containsAll, equals, hashCode, isEmpty, iterator, remove, removeAll, retainAll, size, toArray, toArray
 
 

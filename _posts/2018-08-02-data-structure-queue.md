@@ -142,8 +142,9 @@ public class MyQueue {
 * [Queue Implementations 참고](https://docs.oracle.com/javase/tutorial/collections/implementations/queue.html)
 
 
-<!-- # 관련된 Post
-* OOP(객체지향 프로그래밍)의 특징에 대해 알고 싶으시면 [OOP의 특징](https://gmlwjd9405.github.io/2018/07/05/oop-features.html)을 참고하시기 바랍니다. -->
+# 관련된 Post
+* 자료구조 힙(heap)에 대해 알고 싶으시면 [힙(heap)이란](https://gmlwjd9405.github.io/2018/05/10/data-structure-heap.html) 를 참고하시기 바랍니다.
+* 자료구조 스택(Stack)에 대해 알고 싶으시면 [스택(Stack)이란](https://gmlwjd9405.github.io/2018/08/03/data-structure-stack.html)을 참고하시기 바랍니다.
 
 
 # References

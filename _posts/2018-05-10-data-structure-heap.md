@@ -171,6 +171,8 @@ element delete_max_heap(HeapType *h){
 
 # 관련된 Post
 * 힙 정렬(heap sort): [힙 정렬(heap sort)](https://gmlwjd9405.github.io/2018/05/10/algorithm-heap-sort.html) 을 참고하시기 바랍니다.
+* 자료구조 스택(Stack)에 대해 알고 싶으시면 [스택(Stack)이란](https://gmlwjd9405.github.io/2018/08/03/data-structure-stack.html)을 참고하시기 바랍니다.
+* 자료구조 힙(heap)에 대해 알고 싶으시면 [힙(heap)이란](https://gmlwjd9405.github.io/2018/05/10/data-structure-heap.html) 를 참고하시기 바랍니다.
 
 
 

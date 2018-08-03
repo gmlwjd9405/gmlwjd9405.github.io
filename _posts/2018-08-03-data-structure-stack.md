@@ -112,8 +112,9 @@ public class MyStack {
   * finalize, getClass, notify, notifyAll, wait, wait, wait
 
 
-<!-- # 관련된 Post
-* OOP(객체지향 프로그래밍)의 특징에 대해 알고 싶으시면 [OOP의 특징](https://gmlwjd9405.github.io/2018/07/05/oop-features.html)을 참고하시기 바랍니다. -->
+# 관련된 Post
+* 자료구조 힙(heap)에 대해 알고 싶으시면 [힙(heap)이란](https://gmlwjd9405.github.io/2018/05/10/data-structure-heap.html) 를 참고하시기 바랍니다.
+* 자료구조 큐(Queue)에 대해 알고 싶으시면 [큐(Queue)란](https://gmlwjd9405.github.io/2018/08/02/data-structure-queue.html)을 참고하시기 바랍니다.
 
 
 # References

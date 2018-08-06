@@ -1,7 +1,7 @@
 ---
 layout: post
 title: '[Java] java static 멤버와 static 메서드'
-subtitle: 'Java의 static 멤버의 활용 및 사용법을 이해한다.'
+subtitle: 'java static의 활용 및 사용법을 이해한다.'
 date: 2018-08-04
 author: heejeong Kwon
 cover: '/images/java-programming/java-programming-main2.png'
@@ -15,7 +15,7 @@ sitemap :
 
 ## Goal
 > - non-static 멤버와 static 멤버의 차이를 이해할 수 있다.
-> - static 멤버의 사용법을 ㅇ이해할 수 있다.
+> - static 멤버의 사용법을 이해할 수 있다.
 > - static의 활용과 static 메서드의 제약 조건을 이해할 수 있다.
 
 ## static 멤버의 선언

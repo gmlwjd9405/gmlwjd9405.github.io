@@ -196,7 +196,7 @@ this는 호출 당시 실행 중인 객체를 가리키는 레퍼런스이다.
 * 따라서 객체가 생성되지 않은 상황에서도 클래스 이름을 이용하여 호출이 가능한 static 메서드는 this를 사용할 수 없다.
 
 ~~~java
-class StaticAndThid {
+class StaticAndThis {
   int n;
   static int m;
   void f1(int x) { this.n = x; } // 정상

@@ -4,7 +4,7 @@ title: '[Java] java static 멤버와 static 메서드'
 subtitle: 'java static의 활용 및 사용법을 이해한다.'
 date: 2018-08-04
 author: heejeong Kwon
-cover: '/images/java-programming/java-programming-main2.png'
+cover: '/images/oop-solid/java-main.png'
 tags: Java static
 comments: true
 sitemap :

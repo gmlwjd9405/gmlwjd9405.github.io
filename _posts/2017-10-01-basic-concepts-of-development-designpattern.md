@@ -162,6 +162,29 @@ sitemap :
 
 
 ### 팩토리 메서드 패턴
+* **객체 생성 처리를 서브 클래스로 분리** 해 처리하도록 캡슐화하는 패턴
+  * 즉, 객체의 생성 코드를 별도의 클래스/메서드로 분리함으로써 객체 생성의 변화에 대비하는 데 유용하다.
+  * 특정 기능의 구현은 개별 클래스를 통해 제공되는 것이 바람직한 설계다.
+    * 기능의 변경이나 상황에 따른 기능의 선택은 해당 객체를 생성하는 코드의 변경을 초래한다.
+    * 상황에 따라 적절한 객체를 생성하는 코드는 자주 중복될 수 있다.
+    * 객체 생성 방식의 변화는 해당되는 모든 코드 부분을 변경해야 하는 문제가 발생한다.
+  * [스트래티지 패턴](https://gmlwjd9405.github.io/2018/07/06/strategy-pattern.html), [싱글턴 패턴](https://gmlwjd9405.github.io/2018/07/06/singleton-pattern.html), [템플릿 메서드 패턴](https://gmlwjd9405.github.io/2018/07/13/template-method-pattern.html)을 사용한다.
+  * '생성(Creational) 패턴'의 하나
+* ![](/images/design-pattern-factory-method/factory-method-pattern.png){: width="370" height="250"}
+* 역할이 수행하는 작업
+  * Product
+    * 팩토리 메서드로 생성될 객체의 공통 인터페이스
+  * ConcreteProduct
+    * 구체적으로 객체가 생성되는 클래스
+  * Creator
+    * 팩토리 메서드를 갖는 클래스
+  * ConcreteCreator
+    * 팩토리 메서드를 구현하는 클래스로 ConcreteProduct 객체를 생성
+* 팩토리 메서드 패턴의 개념
+  * ![](/images/design-pattern-factory-method/factory-method-pattern-concepts.png){: width="370" height="250"}
+
+> - 관련 POST
+> -  [https://gmlwjd9405.github.io/2018/08/07/factory-method-pattern.html](https://gmlwjd9405.github.io/2018/08/07/factory-method-pattern.html)
 
 ### 추상 팩토리 패턴
 

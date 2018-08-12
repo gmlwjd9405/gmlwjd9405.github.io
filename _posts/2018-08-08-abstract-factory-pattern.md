@@ -18,12 +18,11 @@ sitemap :
 > - 예시를 통해 추상 팩토리 패턴을 이해한다.
 
 ## 추상 팩토리 패턴이란
-* 구제적인 클래스에 의존하지 않고 서로 연관되거나 의존적인 객체들의 조합을 만드는 인터페이스를 제공하는 패턴
+* 구체적인 클래스에 의존하지 않고 서로 연관되거나 의존적인 객체들의 조합을 만드는 인터페이스를 제공하는 패턴
   * 즉, 관련성 있는 여러 종류의 객체를 일관된 방식으로 생성하는 경우에 유용하다.
-  * (내용 추가)
   * [싱글턴 패턴](https://gmlwjd9405.github.io/2018/07/06/singleton-pattern.html), [팩토리 메서드 패턴](https://gmlwjd9405.github.io/2018/08/07/factory-method-pattern.html)을 사용한다.
   * '생성(Creational) 패턴'의 하나 (*아래 참고*)
-* ![](/images/design-pattern-abstract-factory/abstract-factory-pattern.png){: width="370" height="250"}
+* ![](/images/design-pattern-abstract-factory/abstract-factory-pattern.png)
 * 역할이 수행하는 작업
   * AbstractFactory
     * 실제 팩토리 클래스의 공통 인터페이스
@@ -76,7 +75,6 @@ public void open() {
 
 **[템플릿 메서드 패턴](https://gmlwjd9405.github.io/2018/07/13/template-method-pattern.html)** 을 적용한 예제 코드
 * 전체적으로는 동일하면서 부분적으로는 다른 구문으로 구성된 메서드의 코드 중복을 최소화할 수 있다.
-* ![](/images/design-pattern-abstract-factory/abstract-factory-example1.png)
 
 ~~~Java
 public abstract class Door {
@@ -129,7 +127,7 @@ public class HyundaiDoor extends Door {
 
 **[팩토리 메서드 패턴](https://gmlwjd9405.github.io/2018/08/07/factory-method-pattern.html)** 을 적용한 예제 코드
 * 객체 생성 처리를 서브 클래스로 분리하여 캡슐화함으로써 객체 생성의 변화에 대비할 수 있다.
-* ![](/images/design-pattern-abstract-factory/abstract-factory-example2.png)
+* ![](/images/design-pattern-abstract-factory/abstract-factory-example1.png)
 
 ~~~Java
 public enm VendorID { LG, HYUNDAI }
@@ -298,6 +296,7 @@ public class Client {
   * 즉, 문제점 1과 같이 다른 제조 업체의 부품으로 변경하는 경우에도 Client 코드를 변경할 필요가 없다.
 * 제조 업체별로 Factory 클래스를 정의했으므로 제조 업체별 부품 객체를 간단히 생성할 수 있다.
   * 즉, 문제점 2와 같이 새로운 제조 업체의 부품을 지원하는 경우에도 해당 제조 업체의 부품을 생성하는 Factory 클래스만 새롭게 만들면 된다.
+* ![](/images/design-pattern-abstract-factory/abstract-factory-solution2.png)
 
 ~~~java
 /* Samsung 부품을 생성하는 팩토리 클래스 */
@@ -337,7 +336,7 @@ public class Client {
 ~~~
 
 ### 추가 보완 해결책(정확한 추상 팩토리 패턴 적용)
-![](/images/design-pattern-abstract-factory/abstract-factory-solution2.png)
+![](/images/design-pattern-abstract-factory/abstract-factory-solution3.png)
 
 ***과정 1***<br>
 **"팩토리 메서드 패턴":** 제조 업체별 Factory 객체를 생성하는 방식을 캡슐화한다.<br>
@@ -418,7 +417,7 @@ public class Client {
 ~~~
 
 ***추상 팩토리 패턴 최종 클래스 다이어그램***<br>
-* ![](/images/design-pattern-abstract-factory/abstract-factory-solution3.png)
+* ![](/images/design-pattern-abstract-factory/abstract-factory-solution4.png)
   * **"AbstractFactory"**: ElevatorFactory 클래스
   * **"ConcreteFactory"**:  LGElevatorFactory 클래스와 HyundaiElevatorFactory 클래스
   * **"AbstractProductA"**: Motor 클래스

@@ -31,6 +31,7 @@ sitemap :
   * 에리히 감마(Erich Gamma), 리차드 헬름(Richard Helm), 랄프 존슨(Ralph Johnson), 존 블리시디스(John Vissides)
 * GoF 디자인 패턴의 종류
 ![](/images/design-pattern/types-of-designpattern.png)
+
 > - 관련 POST
 > - [https://gmlwjd9405.github.io/2018/07/06/design-pattern.html](https://gmlwjd9405.github.io/2018/07/06/design-pattern.html)
 
@@ -52,6 +53,9 @@ sitemap :
   * Context
     * 스트래티지 패턴을 이용하는 역할을 수행한다.
     * 필요에 따라 동적으로 구체적인 전략을 바꿀 수 있도록 setter 메서드('집약 관계')를 제공한다.
+* 예시
+  * 로봇 만들기
+
 > - 관련 POST
 > - [https://gmlwjd9405.github.io/2018/07/06/strategy-pattern.html](https://gmlwjd9405.github.io/2018/07/06/strategy-pattern.html)
 
@@ -63,6 +67,9 @@ sitemap :
 * 역할이 수행하는 작업
   * Singleton
     * 하나의 인스턴스만을 생성하는 책임이 있으며 getInstance 메서드를 통해 모든 클라이언트에게 동일한 인스턴스를 반환하는 작업을 수행한다.
+* 예시
+  * 프린터 관리자 만들기
+
 > - 관련 POST
 > -  [https://gmlwjd9405.github.io/2018/07/06/singleton-pattern.html](https://gmlwjd9405.github.io/2018/07/06/singleton-pattern.html)
 
@@ -86,6 +93,9 @@ sitemap :
   * Receiver
     * ConcreteCommand에서 execute 메서드를 구현할 때 필요한 클래스
     * 즉, ConcreteCommand의 기능을 실행하기 위해 사용하는 수신자 클래스
+* 예시
+  * 만능 버튼 만들기
+
 > - 관련 POST
 > -  [https://gmlwjd9405.github.io/2018/07/07/command-pattern.html](https://gmlwjd9405.github.io/2018/07/07/command-pattern.html)
 
@@ -115,6 +125,8 @@ sitemap :
     * ConcreteSubject의 변경을 통보받는 클래스
     * Observer 인터페이스의 update 메서드를 구현함으로써 변경을 통보받는다.
     * 변경된 데이터는 ConcreteSubject의 getState 메서드를 호출함으로써 변경을 조회한다.
+* 예시
+  * 여러 가지 방식으로 성적 출력하기
 
 > - 관련 POST
 > -  [https://gmlwjd9405.github.io/2018/07/08/observer-pattern.html](https://gmlwjd9405.github.io/2018/07/08/observer-pattern.html)
@@ -138,6 +150,8 @@ sitemap :
   * ConcreteDecoratorA, ConcreteDecoratorB
     * Decorator의 하위 클래스로 기본 기능에 추가되는 개별적인 기능을 뜻함
     * ConcreteDecorator 클래스는 ConcreteComponent 객체에 대한 참조가 필요한데, 이는 Decorator 클래스에서 Component 클래스로의 '합성(composition) 관계'를 통해 표현됨
+* 예시
+  * 도로 표시 방법 조합하기
 
 > - 관련 POST
 > -  [https://gmlwjd9405.github.io/2018/07/09/decorator-pattern.html](https://gmlwjd9405.github.io/2018/07/09/decorator-pattern.html)
@@ -156,6 +170,8 @@ sitemap :
   * ConcreteClass
     * 물려받은 primitive 메서드 또는 hook 메서드를 구현하는 클래스
     * 상위 클래스에 구현된 템플릿 메서드의 일반적인 알고리즘에서 하위 클래스에 적합하게 primitive 메서드나 hook 메서드를 오버라이드하는 클래스
+* 예시
+  * 여러 회사의 모터 지원하기
 
 > - 관련 POST
 > -  [https://gmlwjd9405.github.io/2018/07/13/template-method-pattern.html](https://gmlwjd9405.github.io/2018/07/13/template-method-pattern.html)
@@ -170,7 +186,7 @@ sitemap :
     * 객체 생성 방식의 변화는 해당되는 모든 코드 부분을 변경해야 하는 문제가 발생한다.
   * [스트래티지 패턴](https://gmlwjd9405.github.io/2018/07/06/strategy-pattern.html), [싱글턴 패턴](https://gmlwjd9405.github.io/2018/07/06/singleton-pattern.html), [템플릿 메서드 패턴](https://gmlwjd9405.github.io/2018/07/13/template-method-pattern.html)을 사용한다.
   * '생성(Creational) 패턴'의 하나
-* ![](/images/design-pattern-factory-method/factory-method-pattern.png){: width="370" height="250"}
+* ![](/images/design-pattern-factory-method/factory-method-pattern.png)
 * 역할이 수행하는 작업
   * Product
     * 팩토리 메서드로 생성될 객체의 공통 인터페이스
@@ -180,15 +196,60 @@ sitemap :
     * 팩토리 메서드를 갖는 클래스
   * ConcreteCreator
     * 팩토리 메서드를 구현하는 클래스로 ConcreteProduct 객체를 생성
-* 팩토리 메서드 패턴의 개념
-  * ![](/images/design-pattern-factory-method/factory-method-pattern-concepts.png){: width="370" height="250"}
+* 팩토리 메서드 패턴의 개념과 적용 방법
+  1. 객체 생성을 전담하는 별도의 **Factory 클래스 이용**
+  2. **상속 이용**: 하위 클래스에서 적합한 클래스의 객체를 생성
+* 예시
+  * 여러 가지 방식의 엘리베이터 스케줄링 방법 지원하기
 
 > - 관련 POST
 > -  [https://gmlwjd9405.github.io/2018/08/07/factory-method-pattern.html](https://gmlwjd9405.github.io/2018/08/07/factory-method-pattern.html)
 
+
 ### 추상 팩토리 패턴
+* 구체적인 클래스에 의존하지 않고 서로 연관되거나 의존적인 객체들의 조합을 만드는 인터페이스를 제공하는 패턴
+  * 즉, 관련성 있는 여러 종류의 객체를 일관된 방식으로 생성하는 경우에 유용하다.
+  * [싱글턴 패턴](https://gmlwjd9405.github.io/2018/07/06/singleton-pattern.html), [팩토리 메서드 패턴](https://gmlwjd9405.github.io/2018/08/07/factory-method-pattern.html)을 사용한다.
+  * '생성(Creational) 패턴'의 하나
+* ![](/images/design-pattern-abstract-factory/abstract-factory-pattern.png)
+* 역할이 수행하는 작업
+  * AbstractFactory
+    * 실제 팩토리 클래스의 공통 인터페이스
+  * ConcreteFactory
+    * 구체적인 팩토리 클래스로 AbstractFactory 클래스의 추상 메서드를 오버라이드함으로써 구체적인 제품을 생성한다.
+  * AbstractProduct
+    * 제품의 공통 인터페이스
+  * ConcreteProduct
+    * 구체적인 팩토리 클래스에서 생성되는 구체적인 제품
+* 예시
+  * 엘리베이터 부품 업체 변경하기
+
+> - 관련 POST
+> -  [https://gmlwjd9405.github.io/2018/08/08/abstract-factory-pattern.html](https://gmlwjd9405.github.io/2018/08/08/abstract-factory-pattern.html)
+
 
 ### 컴퍼지트 패턴
+* 여러 개의 객체들로 구성된 복합 객체와 단일 객체를 클라이언트에서 구별 없이 다루게 해주는 패턴
+  * 즉, **전체-부분의 관계(Ex. Directory-File)를 갖는 객체들** 사이의 관계를 정의할 때 유용하다.
+  * 또한 클라이언트는 전체와 부분을 구분하지 않고 **동일한 인터페이스** 를 사용할 수 있다.
+  * '구조(Structural)'의 하나
+* ![](/images/design-pattern-composite/composite-pattern.png)
+* 역할이 수행하는 작업
+  * Component
+    * 구체적인 부분
+    * 즉 Leaf 클래스와 전체에 해당하는 Composite 클래스에 공통 인터페이스를 정의
+  * Leaf
+    * 구체적인 부분 클래스
+    * Composite 객체의 부품으로 설정
+  * Composite
+    * 전체 클래스
+    * 복수 개의 Component를 갖도록 정의
+    * 그러므로 복수 개의 Leaf, 심지어 복수 개의 Composite 객체를 부분으로 가질 수 있음
+* 예시
+  * 컴퓨터에 추가 장치 지원하기
+
+> - 관련 POST
+> -  [https://gmlwjd9405.github.io/2018/08/10/composite-pattern.html](https://gmlwjd9405.github.io/2018/08/10/composite-pattern.html)
 
 
 ---

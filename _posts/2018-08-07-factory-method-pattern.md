@@ -470,7 +470,7 @@ public class ElevatorManagerWithDynamicScheduling extends ElevatorManager {
 * 즉, 팩토리 메서드를 호출하는 상위 클래스의 메서드는 템플릿 메서드가 된다.
 
 
-### 최종
+### 상속을 이용한 팩토리 메서드 패턴 적용
 * ![](/images/design-pattern-factory-method/factory-method-extends2.png)
   * **"Product"**: ElevatorScheduler 인터페이스
   * **"ConcreteProduct"**:  ThroughputScheduler 클래스와 ResponseTimeScheduler 클래스

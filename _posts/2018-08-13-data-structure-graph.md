@@ -167,7 +167,7 @@ else
 
 ## 그래프(Graph)의 탐색
 일반적인 방법 두 가지: <br>
-**[깊이 우선 탐색(Depth-First Search)과 너비 우선 탐색(Breadth-First Search)](https://gmlwjd9405.github.io/2018/08/14/dfs-vs-bfs.html))**
+**[깊이 우선 탐색(Depth-First Search)](https://gmlwjd9405.github.io/2018/08/14/algorithm-dfs.html)** 과 **[너비 우선 탐색(Breadth-First Search)](https://gmlwjd9405.github.io/2018/08/15/algorithm-bfs.html)**
 
 ### 1. 깊이 우선 탐색(DFS, Depth-First Search)
 루트 노드(혹은 다른 임의의 노드)에서 시작해서 다음 분기(branch)로 넘어가기 전에 해당 분기를 완벽하게 탐색하는 방법
@@ -191,6 +191,8 @@ else
 * 자료구조 스택(Stack)에 대해 알고 싶으시면 [스택(Stack)이란](https://gmlwjd9405.github.io/2018/08/03/data-structure-stack.html)을 참고하시기 바랍니다.
 * 자료구조 큐(Queue)에 대해 알고 싶으시면 [큐(Queue)란](https://gmlwjd9405.github.io/2018/08/02/data-structure-queue.html)을 참고하시기 바랍니다.
 * 자료구조 트리(Tree)에 대해 알고 싶으시면 [트리(Tree)란](https://gmlwjd9405.github.io/2018/08/12/data-structure-tree.html)을 참고하시기 바랍니다.
+* 너비 우선 탐색(BFS, Breadth-First Search): [너비 우선 탐색(BFS)이란](https://gmlwjd9405.github.io/2018/08/15/algorithm-bfs.html) 을 참고하시기 바랍니다.
+* 깊이 우선 탐색(DFS, Depth-First Search): [깊이 우선 탐색(DFS)이란](https://gmlwjd9405.github.io/2018/08/14/algorithm-dfs.html) 을 참고하시기 바랍니다.
 
 
 # References

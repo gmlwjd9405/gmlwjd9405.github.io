@@ -117,6 +117,23 @@ void insert_max_heap(HeapType *h, element item){
 }
 ~~~
 
+* java언어를 이용한 최대 힙(max heap) 삽입 연산
+~~~java
+/* 최대힙 삽입 */
+void insert_max_heap(int x){
+  maxHeap[++heapSize] = x; // 힙 크기를 하나 증가하고 마지막 노드에 x를 넣는다.
+
+  for (int i=heapSize; i>1; i/=2) {
+    // 마지막 노드가 자신의 부모 노드보다 크면 swap
+    if (maxHeap[i/2] < maxHeap[i]) {
+      swap(i/2, i);
+    } else {
+      break;
+    }
+  }
+}
+~~~
+
 
 ## 힙(heap)의 삭제
 1. 최대 힙에서 최댓값은 루트 노드이므로 루트 노드가 삭제된다.
@@ -167,13 +184,47 @@ element delete_max_heap(HeapType *h){
 }
 ~~~
 
+* java언어를 이용한 최대 힙(max heap) 삭제 연산
+~~~java
+/* 최대힙 삭제 */
+int delete_max_heap(){
+  if (heapSize == 0) // 배열이 빈 경우
+    return 0;
+
+  int item = maxHeap[1]; // 루트 노드의 값을 저장한다.
+  maxHeap[1] = maxHeap[heapSize]; // 마지막 노드의 값을 루트 노드에 둔다.
+  maxHeap[heapSize--] = 0; // 힙 크기를 하나 줄이고 마지막 노드를 0으로 초기화한다.
+
+  for (int i=1; i*2<=heapSize;) {
+    // 마지막 노드가 왼쪽 노드와 오른쪽 노드보다 크면 반복문을 나간다.
+    if (maxHeap[i] > maxHeap[i*2] && maxHeap[i] > maxHeap[i*2+1]) {
+      break;
+    }
+    // 왼쪽 노드가 더 큰 경우, 왼쪽 노드와 마지막 노드를 swap
+    else if (maxHeap[i*2] > maxHeap[i*2+1]) {
+      swap(i, i*2);
+      i = i*2;
+    }
+    // 오른쪽 노드가 더 큰 경우, 오른쪽 노드와 마지막 노드를 swap
+    else {
+      swap(i, i*2+1);
+      i = i*2+1;
+    }
+  }
+  return item;
+}
+~~~
+
+### 참고
+[Java] PriorityQueue, Comparator interface를 이용한 방법: [https://gist.github.com/Baekjoon/5b1349b9159e7548bb54]()
 
 
 # 관련된 Post
 * 힙 정렬(heap sort): [힙 정렬(heap sort)](https://gmlwjd9405.github.io/2018/05/10/algorithm-heap-sort.html) 을 참고하시기 바랍니다.
 * 자료구조 스택(Stack)에 대해 알고 싶으시면 [스택(Stack)이란](https://gmlwjd9405.github.io/2018/08/03/data-structure-stack.html)을 참고하시기 바랍니다.
-* 자료구조 힙(heap)에 대해 알고 싶으시면 [힙(heap)이란](https://gmlwjd9405.github.io/2018/05/10/data-structure-heap.html) 를 참고하시기 바랍니다.
-
+* 자료구조 큐(Queue)에 대해 알고 싶으시면 [큐(Queue)란](https://gmlwjd9405.github.io/2018/08/02/data-structure-queue.html)을 참고하시기 바랍니다.
+* 자료구조 트리(Tree)에 대해 알고 싶으시면 [트리(Tree)란](https://gmlwjd9405.github.io/2018/08/12/data-structure-tree.html)을 참고하시기 바랍니다.
+* 자료구조 그래프(Graph)에 대해 알고 싶으시면 [그래프(Graph)란](https://gmlwjd9405.github.io/2018/08/13/data-structure-graph.html)을 참고하시기 바랍니다.
 
 
 # References

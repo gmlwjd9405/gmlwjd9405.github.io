@@ -29,12 +29,19 @@ sitemap :
 > - [퀵 정렬(quick sort)](https://gmlwjd9405.github.io/2018/05/10/algorithm-quick-sort.html)
 > - [힙 정렬(heap sort)](https://gmlwjd9405.github.io/2018/05/10/algorithm-heap-sort.html)
 
+### 그래프 탐색
+> - 관련 POST
+> - [깊이 우선 탐색(DFS)이란](https://gmlwjd9405.github.io/2018/08/14/algorithm-dfs.html)
+> - [너비 우선 탐색(BFS)이란](https://gmlwjd9405.github.io/2018/08/15/algorithm-bfs.html)
+
 
 ### 자료 구조
 > - 관련 POST
 > - [스택(Stack)이란](https://gmlwjd9405.github.io/2018/08/03/data-structure-stack.html)
 > - [큐(Queue)란](https://gmlwjd9405.github.io/2018/08/02/data-structure-queue.html)
 > - [힙(heap)이란](https://gmlwjd9405.github.io/2018/05/10/data-structure-heap.html)
+> - [트리(Tree)란](https://gmlwjd9405.github.io/2018/08/12/data-structure-tree.html)
+> - [그래프(Graph)란](https://gmlwjd9405.github.io/2018/08/13/data-structure-graph.html)
 
 ---
 

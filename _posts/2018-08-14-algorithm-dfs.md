@@ -29,7 +29,8 @@ sitemap :
 * 미로를 탐색할 때 한 방향으로 갈 수 있을 때까지 계속 가다가 더 이상 갈 수 없게 되면 다시 가장 가까운 갈림길로 돌아와서 이곳으로부터 다른 방향으로 다시 탐색을 진행하는 방법과 유사하다.
 * 즉, 넓게(wide) 탐색하기 전에 깊게(deep) 탐색하는 것이다.
 * 사용하는 경우: **모든 노드를 방문** 하고자 하는 경우에 이 방법을 선택한다.
-* 깊이 우선 탐색이 너비 우선 탐색보다 좀 더 간단하다.
+* 깊이 우선 탐색(DFS)이 너비 우선 탐색(BFS)보다 좀 더 간단하다.
+* 단순 검색 속도 자체는 너비 우선 탐색(BFS)에 비해서 느리다.
 
 ### 깊이 우선 탐색(DFS)의 특징
 * 자기 자신을 호출하는 **순환 알고리즘의 형태** 를 가지고 있다.
@@ -57,7 +58,7 @@ sitemap :
   * **2. 명시적인 스택 사용**
     * 명시적인 스택을 사용하여 방문한 정점들을 스택에 저장하였다가 다시 꺼내어 작업한다.
 
-* DFS 의사코드(pseudocode)
+* 순환 호출을 이용한 DFS 의사코드(pseudocode)
 
 ```java
 void search(Node root) {
@@ -73,6 +74,83 @@ void search(Node root) {
   }
 }
 ```
+
+* **순환 호출을 이용한 DFS 구현** (java 언어)
+
+~~~java
+import java.io.*;
+import java.util.*;
+
+/* 인접 리스트를 이용한 방향성 있는 그래프 클래스 */
+class Graph {
+  private int V; // 노드의 개수
+  private LinkedList<Integer> adj[]; // 인접 리스트
+
+  /** 생성자 */
+  Graph(int v) {
+    V = v;
+    adj = new LinkedList[v];
+    for (int i=0; i<v; ++i) // 인접 리스트 초기화
+      adj[i] = new LinkedList();
+  }
+
+  /** 노드를 연결 v->w */
+  void addEdge(int v, int w) { adj[v].add(w); }
+
+  /** DFS에 의해 사용되는 함수 */
+  void DFSUtil(int v, boolean visited[]) {
+    // 현재 노드를 방문한 것으로 표시하고 값을 출력
+    visited[v] = true;
+    System.out.print(v + " ");
+
+    // 방문한 노드와 인접한 모든 노드를 가져온다.
+    Iterator<Integer> i = adj[v].listIterator();
+    while (i.hasNext()) {
+      int n = i.next();
+      // 방문하지 않은 노드면 해당 노드를 시작 노드로 다시 DFSUtil 호출
+      if (!visited[n])
+        DFSUtil(n, visited); // 순환 호출
+    }
+  }
+
+  /** 주어진 노드를 시작 노드로 DFS 탐색 */
+  void DFS(int v) {
+    // 노드의 방문 여부 판단 (초깃값: false)
+    boolean visited[] = new boolean[V];
+
+    // v를 시작 노드로 DFSUtil 순환 호출
+    DFSUtil(v, visited);
+  }
+
+  /** DFS 탐색 */
+  void DFS() {
+    // 노드의 방문 여부 판단 (초깃값: false)
+    boolean visited[] = new boolean[V];
+
+    // 비연결형 그래프의 경우, 모든 정점을 하나씩 방문
+    for (int i=0; i<V; ++i) {
+      if (visited[i] == false)
+        DFSUtil(i, visited);
+    }
+  }
+}
+~~~
+~~~java
+/** 사용 방법 */
+public static void main(String args[]) {
+    Graph g = new Graph(4);
+
+    g.addEdge(0, 1);
+    g.addEdge(0, 2);
+    g.addEdge(1, 2);
+    g.addEdge(2, 0);
+    g.addEdge(2, 3);
+    g.addEdge(3, 3);
+
+    g.DFS(2); /* 주어진 노드를 시작 노드로 DFS 탐색 */
+    g.DFS(); /* 비연결형 그래프의 경우 */
+}
+~~~
 
 <!-- * **순환 호출을 이용한 DFS 구현** (c 언어)
 ```java
@@ -127,3 +205,4 @@ void dfs(GraphType *graph, int v) {
 
 # References
 > - [코딩 인터뷰 완전 분석, 프로그래밍인사이트](https://www.kyobobook.co.kr/product/detailViewKor.laf?mallGb=KOR&ejkGb=KOR&barcode=9788966263080)
+> - [https://www.geeksforgeeks.org/depth-first-search-or-dfs-for-a-graph/](https://www.geeksforgeeks.org/depth-first-search-or-dfs-for-a-graph/)

@@ -160,6 +160,26 @@ void postOrderTraversal(TreeNode node) {
   <!-- * [트라이(trie)이란]() 참고 -->
 
 
+## 트리(Tree)의 구현 방법
+기본적으로 트리는 그래프의 한 종류이므로 그래프의 구현 방법(인접 리스트 또는 인접 배열)으로 구현할 수 있다.<br>
+
+**인접 배열 이용**
+1. 1차원 배열에 자신의 부모 노드만 저장하는 방법
+  * 트리는 부모 노드를 0개 또는 1개를 가지기 때문
+  * 부모 노드를 0개: 루트 노드
+2. 이진 트리의 경우, 2차원 배열에 자식 노드를 저장하는 방법
+  * 이진 트리는 각 노드가 최대 두 개의 자식을 갖는 트리이기 때문
+  * Ex) A[i][0]: 왼쪽 자식 노드, A[i][1]: 오른쪽 자식 노드
+
+**인접 리스트 이용**
+1. 가중치가 없는 트리의 경우
+  * ArrayList< ArrayList<Integer> > list = new ArrayList<>();
+2. 가중치가 있는 트리의 경우
+  * 1) class Node { int num, dist; // 노드 번호, 거리 } 정의
+  * 2) ArrayList<Node>[] list = new ArrayList[정점의 수 + 1];
+
+
+
 <mark>그래프와 트리의 차이</mark>
 ![](/images/data-structure-graph/graph-vs-tree.png)
 

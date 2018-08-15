@@ -125,8 +125,8 @@ sitemap :
 class Graph { public Node[] nodes; }
 // 트리의 노드 클래스와 동일
 class Node {
-  public String name;
-  public Node[] children;
+      public String name;
+      public Node[] children;
 }
 ~~~
 
@@ -135,9 +135,9 @@ class Node {
 * 0과 1을 이용한 정수 행렬(Integer Matrix)을 사용할 수도 있다.
 ```java
 if(간선 (i, j)가 그래프에 존재)
-  matrix[i][j] = 1;
+    matrix[i][j] = 1;
 else
-  matrix[i][j] = 0;
+    matrix[i][j] = 0;
 ```
 * 정점(노드)의 개수가 N인 그래프를 인접 행렬로 표현
   * 간선의 수와 무관하게 항상 n^2개의 메모리 공간이 필요하다.

@@ -29,11 +29,6 @@ sitemap :
 > - [퀵 정렬(quick sort)](https://gmlwjd9405.github.io/2018/05/10/algorithm-quick-sort.html)
 > - [힙 정렬(heap sort)](https://gmlwjd9405.github.io/2018/05/10/algorithm-heap-sort.html)
 
-### 그래프 탐색
-> - 관련 POST
-> - [깊이 우선 탐색(DFS)이란](https://gmlwjd9405.github.io/2018/08/14/algorithm-dfs.html)
-> - [너비 우선 탐색(BFS)이란](https://gmlwjd9405.github.io/2018/08/15/algorithm-bfs.html)
-
 
 ### 자료 구조
 > - 관련 POST
@@ -42,6 +37,25 @@ sitemap :
 > - [힙(heap)이란](https://gmlwjd9405.github.io/2018/05/10/data-structure-heap.html)
 > - [트리(Tree)란](https://gmlwjd9405.github.io/2018/08/12/data-structure-tree.html)
 > - [그래프(Graph)란](https://gmlwjd9405.github.io/2018/08/13/data-structure-graph.html)
+
+
+### 탐색
+> - 관련 POST
+> - [그래프 탐색 - 깊이 우선 탐색(DFS)이란](https://gmlwjd9405.github.io/2018/08/14/algorithm-dfs.html)
+> - [그래프 탐색 - 너비 우선 탐색(BFS)이란](https://gmlwjd9405.github.io/2018/08/15/algorithm-bfs.html)
+
+
+### 최소 비용 신장 트리(MST, Minimum Spanning Tree) 알고리즘
+> - 관련 POST
+> - [신장 트리(Spanning Tree)란]()
+> - [Kruskal 알고리즘이란]()
+> - [Prim 알고리즘이란]()
+
+
+### 최단 경로(Shortest Path) 알고리즘
+> - 관련 POST
+> - [Dijkstra 알고리즘이란]()
+> - [Floyd 알고리즘이란]()
 
 ---
 

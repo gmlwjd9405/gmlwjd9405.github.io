@@ -5,7 +5,7 @@ subtitle: '너비 우선 탐색(BFS, Breadth-First Search)을 이해할 수 있�
 date: 2018-08-15
 author: heejeong Kwon
 cover: '/images/algorithm-dfs-vs-bfs/bfs-main.png'
-tags: algorithm bfs
+tags: algorithm bfs graph
 comments: true
 sitemap :
   changefreq : daily

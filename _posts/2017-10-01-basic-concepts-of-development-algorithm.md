@@ -28,6 +28,7 @@ sitemap :
 > - [셸 정렬(shell sort)](https://gmlwjd9405.github.io/2018/05/08/algorithm-shell-sort.html)
 > - [퀵 정렬(quick sort)](https://gmlwjd9405.github.io/2018/05/10/algorithm-quick-sort.html)
 > - [힙 정렬(heap sort)](https://gmlwjd9405.github.io/2018/05/10/algorithm-heap-sort.html)
+> - [위상 정렬(topological sort](https://gmlwjd9405.github.io/2018/08/27/algorithm-topological-sort.html)
 
 
 ### 자료 구조
@@ -47,7 +48,7 @@ sitemap :
 
 ### 최소 비용 신장 트리(MST, Minimum Spanning Tree) 알고리즘
 > - 관련 POST
-> - [신장 트리(Spanning Tree)란]()
+> - [신장 트리(Spanning Tree)란](https://gmlwjd9405.github.io/2018/08/28/algorithm-mst.html)
 > - [Kruskal 알고리즘이란]()
 > - [Prim 알고리즘이란]()
 

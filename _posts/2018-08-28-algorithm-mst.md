@@ -14,14 +14,12 @@ sitemap :
 
 
 ## Goal
-> - Spanning Tree란
-> - Spanning Tree의 특징
+> - Spanning Tree의 개념과 특징을 이해할 수 있다.
 > - Spanning Tree의 사용 사례
-> - MST란
-> - MST의 특징
+> - MST의 개념과 특징을 이해할 수 있다.
 > - MST의 사용 사례
-> - MST의 구현 방법
-> - MST 관련 문제
+> - MST의 구현 방법에 대해 간단히 정리한다.
+
 
 # Spanning Tree
 ## Spanning Tree란
@@ -33,7 +31,7 @@ sitemap :
 * 즉, 그래프에서 일부 간선을 선택해서 만든 트리
 
 ## Spanning Tree의 특징
-![](/images/algorithm-mst/spanning-tree.png)
+![](/images/algorithm-mst/spanning-tree.png){: width="400" height="250"}
 * DFS, BFS을 이용하여 그래프에서 신장 트리를 찾을 수 있다.
   * 탐색 도중에 사용된 간선만 모으면 만들 수 있다.
 * 하나의 그래프에는 많은 신장 트리가 존재할 수 있다.
@@ -42,7 +40,7 @@ sitemap :
 
 ## Spanning Tree의 사용 사례
 통신 네트워크 구축
-![](/images/algorithm-mst/spanning-tree-example.png)
+![](/images/algorithm-mst/spanning-tree-example.png){: width="300" height="150"}
 * 예를 들어, 회사 내의 모든 전화기를 가장 적은 수의 케이블을 사용하여 연결하고자 하는 경우
 * n개의 위치를 연결하는 통신 네트워크를 최소의 링크(간선)를 이용하여 구축하고자 하는 경우, 최소 링크의 수는 (n-1)개가 되고, 따라서 Spanning Tree가 가능해진다.
 
@@ -62,6 +60,7 @@ Spanning Tree 중에서 사용된 간선들의 가중치 합이 최소인 트리
 
 ## MST의 사용 사례
 통신망, 도로망, 유통망에서 길이, 구축 비용, 전송 시간 등을 최소로 구축하려는 경우
+![](/images/algorithm-mst/mst-example.png){: width="300" height="150"}
 * 도로 건설
   * 도시들을 모두 연결하면서 도로의 길이가 최소가 되도록 하는 문제
 * 전기 회로

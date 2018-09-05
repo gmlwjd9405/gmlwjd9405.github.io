@@ -41,25 +41,27 @@ sitemap :
 
 ## Kruskal 알고리즘의 구체적인 동작 과정
 Kruskal 알고리즘을 이용하여 MST(최소 비용 신장 트리)를 만드는 과정
-![](/images/algorithm-mst/kruskal-example.png)
+![](/images/algorithm-mst/kruskal-example2.png)
 
 <mark>주의!</mark>
 * 다음 간선을 이미 선택된 간선들의 집합에 추가할 때 **사이클을 생성하는지를 체크!**
 * ![](/images/algorithm-mst/kruskal-cycle-check.png)
   * 새로운 간선이 이미 다른 경로에 의해 연결되어 있는 정점들을 연결할 때 사이클이 형성된다.
   * 즉, 추가할 새로운 간선의 양끝 정점이 같은 집합에 속해 있으면 사이클이 형성된다.
-
-사이클 생성 여부를 확인하는 방법
-* 추가하고자 하는 간선의 양끝 정점이 같은 집합에 속해 있는지를 먼저 검사해야 한다.
-* <span style="background-color: #e1e1e1">**['union-find 알고리즘']((https://gmlwjd9405.github.io/2018/08/31/algorithm-union-find.html))**</span> 이용
+* ***사이클 생성 여부를 확인하는 방법***
+  * 추가하고자 하는 간선의 양끝 정점이 같은 집합에 속해 있는지를 먼저 검사해야 한다.
+  * <span style="background-color: #e1e1e1">**['union-find 알고리즘'](https://gmlwjd9405.github.io/2018/08/31/algorithm-union-find.html)**</span> 이용
 
 
 ## Kruskal 알고리즘 구현
-
+~~~java
+~~~
 
 
 ## Kruskal 알고리즘의 시간 복잡도
-
+* union-find 알고리즘을 이용하면 Kruskal 알고리즘의 시간 복잡도는 간선들을 정렬하는 시간에 좌우된다.
+* 즉, 간선 e개를 퀵 정렬과 같은 효율적인 알고리즘으로 정렬한다면
+  * Kruskal 알고리즘의 시간 복잡도는 **O(elog₂e)** 이 된다.
 
 
 # 관련된 Post

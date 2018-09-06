@@ -41,6 +41,11 @@ sitemap :
 
 ## Kruskal 알고리즘의 구체적인 동작 과정
 Kruskal 알고리즘을 이용하여 MST(최소 비용 신장 트리)를 만드는 과정
+  * **간선 선택을 기반** 으로 하는 알고리즘
+  * 이전 단계에서 만들어진 신장 트리와는 상관없이 무조건 최소 간선만을 선택하는 방법
+<br>
+<br>
+
 ![](/images/algorithm-mst/kruskal-example2.png)
 
 <mark>주의!</mark>
@@ -62,6 +67,9 @@ Kruskal 알고리즘을 이용하여 MST(최소 비용 신장 트리)를 만드�
 * union-find 알고리즘을 이용하면 Kruskal 알고리즘의 시간 복잡도는 간선들을 정렬하는 시간에 좌우된다.
 * 즉, 간선 e개를 퀵 정렬과 같은 효율적인 알고리즘으로 정렬한다면
   * Kruskal 알고리즘의 시간 복잡도는 **O(elog₂e)** 이 된다.
+* Prim의 알고리즘의 시간 복잡도는 **O(n^2)** 이므로
+  * 그래프 내에 적은 숫자의 간선만을 가지는 '희소 그래프(Sparse Graph)'의 경우 Kruskal 알고리즘이 적합하고
+  * 그래프에 간선이 많이 존재하는 '밀집 그래프(Dense Graph)' 의 경우는 Prim 알고리즘이 적합하다.
 
 
 # 관련된 Post
@@ -70,5 +78,5 @@ Kruskal 알고리즘을 이용하여 MST(최소 비용 신장 트리)를 만드�
 * 자료구조 그래프(Graph)에 대해 알고 싶으시면 [그래프(Graph)란](https://gmlwjd9405.github.io/2018/08/13/data-structure-graph.html)을 참고하시기 바랍니다.
 * 자료구조 트리(Tree)에 대해 알고 싶으시면 [트리(Tree)란](https://gmlwjd9405.github.io/2018/08/12/data-structure-tree.html)을 참고하시기 바랍니다.
 
-# References
-> - []()
+<!-- # References
+> - []() -->

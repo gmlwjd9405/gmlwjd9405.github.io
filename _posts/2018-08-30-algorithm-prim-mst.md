@@ -2,7 +2,7 @@
 layout: post
 title: '[알고리즘] Prim 알고리즘 이란'
 subtitle: 'Prim의 MST 알고리즘을 이해할 수 있다.'
-date: 2018-08-29
+date: 2018-08-30
 author: heejeong Kwon
 cover: '/images/algorithm-mst/prim-main.png'
 tags: algorithm mst prim

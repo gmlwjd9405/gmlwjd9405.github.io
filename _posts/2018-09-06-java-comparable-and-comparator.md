@@ -24,9 +24,17 @@ sitemap :
 
 ## 객체의 정렬 기준을 명시하는 두 가지 방법
 ### 1. Comparable interface 구현
-* 정렬할 객체에 Comparable interface를 implements 후 compareTo() 메소드를 오버라이드
-* compareTo() 메소드는 현재 객체가 파라미터로 넘어온 객체보다 작으면 음수 리턴, 같으면 0 리턴, 크면 양수 리턴 하도록 작성
-* Collections.sort(list)
+* 정의
+  * 정렬 수행 시 기본적으로 적용되는 정렬 기준이 되는 메서드를 정의하는 인터페이스
+  * package: java.lang.Comparable
+    * Java에서 제공되는 정렬이 가능한 클래스들은 모두 Comparable 인터페이스를 구현하고 있으며, 정렬 시에 이에 맞게 정렬이 수행된다.
+    * Ex) Integer, Double 클래스: 오름차순 정렬
+    * Ex) String 클래스: 사전순 정렬
+* 구현 방법
+  * 정렬할 객체에 Comparable interface를 implements 후, compareTo() 메서드를 오버라이드하여 구현한다.
+  * compareTo() 메서드는 현재 객체가 파라미터로 넘어온 객체보다 작으면 음수 리턴, 같으면 0 리턴, 크면 양수 리턴 하도록 작성한다.
+* 사용 방법
+  * Collections.sort(list)
 
 **<span style="background-color: #e1e1e1">Comparable interface</span>를 이용한 Java 객체를 정렬**
 ~~~java
@@ -53,11 +61,26 @@ pointList.add(new Point(x, y));
 Collections.sort(pointList);
 ~~~
 
+// 내림차순 기준 정렬.
+// 오름차순 기준 정렬.
+
 ### 2. Comparator interface 구현
-* Collections.sort() 메소드는 두 번째 인자로 Comparator interface를 받을 수 있음
-* Comparator interface를 implements 후 compare() 메소드를 오버라이드한 myComparator class 작성
-* compareTo() 메소드는 첫 번째 파라미터로 넘어온 객체가 두 번째 파라미터로 넘어온 객체보다 작으면 음수 리턴, 같으면 0 리턴, 크면 양수 리턴 하도록 작성
-* Collections.sort(list, myComparator)
+* 정의
+  * 정렬 가능한 클래스(omparable 인터페이스를 구현한 클래스)들의 기본 정렬 기준과 다르게 정렬하고 싶을 때 사용하는 인터페이스
+  * package: java.util.Comparator
+    * 주로 익명 클래스로 사용된다.
+    * 기본적인 정렬 방법인 오름차순 정렬을 내림차순으로 정렬할 때 많이 사용한다.
+* 구현 방법
+  * Comparator interface를 implements 후 compare() 메서드를 오버라이드한 myComparator class 작성한다.
+  * compare() 메서드는 첫 번째 파라미터로 넘어온 객체가 두 번째 파라미터로 넘어온 객체보다 작으면 음수 리턴, 같으면 0 리턴, 크면 양수 리턴 하도록 작성한다.
+    * `Integer.compare(x, y)`와 동일
+    * `return (x < y) ? -1 : ((x == y) ? 0 : 1);`
+* 사용 방법
+  * Collections.sort(list, myComparator)
+  * Collections.sort() 메서드는 두 번째 인자로 Comparator interface를 받을 수 있다.
+* 또한 **우선 순위 큐(PriorityQueue)** 생성자의 두 번째 인자로 Comparator interface를 받을 수 있다.
+  * PriorityQueue(int initialCapacity, Comparator<? super E> comparator)
+  * 지정된 Comparator의 정렬 방법에 따라 우선 순위를 할당한다.
 
 **<span style="background-color: #e1e1e1">Comparator interface</span>를 이용한 Java 객체를 정렬**
 ~~~java
@@ -90,3 +113,4 @@ Collections.sort(pointList, myComparator);
 
 # References
 > - [http://hochulshin.com/java-comparable-comparator/](http://hochulshin.com/java-comparable-comparator/)
+> - [https://m.blog.naver.com/PostView.nhn?blogId=occidere&logNo=220918234464&proxyReferer=https%3A%2F%2Fwww.google.co.kr%2F](https://m.blog.naver.com/PostView.nhn?blogId=occidere&logNo=220918234464&proxyReferer=https%3A%2F%2Fwww.google.co.kr%2F)

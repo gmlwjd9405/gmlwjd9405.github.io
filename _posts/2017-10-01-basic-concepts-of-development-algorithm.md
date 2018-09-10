@@ -49,14 +49,18 @@ sitemap :
 ### 최소 비용 신장 트리(MST, Minimum Spanning Tree) 알고리즘
 > - 관련 POST
 > - [신장 트리(Spanning Tree)란](https://gmlwjd9405.github.io/2018/08/28/algorithm-mst.html)
-> - [Kruskal 알고리즘이란]()
-> - [Prim 알고리즘이란]()
+> - [Kruskal 알고리즘이란](https://gmlwjd9405.github.io/2018/08/29/algorithm-kruskal-mst.html)
+> - [Prim 알고리즘이란](https://gmlwjd9405.github.io/2018/08/30/algorithm-prim-mst.html)
 
 
 ### 최단 경로(Shortest Path) 알고리즘
 > - 관련 POST
 > - [Dijkstra 알고리즘이란]()
 > - [Floyd 알고리즘이란]()
+
+### 기타
+> - 관련 POST
+> - [Union-Find 알고리즘이란](https://gmlwjd9405.github.io/2018/08/31/algorithm-union-find.html)
 
 ---
 

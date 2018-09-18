@@ -16,6 +16,7 @@ sitemap :
 <span style="color:#4d0000">디자인패턴(design pattern)과 관련된 기본적인 개념을 이해하고 기술 면접에 대비하자!</span>  
 
 <br> <span style="background-color: #e1e1e1">계속해서 추가할 예정입니다!<span>
+<br> [Do-Hee의 tech-interview](https://github.com/Do-Hee/tech-interview) - 이 Github 페이지와 동기화되어 있습니다.
 
 ### 클래스 다이어그램 작성법
 > - 관련 POST

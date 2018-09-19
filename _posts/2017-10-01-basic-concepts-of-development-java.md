@@ -55,7 +55,7 @@ sitemap :
 > - [http://huhghiza.tistory.com/7](http://huhghiza.tistory.com/7)
 
 ### java의 접근 제어자의 종류와 특징
-<img src="./images/access-controller.png" width="70%" height="70%">
+![](/images/basic-concepts-of-development/access-controller.png){: width="650" height="160"}
 
 ### OOP의 4가지 특징
 1. 추상화
@@ -148,7 +148,7 @@ sitemap :
 ### java의 제네릭(Generic)과 c++의 템플릿(Template)의 차이
 * java의 제네릭(Generic)
   * 개념: 모든 종류의 타입을 다룰 수 있도록 일반화된 타입 매개 변수(generic type)로 클래스나 메서드를 선언하는 기법
-  * <img src="./images/generics.png" width="60%" height="60%">
+  * ![](/images/basic-concepts-of-development/generics.png)
   * 처리 방법: 타입 제거(type erasure)라는 개념에 근거한다.
     * 소스 코드를 JVM이 인식하는 바이트 코드로 변환할 때 인자로 주어진 타입을 제거하는 기술이다.
     * 제네릭이 있다고 해서 크게 달라지는 것은 없다. 단지 코드를 좀 더 예쁘게 할 뿐이다.
@@ -157,7 +157,6 @@ sitemap :
 Vector<String> vector = new Vector<String>();
 vector.add(new String("hello"));
 String str = vector.get(0);
-
 // 컴파일러가 아래와 같이 변환
 Vector vector = new Vector();
 vector.add(new String("hello"));
@@ -170,20 +169,18 @@ String str = (String) vector.get(0);
     * 예를 들어 MyClass<Foo>가 MyClass<Bar>와 정적 변수(static variable)를 공유하지 않는다.
     * 하지만 java에서 정적 변수는 제네릭(Generic) 인자로 어떤 타입을 주었는지에 관계없이 MyClass로 만든 모든 객체가 공유한다.
     * 즉, 템플릿은 좀 더 **우아한 형태의 매크로** 다.
-~~~c
+```c
 /** MyClass.h **/
 template<class T> class MyClass {
-  public:
-    static int val;
-    MyClass(int v) { val = v; }
+    public:
+        static int val;
+        MyClass(int v) { val = v; }
 };
-
 /** MyClass.cpp **/
 template<typename T>
 int MyClass<T>::bar;
 template class MyClass<Foo>;
 template class MyClass<Bar>;
-
 /** main.cpp **/
 MyClass<Foo> * foo1 = new MyClass<Foo>(10);
 MyClass<Foo> * foo2 = new MyClass<Foo>(15);
@@ -193,7 +190,7 @@ int f1 = foo1->val; // 15
 int f2 = foo2->val; // 15
 int b1 = bar1->val; // 35
 int b2 = bar2->val; // 35
-~~~
+```
 
 * java의 제네릭과 c++의 템플릿의 차이
   1. List<String>처럼 코드를 작성할 수 있다는 이유에서 동등한 개념으로 착각하기 쉽지만 두 언어가 이를 처리하는 방법은 아주 많이 다르다.
@@ -245,13 +242,13 @@ public class Animal {
 }
 /* 객체와 인스턴스 */
 public class Main {
-  public static void main(String[] args) {
-    Animal cat, dog; // '객체'
+      public static void main(String[] args) {
+          Animal cat, dog; // '객체'
 
-    // 인스턴스화
-    cat = new Animal(); // cat은 Animal 클래스의 '인스턴스'(객체를 메모리에 할당)
-    dog = new Animal(); // dog은 Animal 클래스의 '인스턴스'(객체를 메모리에 할당)
-  }
+          // 인스턴스화
+          cat = new Animal(); // cat은 Animal 클래스의 '인스턴스'(객체를 메모리에 할당)
+          dog = new Animal(); // dog은 Animal 클래스의 '인스턴스'(객체를 메모리에 할당)
+      }
 }
 ~~~
 * Q. 클래스 VS 객체
@@ -294,18 +291,18 @@ public class Main {
   * Ex) Circle에서 printMe() 메서드를 재정의한다.
 ~~~java
 public abstract class Shape {
-    public void printMe() { System.out.println("Shape"); }
-    public abstract double computeArea();
+      public void printMe() { System.out.println("Shape"); }
+      public abstract double computeArea();
 }
 public class Circle extends Shape {
-    private double rad = 5;
-    @Override // 개발자의 실수를 방지하기 위해 @Override(annotation) 쓰는 것을 권장
-    public void printMe() { System.out.println("Circle"); }
-    public double computeArea() { return rad * rad * 3.15; }
+      private double rad = 5;
+      @Override // 개발자의 실수를 방지하기 위해 @Override(annotation) 쓰는 것을 권장
+      public void printMe() { System.out.println("Circle"); }
+      public double computeArea() { return rad * rad * 3.15; }
 }
 public class Ambiguous extends Shape {
-    private double area = 10;
-    public double computeArea() { return area; }
+      private double area = 10;
+      public double computeArea() { return area; }
 }
 ~~~
 
@@ -325,42 +322,42 @@ public class Ambiguous extends Shape {
 * Java는 Call by Value 일까? Call by Reference 일까?
 ~~~java
 class Person {
-  private String name;
-  public Person(String name) {
-    this.name = name;
-  }
-  public setName(String name) {
-    this.name = name;
-  }
-  @Override
-  public String toString() {
-    return "name is " + this.name;
-  }
+    private String name;
+    public Person(String name) {
+        this.name = name;
+    }
+    public setName(String name) {
+        this.name = name;
+    }
+    @Override
+    public String toString() {
+        return "name is " + this.name;
+    }
 }
 ~~~
 ~~~java
 public class FunctionCallTest {
-  public static void assignNewPerson(Person p) {
-    p = new Person("hee");
-  }
-  public static void changeName(Person p) {
-    p.setNaem("hee");
-  }
-  public static void main(String[] args) {
-    Person p = new Person("doy");
+    public static void assignNewPerson(Person p) {
+      p = new Person("hee");
+    }
+    public static void changeName(Person p) {
+      p.setNaem("hee");
+    }
+    public static void main(String[] args) {
+      Person p = new Person("doy");
 
-    assignNewPerson(p);
-    System.out.println(p); // name is doy
+      assignNewPerson(p);
+      System.out.println(p); // name is doy
 
-    changeName(p);
-    System.out.println(p); // name is hee
-  }
+      changeName(p);
+      System.out.println(p); // name is hee
+    }
 }
 ~~~
   * 기본자료형은 Call By Value이고, 참조자료형은 Call By Reference이다??
-  * 오해 1. 특정 메서드 내에서 전달 받은 객체의 상태를 변경 할 수 있다.
+  * **오해 1.** 특정 메서드 내에서 전달 받은 객체의 상태를 변경 할 수 있다.
     * `changeName` 메서드는 참조변수 p가 가리키는 [이름 속성이 "doy"인 Person 객체]를 [이름 속성이 "hee"인 새로운 Person 객체]로 변경한 것이 아니라, 단지 이름 속성만 변경했을 뿐이다.
-  * 오해 2. 참조변수는 임의의 객체에 대한 레퍼런스를 저장하므로 메서드로 전달한 값이 레퍼런스(Call by Reference)이다.
+  * **오해 2.** 참조변수는 임의의 객체에 대한 레퍼런스를 저장하므로 메서드로 전달한 값이 레퍼런스(Call by Reference)이다.
     * 전달 된 레퍼런스는 참조변수 p 자체의 레퍼런스가 아닌 p가 저장하고 있는 값(이것도 레퍼런스)이다.
     * 만약 Java가 Call by Reference를 지원한다면 `assignNewPerson` 메서드 실행 후에 p 참조변수가 가리키는 객체가 [이름 속성이 "hee"인 새로운 Person 객체]로 변경되어야 한다.
     * 또한 참조변수 p 자체의 레퍼런스를 얻을 수 있는 방법이 있어야 한다. 그러나 Java는 이 방법을 지원하지 않는다.
@@ -397,29 +394,31 @@ public abstract String fail() { return "Fail"; } // 추상 메서드 아님. 컴
 ~~~java
 /* 개념 a의 예시 */
 abstract class Shape { // 추상 클래스
-  Shape() {...}
-  void edit() {...}
-  abstract public void draw(); // 추상 메서드
+      Shape() {...}
+      void edit() {...}
+      abstract public void draw(); // 추상 메서드
 }
 ~~~
 ~~~java
 /* 개념 b의 예시 */
 abstract class Shape { // 추상 클래스
-  Shape() {...}
-  void edit() {...}
+      Shape() {...}
+      void edit() {...}
 }
 ~~~
 ~~~java
 /* 추상 클래스의 구현 */
 class Circle extends Shape {
-  public void draw() { System.out.println("Circle"); } // 추상 메서드 (오버라이딩)
-  void show() { System.out.println("동그라미 모양"); }
+      public void draw() { System.out.println("Circle"); } // 추상 메서드 (오버라이딩)
+      void show() { System.out.println("동그라미 모양"); }
 }
 ~~~
+
   <!-- * 추상 클래스의 특징
     1. 추상 클래스의 인스턴스(객체)를 생성할 수 없다.
     2. 상속받은 추상 클래스의 추상 메서드를 구현하지 않으면 자동으로 추상 클래스가 된다.
         * `interface MobilePhone extends Phone { }` -->
+
 * 인터페이스(Interface)
   * 개념: 추상 메서드와 상수만을 포함하며, interface 키워드를 사용하여 선언한다.
   * 인터페이스의 구현
@@ -438,20 +437,19 @@ class Circle extends Shape {
 ~~~java
 /* 인터페이스의 개념 */
 interface Phone { // 인터페이스
-  int BUTTONS = 20; // 상수 필드 (public static final int BUTTONS = 20;과 동일)
-  void sendCall(); // 추상 메서드 (abstract public void sendCall();과 동일)
-  abstract public void receiveCall(); // 추상 메서드
+      int BUTTONS = 20; // 상수 필드 (public static final int BUTTONS = 20;과 동일)
+      void sendCall(); // 추상 메서드 (abstract public void sendCall();과 동일)
+      abstract public void receiveCall(); // 추상 메서드
 }
 ~~~
 ~~~java
 /* 인터페이스의 구현 */
 class FeaturePhone implements Phone {
-  // Phone의 모든 추상 메서드를 구현한다.
-  public void sendCall() {...}
-  public void receiveCall() {...}
-
-  // 추가적으로 다른 메서드를 작성할 수 있다.
-  public int getButtons() {...}
+      // Phone의 모든 추상 메서드를 구현한다.
+      public void sendCall() {...}
+      public void receiveCall() {...}
+      // 추가적으로 다른 메서드를 작성할 수 있다.
+      public int getButtons() {...}
 }
 ~~~
 * 추상 클래스와 인터페이스의 ***공통점***
@@ -474,8 +472,7 @@ class FeaturePhone implements Phone {
 ### JVM 구조
 
 ### Java Collections Framework
-<img src="./images/java-collections-framework.png" width="70%" height="70%">
-
+![](/images/basic-concepts-of-development/java-collections-framework.png)
 * Map
     * 검색할 수 있는 인터페이스
     * 데이터를 삽입할 때 Key와 Value의 형태로 삽입되며, Key를 이용해서 Value를 얻을 수 있다.
@@ -489,11 +486,11 @@ class FeaturePhone implements Phone {
         * 데이터를 중복해서 포함할 수 없다.
 * Collections Framework 선택 과정
   1. Map과 Collection 인터페이스 중 선택
-    1-1. Collection 선택 시 사용 목적에 따라 List와 Set중 선택
+      * 1-1. Collection 선택 시 사용 목적에 따라 List와 Set중 선택
   2. 사용 목적에 따라 Map, List, Set 각각의 하위 구현체를 선택
-    2-1. Map: HashMap, LinkedHashMap, HashTable, TreeMap
-    2-2. List: LinkedList, ArrayList
-    2-3. Set: TreeSet, HashSet
+      * 2-1. Map: HashMap, LinkedHashMap, HashTable, TreeMap
+      * 2-2. List: LinkedList, ArrayList
+      * 2-3. Set: TreeSet, HashSet
 
 ### java Map 인터페이스 구현체의 종류
 * HashMap
@@ -582,73 +579,67 @@ class FeaturePhone implements Phone {
   * 클래스의 이름으로부터 인스턴스를 생성할 수 있고, 이를 이용하여 클래스의 정보를 가져올 수 있다.
   ~~~java
   public class DoHee {
-      public String name;
-      public int number;
-      public void setDoHee (String name, int number) {
-        this.name = name;
-        this.number = number;
+        public String name;
+        public int number;
+        public void setDoHee (String name, int number) {
+            this.name = name;
+            this.number = number;
+        }
+        public void setNumber(int number) {
+              this.number = number;
+        }
+        public void sayHello(String name) {
+            System.out.println("Hello, " + name);
       }
-      public void setNumber(int number) {
-          this.number = number;
-      }
-      public void sayHello(String name) {
-        System.out.println("Hello, " + name);
-    }
   }
   ~~~
   ~~~java
   import java.lang.reflect.Method;
   import java.lang.reflect.Field;
-
+  /* ReflectionTest 클래스 */
   public class ReflectionTest {
-      public void reflectionTest() {
-          try {
-              Class myClass = Class.forName("DoHee");
-              Method[] methods = myClass.getDeclaredMethods();
-
-              /* 클래스 내 선언된 메서드의 목록 출력 */
-              /* 출력 : public void DoHee.setDoHee(java.lang.String,int)
-                       public void DoHee.setNumber(int)
-                       public void DoHee.sayHello(java.lang.String) */
-              for (Method method : methods) {
-                  System.out.println(method.toString());
-              }
-
-              /* 메서드의 매개변수와 반환 타입 확인 */
-              /* 출력 : Class Name : class DoHee
-                       Method Name : setDoHee
-                       Return Type : void */
-              Method method = methods[0];
-              System.out.println("Class Name : " + method.getDeclaringClass());
-              System.out.println("Method Name : " + method.getName());
-              System.out.println("Return Type : " + method.getReturnType());
-
-              /* 출력 : Param Type : class java.lang.String
-                       Param Type : int */
-              Class[] paramTypes = method.getParameterTypes();
-              for(Class paramType : paramTypes) {
-                  System.out.println("Param Type : " + paramType);
-              }
-
-              /* 메서드 이름으로 호출 */
-              Method sayHelloMethod = myClass.getMethod("sayHello", String.class);
-              sayHelloMethod.invoke(myClass.newInstance(), new String("DoHee")); // 출력 : Hello, DoHee
-
-              /* 다른 클래스의 멤버 필드의 값 수정 */
-              Field field = myClass.getField("number");
-              DoHee obj = (DoHee) myClass.newInstance();
-              obj.setNumber(5);
-              System.out.println("Before Number : " + field.get(obj)); // 출력 : Before Number : 5
-              field.set(obj, 10);
-              System.out.println("After Number : " + field.get(obj)); // 출력 : After Number : 10
-          } catch (Exception e) {
-              // Exception Handling
-          }
-      }
-
-      public static void main(String[] args) {
-          new ReflectionTest().reflectionTest();
-      }
+        public void reflectionTest() {
+            try {
+                Class myClass = Class.forName("DoHee");
+                Method[] methods = myClass.getDeclaredMethods();
+                /* 클래스 내 선언된 메서드의 목록 출력 */
+                /* 출력 : public void DoHee.setDoHee(java.lang.String,int)
+                         public void DoHee.setNumber(int)
+                         public void DoHee.sayHello(java.lang.String) */
+                for (Method method : methods) {
+                    System.out.println(method.toString());
+                }
+                /* 메서드의 매개변수와 반환 타입 확인 */
+                /* 출력 : Class Name : class DoHee
+                         Method Name : setDoHee
+                         Return Type : void */
+                Method method = methods[0];
+                System.out.println("Class Name : " + method.getDeclaringClass());
+                System.out.println("Method Name : " + method.getName());
+                System.out.println("Return Type : " + method.getReturnType());
+                /* 출력 : Param Type : class java.lang.String
+                         Param Type : int */
+                Class[] paramTypes = method.getParameterTypes();
+                for(Class paramType : paramTypes) {
+                    System.out.println("Param Type : " + paramType);
+                }
+                /* 메서드 이름으로 호출 */
+                Method sayHelloMethod = myClass.getMethod("sayHello", String.class);
+                sayHelloMethod.invoke(myClass.newInstance(), new String("DoHee")); // 출력 : Hello, DoHee
+                /* 다른 클래스의 멤버 필드의 값 수정 */
+                Field field = myClass.getField("number");
+                DoHee obj = (DoHee) myClass.newInstance();
+                obj.setNumber(5);
+                System.out.println("Before Number : " + field.get(obj)); // 출력 : Before Number : 5
+                field.set(obj, 10);
+                System.out.println("After Number : " + field.get(obj)); // 출력 : After Number : 10
+            } catch (Exception e) {
+                // Exception Handling
+            }
+        }
+        public static void main(String[] args) {
+            new ReflectionTest().reflectionTest();
+        }
   }
   ~~~
 * 왜 사용할까?

@@ -31,7 +31,7 @@ sitemap :
     * 운영되기 위해 필요한 주소 공간
     * Code, Data, Stack, Heap의 구조로 되어 있는 독립된 메모리 영역
   * 특징
-    * <img src="./images/process.png" width="40%" height="40%">
+    * ![](/images/basic-concepts-of-development/process.png){: width="400" height="250"}
     * 프로세스는 각각 독립된 메모리 영역(Code, Data, Stack, Heap의 구조)을 할당받는다.
     * 기본적으로 프로세스당 최소 1개의 스레드(메인 스레드)를 가지고 있다.
     * 각 프로세스는 별도의 주소 공간에서 실행되며, 한 프로세스는 다른 프로세스의 변수나 자료구조에 접근할 수 없다.
@@ -41,7 +41,7 @@ sitemap :
     * **프로세스의 특정한 수행 경로**
     * 프로세스가 할당받은 자원을 이용하는 실행의 단위
   * 특징
-    * <img src="./images/thread.png" width="40%" height="40%">
+    * ![](/images/basic-concepts-of-development/thread.png){: width="400" height="250"}
     * 스레드는 프로세스 내에서 각각 Stack만 따로 할당받고 Code, Data, Heap 영역은 공유한다.
     * 스레드는 한 프로세스 내에서 동작되는 여러 실행의 흐름으로, 프로세스 내의 주소 공간이나 자원들(힙 공간 등)을 같은 프로세스 내에 스레드끼리 공유하면서 실행된다.
     * 같은 프로세스 안에 있는 여러 스레드들은 같은 힙 공간을 공유한다. 반면에 프로세스는 다른 프로세스의 메모리에 직접 접근할 수 없다.
@@ -67,7 +67,7 @@ sitemap :
 
 ### 멀티 프로세스 대신 멀티 스레드를 사용하는 이유?
 * 쉽게 설명하면, 프로그램을 여러 개 키는 것보다 하나의 프로그램 안에서 여러 작업을 해결하는 것이다.
-  * <img src="./images/multi-thread.png" width="50%" height="50%">
+  * ![](/images/basic-concepts-of-development/multi-thread.png)
 
 1. 자원의 효율성 증대
     * 멀티 프로세스로 실행되는 작업을 멀티 스레드로 실행할 경우, **프로세스를 생성하여 자원을 할당하는 시스템 콜이 줄어들어** 자원을 효율적으로 관리할 수 있다.

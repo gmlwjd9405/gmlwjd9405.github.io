@@ -20,7 +20,7 @@ sitemap :
 <br>
 **들어가기 전**
 
-예를 들어, IntelliJ IDE를 사용할 때 .out 폴더를 .gitigore에 넣지 않고 원격 저장소에 push했다고 가정하자.
+예를 들어, IntelliJ IDE를 사용할 때 .out 폴더를 .gitignore에 넣지 않고 원격 저장소에 push했다고 가정하자.
 (*IntelliJ의 .out 폴더:*  빌드/컴파일 시 .class 파일이 포함된 프로젝트의 출력이 포함되는 위치)
 <br>
 <br>
@@ -45,10 +45,10 @@ $ git rm --cached [File Name]
 $ git rm --cached .out
 ~~~
 
-### 2. .gitigore 설정하기
-만약 .gitigore가 제대로 설정되어 있지 않다면 .gitigore 설정하여 다음에는 개인이 관리해야되는 파일들이 원격 저장소에 올라가지 않도록 해야한다. [.gitignore 설정하기](https://gmlwjd9405.github.io/2017/10/06/make-gitignore-file.html) 를 참고하여 .gitigore를 설정한다.
+### 2. .gitignore 설정하기
+만약 .gitignore가 제대로 설정되어 있지 않다면 .gitigore 설정하여 다음에는 개인이 관리해야되는 파일들이 원격 저장소에 올라가지 않도록 해야한다. [.gitignore 설정하기](https://gmlwjd9405.github.io/2017/10/06/make-gitignore-file.html) 를 참고하여 .gitignore를 설정한다.
 
-<mark>TIP)</mark> 또한 .gitigore는 git add 명령어 전에 설정되어 있어야 적용이 가능하다는 것을 알아두자.
+<mark>TIP)</mark> 또한 .gitignore는 git add 명령어 전에 설정되어 있어야 적용이 가능하다는 것을 알아두자.
 
 ### 3. 원격 저장소에 적용하기
 버전 관리에서 완전히 제외하기 위해서는 반드시 commit 명령어와 push를 수행해야 한다.

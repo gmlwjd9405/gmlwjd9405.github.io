@@ -36,10 +36,10 @@ sitemap :
     * 작성한 Java Servlet 파일이 나중에 .class로 이곳에 모두 저장된다.
   * ***web.xml:*** 
     * SUN에서 정해놓은 규칙에 맞게 작성해야 하며 모든 WAS에 대하여 작성 방법이 동일하다.
-    * 아래 추가 설명
+    * <mark>아래 추가 설명</mark>
 * .html 파일들
   * 관련된 HTML 소스를 저장한다.
-  * Ex) WebContent - view 디렉터리 - index.html는 `http://localhost/helloLogin/views/index.html`와 매핑된다.
+  * Ex) WebContent - views Directory - index.html는 `http://localhost/helloLogin/views/index.html`와 매핑된다.
 
 
 ## Web.xml 기본 설정 
@@ -72,15 +72,18 @@ sitemap :
 </web-app>
 ```
 
-1. aliases 설정 : 서블릿 이름을 실제 서블릿 클래스에 연결
+1. aliases 설정
+  * **서블릿 이름을 실제 서블릿 클래스에 연결**
   * `<servlet-name>welcome</servlet-name>`과 아래 매핑 설정에서의 servlet-name은 반드시 같아야 한다.
   * `<servlet-class>servlets.WelcomeServlet</servlet-class>`은 개발자에 의해 작성된 실제 클래스 이름으로 설정해야 한다.
-2. 매핑 : URL을 서블릿 이름에 연결
-  * `<url-pattern>/welcome</url-pattern>`은 요청 URL에서 앱(프로젝트) 이름 뒤에 오는 부분으로, 슬래시('/')로 시작해야 한다.
+    * Ex. (패키지 이름).(서블릿 클래스 이름)
+2. 매핑
+  * **URL을 서블릿 이름에 연결**
+  * `<url-pattern>/welcome</url-pattern>`은 클라이언트(browser)의 요청 URL에서 앱(프로젝트) 이름 뒤에 오는 부분으로, 슬래시('/')로 시작해야 한다.
 
 <mark>참고</mark>  클라이언트(browser)가 요청하는 URL 정보
 * `요청을 보낼 서버의 IP 주소 : Port 번호 / App 이름 / 달라고 요청하는 HTML`
-  * Ex) `localhost:8080/FormHandlingServlet/LoginForm.html`
+  * Ex. `localhost:8080/FormHandlingServlet/LoginForm.html`
 
 
 # 관련된 Post

@@ -119,6 +119,8 @@ sitemap :
 7. WAS는 Response 객체를 HttpResponse 형태로 바꾸어 Web Server에 전달한다.
 8. 생성된 Thread를 종료하고, HttpServletRequest와 HttpServletResponse 객체를 제거한다.
 
+# 관련된 Post
+* Web Application Structure과 web.xml 설정 내용, 역할 및 간단한 예시에 대해 알고 싶으시면 [Web Application Structure 이해하기](https://gmlwjd9405.github.io/2018/10/29/web-application-structure.html)를 참고하시기 바랍니다.
 
 # References
 > - [http://2dubbing.tistory.com/29](http://2dubbing.tistory.com/29)

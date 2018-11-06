@@ -4,7 +4,7 @@ title: '[Web] Web Server와 WAS의 차이와 웹 서비스 구조'
 subtitle: 'Web Server와 WAS의 차이를 이해한다.'
 date: 2018-10-27
 author: heejeong Kwon
-cover: '/images/web/web-main.png'
+cover: '/images/web/web-webserver-vs-was-main.png'
 tags: spring web architecture was webserver
 comments: true
 sitemap :

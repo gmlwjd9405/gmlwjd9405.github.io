@@ -4,7 +4,7 @@ title: '[Web] web.xml 설정 내용, 역할 및 간단한 예시 이해하기'
 subtitle: 'Web Application Structure 이해하기'
 date: 2018-10-29
 author: heejeong Kwon
-cover: '/images/web/web-main.png'
+cover: '/images/web/web-webxml-main.png'
 tags: spring web architecture structure setting
 comments: true
 sitemap :

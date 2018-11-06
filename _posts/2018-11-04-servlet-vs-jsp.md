@@ -4,7 +4,7 @@ title: '[Web] Servlet과 JSP의 차이와 관계'
 subtitle: 'Servlet과 JSP의 차이와 관계를 이해한다.'
 date: 2018-11-04
 author: heejeong Kwon
-cover: '/images/web/web-main.png'
+cover: '/images/web/web-servlet-vs-jsp-main.png'
 tags: spring web servlet jsp
 comments: true
 sitemap :

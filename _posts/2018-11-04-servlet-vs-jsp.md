@@ -125,7 +125,7 @@ public ThreeParams extends HttpServlet {
 * **View**(보여지는 부분)는 HTML이 중심이 되는 JSP를 사용
 * **Controller**(다른 자바 클래스에 데이터를 넘겨주는 부분)는 Java 코드가 중심이 되는 Servlet을 사용
 * **Model**은 Java Beans로, DTO와 DAO를 통해 Mysql과 같은 Data Storage에 접근
-<!-- * 구체적인 MVC 패턴은 []() 참고 -->
+* 구체적인 MVC 패턴은 [MVC-Architecture](https://gmlwjd9405.github.io/2018/11/05/mvc-architecture.html) 참고
 
 # 관련된 Post
 * Web Service의 기본적인 동작 과정과 Servlet에 대해 알고 싶으시면 [Servlet 이란](https://gmlwjd9405.github.io/2018/10/28/servlet.html)을 참고하시기 바랍니다.

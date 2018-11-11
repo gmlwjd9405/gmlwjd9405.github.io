@@ -1,6 +1,6 @@
 ---
 layout: post
-title: '[Web] MVC Architecture'
+title: '[Design Pattern] MVC Architecture'
 subtitle: 'MVC Architecture를 이해한다.'
 date: 2018-11-05
 author: heejeong Kwon

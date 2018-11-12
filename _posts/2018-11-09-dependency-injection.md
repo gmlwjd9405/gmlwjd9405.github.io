@@ -19,7 +19,9 @@ sitemap :
 > - Spring Container를 이해한다.
 > - 구체적인 예시를 확인한다. 
 
-## Object Dependencies
+## Object Dependencies(객체 의존성)
+현재 객체가 다른 객체와 상호작용(참조)하고 있다면 현재 객체는 다른 객체에 의존성을 가진다.
+
 ```java
 public class PetOwner{
     private AnimalType animal;
@@ -29,18 +31,14 @@ public class PetOwner{
     }
 }
 ```
-* 객체 의존성(Object Dependency)
-    * 현재 객체가 다른 객체와 상호작용(참조)하고 있다면 현재 객체는 다른 객체에 의존성을 가진다.
 * PetOwner 객체는 AnimalType 객체(Dog)에 의존한다.
     * PetOwner 생성자에서 `new Dog();`를 통해 Dog에 의존성을 가진다. 
 * 이 접근법의 문제점(의존성이 위험한 이유)
-    * PetOwner 객체는 AnimalType 객체의 생성을 제어한다.
-    * PetOwner와 AnimalType 객체 간에 긴밀한 결합(tight coupling)이 있다.
-    * tight coupling에 따라 AnimalType 객체를 변경하면 PetOwner객체도 변경된다. 
+    * PetOwner 객체는 AnimalType 객체의 생성을 제어하기 때문에 두 객체 간에는 긴밀한 결합(tight coupling)이 생기고, tight coupling에 따라 AnimalType 객체를 변경하면 PetOwner객체도 변경된다. 
     * 즉, 하나의 모듈이 바뀌면 **의존한 다른 모듈까지 변경** 되어야 한다.
-    * 또한 의존성이 있으면 Unit Test 작성이 어렵다.
+    * 또한 두 객체 사이의 의존성이 존재하면 **Unit Test 작성이 어려워 진다.**
 
-## Dependency Injection
+## Dependency Injection(의존성 주입)
 객체 자체가 아니라 **Framework에 의해** 객체의 의존성이 주입되는 설계 패턴
 * Framework에 의해 동적으로 주입되므로 여러 객체 간의 결합이 줄어든다.
 * Dependency Injection은 Spring Framework에서 지원하는 IoC의 형태
@@ -49,12 +47,12 @@ public class PetOwner{
 * 설정에 명시된대로 Container가 
     * 1) bean 객체를 생성하고 
     * 2) 종속성 주입을 수행한다.
-* Dependency Injection(의존성 주입)과 Control Of Inversion(제어의 역전)은 같은 의미로 사용된다. 
+* Dependency Injection(의존성 주입)과 Inversion Of Control(제어의 역전)은 같은 의미로 사용된다. 
     * IoC는 DI를 통해 달성된다.
 * IoC(제어의 역전): 프로그램 제어권을 framework가 가져가는 것
     * 개발자가 모든 제어의 중심이지만 코드 전체에 대한 제어는 framework가 한다.
-    * 우리는 설정(xml, annotation 등)만 하면 Container가 알아서 처리한다.
-    * 즉, 우리는 프레임워크 속에서 프로그래밍을 하는 것.
+    * 개발자가 설정(xml, annotation 등)만 하면 Container가 알아서 처리한다.
+    * 즉, 우리는 Framework 속에서 프로그래밍을 하는 것.
 
 ### 장점 
 1. Reduced Dependencies
@@ -86,14 +84,14 @@ public class PetOwner{
     * Field Injection 
         * 멤버 변수를 통한 전달 
 
-* 우리가 할 일은
+* 개발자가 할 일은
     * 주입할 것에 대한 Class를 작성(Dog, Cat 등)하는 것
     * 어떤 것을 주입할 건지를 결정할 설정 파일(xml, annotation 등)을 작성하는 것
 * 즉, 코드상에서는 전혀 변화가 없다.
 
 
 ## Spring Container
-Spring 프레임 워크의 핵심 컴포넌트
+Spring Framework의 핵심 컴포넌트
 * Container는 DI를 사용하여 응용 프로그램을 구성하는 bean 객체를 관리한다.
 
 ### 역할

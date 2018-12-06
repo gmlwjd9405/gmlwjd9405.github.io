@@ -145,7 +145,7 @@ int find(int x) {
   } else {
       // "경로 압축(Path Compression)"
       // find 하면서 만난 모든 값의 부모 노드를 root로 만든다.
-      root[x] = find(root[x]);
+      return root[x] = find(root[x]);
   }
 }
 ~~~

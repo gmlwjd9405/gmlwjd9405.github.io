@@ -11,7 +11,7 @@ sitemap :
   changefreq : daily
   priority : 1.0
 ---
-<span style="color:#4d0000">계속해서 추가할 예정!</span>  
+<span style="background-color: #e1e1e1">계속해서 추가할 예정!</span>  
 
 ### @Component
 

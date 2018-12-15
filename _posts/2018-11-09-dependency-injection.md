@@ -182,19 +182,6 @@ public class PetOwner {
     }
 }
 ```
-* PetOwner Class
-```java
-package spring.di;
-public class PetOwner {
-    public AnimalType animal;
-    public PetOwner(AninalType animal) {
-        this.animal = animal;
-    }
-    public void play() {
-        animal.sound();
-    }
-}
-```
 * MainApp Class
 ```java
 package spring.di;

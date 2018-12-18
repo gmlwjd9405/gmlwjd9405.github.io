@@ -54,6 +54,16 @@ public class PetOwner{
     * 개발자가 설정(xml, annotation 등)만 하면 Container가 알아서 처리한다.
     * 즉, 우리는 Framework 속에서 프로그래밍을 하는 것.
 
+### 의존성 주입 방법 (세 가지)
+1. Contructor Injection
+    * 생성자를 통한 전달
+    * `<constructor-arg ref="cat"></constructor-arg>`
+2. Method(Setter) Injection
+    * setter()을 통한 전달
+    * `<property name="myName" value="poodle"></property>`
+3. Field Injection 
+    * 멤버 변수를 통한 전달 
+
 ### 장점 
 1. Reduced Dependencies
     * 종속성이 감소한다. 
@@ -89,6 +99,12 @@ public class PetOwner{
     * 어떤 것을 주입할 건지를 결정할 설정 파일(xml, annotation 등)을 작성하는 것
 * 즉, 코드상에서는 전혀 변화가 없다.
 
+### Injection Collection
+![](/images/web/injecting-collection.png)
+* 예시 
+    * ![](/images/web/injecting-collection-example.png)
+
+---
 
 ## Spring Container
 Spring Framework의 핵심 컴포넌트
@@ -103,11 +119,11 @@ Spring Framework의 핵심 컴포넌트
 4. 객체들의 전체 수명주기(lifecycle)를 관리
 
 ### 설정 방법 
-* Spring Container metadata 설정 방법 (세가지)
+* Spring Container metadata 설정 방법 (세 가지)
 
 1. XML
-    * 1) Bean Definition
-    * 2) Dependency Injection
+    * 1) 빈 객체 정의 (Bean Definition)
+    * 2) 의존성 주입 (Dependency Injection)
 2. Java Annotations
 3. Java Code
 
@@ -188,7 +204,7 @@ package spring.di;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 public class MainApp {
     public static void main(String[] args) {
-        /* main함수에서 Contaier를 생성 */ 
+        /* main함수에서 Container를 생성 */ 
         // 설정 파일은 인자로 넣고, 해당 설정 파일에 맞게 bean들을 만든다.
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("spring/di/beans/animal.xml");
         // getBean()을 통해 bean의 주소값을 가져온다.  
@@ -199,8 +215,8 @@ public class MainApp {
 }
 ```
 * Configure beans and dependencies (animal.xml)
-    * 1) Bean Definition
-    * 2) Dependency Injection
+    * 1) 빈 객체 정의 (Bean Definition)
+    * 2) 의존성 주입 (Dependency Injection)
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>

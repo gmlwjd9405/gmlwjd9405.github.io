@@ -17,19 +17,56 @@ sitemap :
 
 ### @Component
 
-### @Controller
+### @Controller, @Service, @Repository
+
 
 ### @RestController
 * @Controller + @ResponseBody
 * @ResponseBody를 모든 메소드에서 적용한다. 
     * 메소드의 반환 결과(문자열)를 JSON 형태로 반환한다.
 
+### @Required
+* setter method에 사용한다.
+* 영향을 받는 bean property 구성 시 XML 설정 파일에 반드시 property를 채워야 한다. (엄격한 체크)
+    * 그렇지 않으면 BeanInitializationException 예외를 발생
+* 예시 
+
+```xml
+<!-- Definition for student bean -->
+<bean id = "student" class = "com.tutorialspoint.Student">
+    <property name = "name" value = "Zara" />
+    <property name = "age"  value = "11"/>
+</bean>
+```
+* [참고](https://www.tutorialspoint.com/spring/spring_required_annotation.htm)
+
 ### @Autowired
-* Bean을 주입한다.
+* `org.springframework.beans.factory.annotation.Autowired`
+* Type에 따라 알아서 Bean을 주입한다.
+* 필드, 생성자, 입력 파라미터가 여러 개인 메소드(@Qualifier는 메소드의 파라미터)에 적용 가능
+* Type을 먼저 확인한 후 못 찾으면 Name에 따라 주입한다.
+    * Name으로 강제하는 방법: @Qualifier을 같이 명시 
+* 예시 
+    * ![](/images/spring-framework/autowired-example.png)
 * TIP) Bean을 주입받는 방식 (3가지)
     * @Autowired
     * setter
     * 생성자 (@AllArgsConstructor 사용) -> **권장방식**
+
+### @Qualifier
+* 같은 타입의 빈이 두 개 이상이 존재하는 경우에 스프링이 어떤 빈을 주입해야 할지 알 수 없어서 스프링 컨테이너를 초기화하는 과정에서 예외를 발생시킨다.
+* 이 경우 @Qualifier을 @Autowired와 함께 사용하여 정확히 어떤 bean을 사용할지 지정하여 특정 의존 객체를 주입할 수 있도록 한다.
+* 예시
+    * ![](/images/spring-framework/qualifier-example.png)
+    1. xml 설정에서 bean의 한정자 값(qualifier value)을 설정한다. 
+    2. @Autowired 어노테이션이 적용된 주입 대상에 @Qualifier 어노테이션을 설정한다.
+
+### @Resource
+* `javax.annotation.Resource`
+* 표준 자바(JSR-250 표준) Annotation으로, Spring Framework 2.5.* 부터 지원 가능한 Annotation이다. 
+* Annotation 사용으로 인해 특정 Framework에 종속적인 어플리케이션을 구성하지 않기 위해서는 @Resource를 사용할 것을 권장한다. 
+    * @Resource를 사용하기 위해서는 class path 내에 jsr250-api.jar 파일을 추가해야 한다.
+* 필드, 입력 파라미터가 한 개인 bean property setter method에 적용 가능
 
 ### @RequestBody
 * RequestData를 바로 Model이나 클래스로 매핑한다.
@@ -69,7 +106,7 @@ sitemap :
 * JPA를 사용하면 DB 데이터에 작업할 경우 실제 쿼리를 날리지 않고 Entity 클래스의 수정을 통해 작업한다.
 
 ### @Entity
-* 실제 DB의 테이블과 매칭될 클래스임을 명시한다ㅏ.
+* 실제 DB의 테이블과 매칭될 클래스임을 명시한다.
 * 즉, 테이블과 링크될 클래스임을 나타냅니다. 
     * Entity Class
     * 가장 Core한 클래스
@@ -128,7 +165,7 @@ sitemap :
 --- 
 
 # 관련된 Post
-* Spring Annotation 활성화 방법에 대해 알고 싶으시면 [Spring Annotation 활성화](https://gmlwjd9405.github.io/2018/12/18/spring-accnotation-enable.html)을 참고하시기 바랍니다.
+* Spring Annotation 활성화 방법에 대해 알고 싶으시면 [Spring Annotation 활성화](https://gmlwjd9405.github.io/2018/12/18/spring-annotation-enable.html)을 참고하시기 바랍니다.
 
 
 # References

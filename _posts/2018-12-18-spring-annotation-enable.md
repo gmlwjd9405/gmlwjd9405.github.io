@@ -46,7 +46,7 @@ public class WebConfig { ... }
 
 ## annotation-driven, component-scan, annotation-config 차이
 ### mvc:annotation-driven
-* 스프링 MVC 컴포넌트들을 그것의 디폴트 설정을 가지고 활성화 하기위해 사용된다. 
+* 스프링 MVC 컴포넌트들을 그것의 디폴트 설정을 가지고 활성화 하기 위해 사용된다. 
 * 이 태그는 **Spring MVC가 @Controller에 요청을 보내기 위해 필요한 HandlerMapping과 HandlerAdapter를 bean으로 등록**한다.
     * 이렇게 등록된 bean에 의해 요청 url과 컨트롤러를 매칭할 수 있다.
     * 또한 컨트롤러(@Controller)에서는 @RequestMapping, @ExceptionHandler 등과 같은 주석을 통해 해당 기능을 사용할 수 있도록 한다.
@@ -73,7 +73,7 @@ public class WebConfig { ... }
 
 
 # 관련된 Post
-* Spring Annotation 종류에 대해 알고 싶으시면 [Spring Annotation의 종류](https://gmlwjd9405.github.io/2018/12/02/spring-accnotation-types.html)을 참고하시기 바랍니다.
+* Spring Annotation 종류에 대해 알고 싶으시면 [Spring Annotation의 종류](https://gmlwjd9405.github.io/2018/12/02/spring-annotation-types.html)을 참고하시기 바랍니다.
 
 
 # References

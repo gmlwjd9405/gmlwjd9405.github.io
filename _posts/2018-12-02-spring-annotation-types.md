@@ -13,6 +13,8 @@ sitemap :
 ---
 <span style="background-color: #e1e1e1">계속해서 추가할 예정!</span>  
 
+---
+
 ### @Component
 
 ### @Controller
@@ -120,12 +122,17 @@ sitemap :
     * 해당 클래스의 빌더 패턴 클래스를 생성
 * 생성자 상단에 선언 시 생성자에 포함된 필드만 빌더에 포함된다.
 
+### @Data
+* @Getter @Setter @EqualsAndHashCode @AllArgsConstructor 을 포함한 Lombok에서 제공하는 필드와 관련된 모든 코드를 생성한다.
+
 --- 
 
 # 관련된 Post
-* Spring Annotation의 개념에 대해 알고 싶으시면 [Spring Annotation의 개념](https://gmlwjd9405.github.io/2018/12/01/spring-accnotation-concept.html)을 참고하시기 바랍니다.
+* Spring Annotation 활성화 방법에 대해 알고 싶으시면 [Spring Annotation 활성화](https://gmlwjd9405.github.io/2018/12/18/spring-accnotation-enable.html)을 참고하시기 바랍니다.
 
 
 # References
 > - [https://jojoldu.tistory.com/255?category=635883](https://jojoldu.tistory.com/255?category=635883)
 > - [https://jeong-pro.tistory.com/151](https://jeong-pro.tistory.com/151)
+> - [component-scan 참고](https://docs.spring.io/spring/docs/current/spring-framework-reference/web.html#mvc)
+> - [mvc:annotation-driven 참고](http://docs.spring.io/spring/docs/current/spring-framework-reference/html/mvc.html#mvc-config)

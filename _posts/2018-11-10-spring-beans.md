@@ -180,7 +180,7 @@ public class MainApp {
         * Person name is null
 
 # 관련된 Post
-* Spring Annotation의 개념에 대해 알고 싶으시면 [Spring Annotation의 개념](https://gmlwjd9405.github.io/2018/12/01/spring-accnotation-concept.html)을 참고하시기 바랍니다.
+* Spring Annotation 활성화 방법에 대해 알고 싶으시면 [Spring Annotation 활성화](https://gmlwjd9405.github.io/2018/12/18/spring-accnotation-enable.html)을 참고하시기 바랍니다.
 
 
 # References

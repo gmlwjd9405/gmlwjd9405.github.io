@@ -5,7 +5,7 @@ subtitle: 'MVC Architecture를 이해한다.'
 date: 2018-11-05
 author: heejeong Kwon
 cover: '/images/web/web-mvc-architecture-main.png'
-tags: mvc architecture design-pattern 디자인패턴 
+tags: mvc architecture design-pattern 디자인패턴 structure web
 comments: true
 sitemap :
   changefreq : daily
@@ -23,7 +23,7 @@ Model, View, Controller를 분리한 디자인 패턴
     * 애플리케이션의 상태(data)를 나타낸다.
     * **Java Beans**
 * View
-    * 디스플레이 데이터 또는 프리젠 테이션 
+    * 디스플레이 데이터 또는 프리젠테이션 
     * **JSP**
 * Controller
     * View와 Model 사이의 인터페이스 역할
@@ -35,7 +35,7 @@ Model, View, Controller를 분리한 디자인 패턴
 * JSP와 Servlet을 모두 사용하여 프레젠테이션 로직(View)과 비즈니스 로직(Controller)을 분리한다.
     * **View**(보여지는 부분)는 HTML이 중심이 되는 JSP를 사용
     * **Controller**(다른 자바 클래스에 데이터를 넘겨주는 부분)는 Java 코드가 중심이 되는 Servlet을 사용
-    * **Model**은 Java Beans로, DTO와 DAO를 통해 Mysql과 같은 Data Storage에 접근
+    * **Model**은 Java Beans로, DAO를 통해 Mysql과 같은 Data Storage에 접근
 * 동작 과정
     * 1) 클라이언트(브라우저)는 Servlet으로 요청을 보낸다.
     * 2-1) Servlet은 DB와 연결된 Java Bean 객체를 생성한다.

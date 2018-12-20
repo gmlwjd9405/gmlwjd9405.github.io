@@ -1,0 +1,339 @@
+---
+layout: post
+title: '[SpringMVC] Spring MVC Framework란'
+subtitle: 'Spring MVC를 이해한다.'
+date: 2018-12-20
+author: heejeong Kwon
+cover: '/images/spring-framework/spring-framework-main.png'
+tags: springMVC mvc architecture structure web
+comments: true
+sitemap :
+  changefreq : daily
+  priority : 1.0
+---
+
+## Goal
+> - Spring MVC Architecture를 이해한다.
+> - 기본 Project Structure을 이해한다.
+> - Spring MVC에서 Model, View, Controller의 사용법을 이해한다.
+  - Model
+  - View
+  - Controller
+> - Spring MVC를 위한 필수적인 기본 설정 방법과 개념을 이해한다.
+  - Maven Configuration (pom.xml)
+  - Web Deployment Descriptor (web.xml)
+  - Spring MVC Configuration
+
+## Spring MVC Architecture란
+![](/images/web/springmvc-architecture.png)
+Model, View, Controller를 분리한 디자인 패턴 (개발자가 직접 구현해야 하는 것)
+* Model
+    * 애플리케이션의 상태(data)를 나타낸다.
+    * 일반적으로 POJO로 구성된다.
+    * **Java Beans**
+* View
+    * 디스플레이 데이터 또는 프리젠테이션 
+    * Model data의 렌더링을 담당하며, HTML ouput을 생성한다.
+    * **JSP**
+* Controller
+    * View와 Model 사이의 인터페이스 역할
+    * Model/View에 대한 사용자 입력 및 요청을 수신하여 그에 따라 적절한 결과를 Model에 담아 View에 전달한다.
+    * 즉, Model Object와 이 Model을 화면에 출력할 View Name을 반환한다.
+    * Controller ---> Service ---> Dao ---> DB
+    * **Servlet**
+
+Spring Framework가 제공하는 Class
+* DispatcherServlet
+    * Spring Framework가 제공하는 Servlet 클래스
+    * 사용자의 요청을 받는다.
+    * Dispatcher가 받은 요청은 HandlerMapping으로 넘어간다. 
+* HandlerMapping
+    * 사용자의 요청을 처리할 Controller를 찾는다. (Controller URL Mapping)
+    * 요청 url에 해당하는 Controller 정보를 저장하는 table을 가진다.
+    * 즉, 클래스에 @RequestMapping("/url") annotaion을 명시하면 해당 URL에 대한 요청이 들어왔을 때 table에 저장된 정보에 따라 해당 클래스 또는 메서드에 Mapping한다.
+* ViewResolver
+    * Controller가 반환한 View Name(the logical names)에 prefix, suffix를 적용하여 View Object(the physical view files)를 반환한다.
+    * 예를 들어 view name: home, prefix: /WEB-INF/views/, suffix: .jsp는 "/WEB-INF/views/home.jsp"라는 위치의 View(JSP)에 Controller에게 받은 Model을 전달한다.
+    * 이 후에 해당 View에서 이 Model data를 이용하여 적절한 페이지를 만들어 사용자에게 보여준다.
+
+---
+
+## 기본 Project Structure
+Web Application Structure(웹 서비스 기본 설정 구조)
+![](/images/web/web-project-structure.png)
+
+* src
+    * 개발자가 작성한 Servlet 코드가 저장된다.
+    * Controller, Model, Service, Dao
+* Libraries
+    * Servlet이나 JSP에서 추가로 사용하는 라이브러리 또는 드라이버
+    * jar로 압축한 파일이어야 한다.
+* WebContent (**전체 ROOT**) - webapp
+    * Deploy할 때 WebContent 디렉터리 전체가 .war로 묶어서 보내진다.
+    * resources
+        * 정적인 데이터 (ex. image file, css, js, fonts)
+    * WEB-INF
+        * classes: 작성한 Java Servlet 파일이 나중에 .class로 이곳에 모두 저장된다. 
+        * lib: 추가한 모든 라이브러리 또는 드라이버가 이곳에 모두 저장된다.
+        * props: property file을 저장한다.
+        * spring: <span style="background-color: #e1e1e1">**spring configuration files**</span>을 저장한다. (spring과 관련된 설정을 모아둔 것)
+            * dispatcher-servlet.xml
+            * applicationContext.xml
+            * dao-context.xml, service-context.xml 등 
+        * views: Controller와 매핑되는 .jsp 파일들을 저장한다.
+        * web.xml: web application의 설정을 위한 <span style="background-color: #e1e1e1">**web deployment descriptor**</span>
+            * DispatcherServlet, ContextLoadListener 설정
+* pom.xml
+    * <span style="background-color: #e1e1e1">**maven configuration file**</span>
+    * 어떤 lib를 쓸지 명시한다.
+
+---
+
+## Spring MVC에서 Model, View, Controller
+### Model
+### View
+### Controller
+
+---
+
+## Spring MVC를 위한 필수 설정
+### 1. Maven Configuration (pom.xml)
+* 자신의 프로젝트에 대한 고유의 좌표 설정
+    1. groupId
+    * 자신의 프로젝트를 고유하게 식별하게 해 주는 것으로, 최소한 내가 컨트롤하는 domain name이어야 한다.
+    * package 명명 규칙을 따른다.
+    * 하위 그룹은 얼마든지 추가할 수 있다.
+    2. artifactId
+    * 제품의 이름으로, 버전 정보를 생략한 jar 파일의 이름이다.
+    * 프로젝트 이름과 동일하게 설정한다.
+    * 소문자로만 작성하며 특수문자는 사용하지 않는다.
+    3. version
+    * SNAPSHOT: 개발용, RELEASE: 배포용
+    * 숫자와 점을 사용하여 버전 형태를 표현한다.(1.0, 1.1, 1.0.1, …)
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.hee</groupId>
+    <artifactId>projectName</artifactId>
+	<name>projectName</name>
+	<packaging>war</packaging>
+	<version>1.0.0-BUILD-SNAPSHOT</version>
+    <!-- properties에 명시한 version이 알아서 placeholder에 주입된다. -->
+	<properties>
+		<java-version>1.8</java-version>
+		<org.springframework-version>4.2.5.RELEASE</org.springframework-version>
+		<spring-security-version>4.0.4.RELEASE</spring-security-version>
+		<org.aspectj-version>1.6.10</org.aspectj-version>
+		<org.slf4j-version>1.6.6</org.slf4j-version>
+	</properties>
+    <dependencies>
+    <!-- Spring -->
+		<dependency>
+            <!-- Spring core dependency -->
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context</artifactId>
+			<version>${org.springframework-version}</version>
+		</dependency>
+		<dependency>
+            <!-- Spring MVC dependency -->
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-webmvc</artifactId>
+			<version>${org.springframework-version}</version>
+		</dependency>
+    </dependencies>
+</project>
+```
+
+<mark>참고</mark>  Maven 장점
+* pom.xml에 명시한 lib를 자동으로 다운
+* build process 자동화
+    * compile -> test -> package(.war) -> install -> deploy
+
+### 2. Web Deployment Descriptor (web.xml)
+* 개념
+    * web application의 설정을 위한 deployment descriptor
+    * SUN에서 정해놓은 규칙에 맞게 작성해야 하며 모든 WAS에 대하여 작성 방법이 동일하다.
+* 역할
+    * Deploy할 때 Servlet의 정보를 설정해준다.
+    * 브라우저가 Java Servlet에 접근하기 위해서는 WAS(Ex. Tomcat)에 필요한 정보를 알려줘야 해당하는 Servlet을 호출할 수 있다.
+        * 정보 1) 배포할 Servlet이 무엇인지
+        * 정보 2) 해당 Servlet이 어떤 URL에 매핑되는지
+* [구체적인 설정 내용](https://gmlwjd9405.github.io/2018/10/29/web-application-structure.html)
+    * DispatcherServlet
+    * ContextLoaderListener
+    * encodingFilter
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.5" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee; http://java.sun.com/xml/ns/javaee/web-app_2.5.xsd">
+
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>
+			/WEB-INF/spring/service-context.xml
+			/WEB-INF/spring/dao-context.xml
+			/WEB-INF/spring/security-context.xml
+			/WEB-INF/spring/applicationContext.xml
+		</param-value>
+	</context-param>
+	<listener>
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>
+
+	<servlet>
+		<servlet-name>dispatcher</servlet-name>
+		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+		<init-param>
+			<param-name>contextConfigLocation</param-name>
+			<param-value>/WEB-INF/spring/dispatcher-servlet.xml
+			</param-value>
+		</init-param>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>dispatcher</servlet-name>
+		<url-pattern>/</url-pattern>
+	</servlet-mapping>
+
+	<filter>
+		<filter-name>encodingFilter</filter-name>
+		<filter-class>org.springframework.web.filter.CharacterEncodingFilter
+		</filter-class>
+		<init-param>
+			<param-name>encoding</param-name>
+			<param-value>UTF-8</param-value>
+		</init-param>
+		<init-param>
+			<param-name>forceEncoding</param-name>
+			<param-value>true</param-value>
+		</init-param>
+	</filter>
+	<filter-mapping>
+		<filter-name>encodingFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+
+	<filter>
+		<filter-name>springSecurityFilterChain</filter-name>
+		<filter-class>org.springframework.web.filter.DelegatingFilterProxy
+		</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>springSecurityFilterChain</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+</web-app>
+```
+    
+### 3. Spring MVC Configuration Files
+**# dispatcher-servlet.xml**
+* *주요 설정 내용:* Controller 관련, ViewResolver, [mvc:annotation-driven 설정](https://gmlwjd9405.github.io/2018/12/18/spring-annotation-enable.html) 등
+* [Annotation 활성화](https://gmlwjd9405.github.io/2018/12/18/spring-annotation-enable.html)
+  * ` <mvc:annotation-driven />`
+* Component 패키지 지정 
+  * ` <context:component-scan base-package="controller"/>`
+  * 이 패키지를 스캔하며 annotaion이 달린 것을 bean으로 생성하여 Container에 담아둔다.
+  * 이 내용은 service, dao 설정에도 필요하다.
+    * ` <context:component-scan base-package="service"/>`
+    * ` <context:component-scan base-package="dao"/>`
+* 정적인 data 위치 mapping
+  * ` <mvc:resources mapping="/static/**" location="/static/" />`
+  * ` <mvc:resources mapping="/resources/**" location="/resources/" />`
+  * Controller가 처리할 필요 없이 해당 위치의 디렉터리에서 바로 접근할 수 있다.
+  * HTTP GET 요청에서의 정적인 data에 바로 매핑이 가능하다.
+* ViewResolver
+  ```xml 
+  <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+    <property name="prefix" value="/WEB-INF/views/"/>
+    <property name="suffix" value=".jsp"/>
+  </bean>
+  ```           
+
+**# applicationContext.xml**
+* *주요 설정 내용:* DataSource 관련, properties 등록, SessionFactory, TransactionManager 등 
+* properties 등록
+    * properties file에서 읽어와 주입한다.
+    * ` <context:property-placeholder location="/WEB-INF/props/jdbc.properties" />`
+    * ` <context:property-placeholder location="classpath:props/jdbc.properties" />`
+* DataSource 주입 
+  ```xml
+  <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource"
+		destroy-method="close">
+	  <property name="driverClassName" value="${jdbc.driverClassName}" />
+	  <property name="url" value="${jdbc.url}" />
+	  <property name="username" value="${jdbc.username}" />
+	  <property name="password" value="${jdbc.password}" />
+  </bean>
+  ```
+* 어노테이션에 기반한 트랜잭션 동작의 설정을 활성화
+    * ` <tx:annotation-driven />`
+* Session Factory 등록 및 Transaction Manager 설정
+  ```xml
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate5.LocalSessionFactoryBean">
+		<property name="dataSource" ref="dataSource"></property>
+		<property name="packagesToScan">
+			<list>
+				<value>com.spring.model</value>
+			</list>
+		</property>
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
+				<prop key="hibernate.hbm2ddl.auto">update</prop>
+				<prop key="hibernate.show_sql">true</prop>
+				<prop key="hibernate.format_sql">false</prop>
+			</props>
+		</property>
+	</bean>
+
+	<bean id="transactionManager"
+		class="org.springframework.orm.hibernate5.HibernateTransactionManager">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+  ```
+
+**# service-context.xml**
+* *주요 설정 내용:* Service 관련 
+* Component 패키지 지정 
+  * ` <context:component-scan base-package="service"/>`
+  * 이 패키지를 스캔하며 annotaion이 달린 것을 bean으로 생성하여 Container에 담아둔다.
+
+**# dao-context.xml**
+* *주요 설정 내용:* DAO 관련
+* Component 패키지 지정 
+  * ` <context:component-scan base-package="dao"/>`
+  * 이 패키지를 스캔하며 annotaion이 달린 것을 bean으로 생성하여 Container에 담아둔다.
+
+**# security-context.xml**: 
+* *주요 설정 내용:* Security 관련, BCryptPasswordEncoder 등
+  ```xml
+  <security:authentication-manager>
+      <security:authentication-provider>
+          <security:jdbc-user-service
+              data-source-ref="dataSource"
+              users-by-username-query="select username, password, enabled from users where username=?"
+              authorities-by-username-query="select username, authority from users where username=?" />
+          <security:password-encoder ref="passwordEncoder"></security:password-encoder>
+      </security:authentication-provider>
+  </security:authentication-manager>
+
+  <security:http auto-config="true" use-expressions="true">
+      <security:intercept-url pattern="/admin/**" access="hasRole('ROLE_ADMIN')" />
+      <security:form-login login-page="/login" authentication-failure-url="/login?error" />
+  </security:http>
+
+  <bean id="passwordEncoder"
+      class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder">
+  </bean>
+  ```
+
+# 관련된 Post
+* MVC Architecture에 대해 알고 싶으시면 [MVC Architecture 이해하기](https://gmlwjd9405.github.io/2018/11/05/mvc-architecture.html)를 참고하시기 바랍니다.
+* Web Application Structure와 web.xml의 역할에 대해 알고 싶으시면 [Web Application Structure 이해하기](https://gmlwjd9405.github.io/2018/10/29/web-application-structure.html)를 참고하시기 바랍니다.
+
+# References
+> - []()

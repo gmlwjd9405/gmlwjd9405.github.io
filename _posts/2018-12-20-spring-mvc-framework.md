@@ -35,6 +35,7 @@ Model, View, Controller를 분리한 디자인 패턴 (개발자가 직접 구�
     * 디스플레이 데이터 또는 프리젠테이션 
     * Model data의 렌더링을 담당하며, HTML ouput을 생성한다.
     * **JSP**
+    * JSP 이외에도 Thymeleaf, Groovy, Freemarker 등 여러 [Tempate Engine](https://gmlwjd9405.github.io/2018/12/21/template-engine.html)이 있다.
 * Controller
     * View와 Model 사이의 인터페이스 역할
     * Model/View에 대한 사용자 입력 및 요청을 수신하여 그에 따라 적절한 결과를 Model에 담아 View에 전달한다.
@@ -91,8 +92,149 @@ Web Application Structure(웹 서비스 기본 설정 구조)
 
 ## Spring MVC에서 Model, View, Controller
 ### Model
-### View
+* Controller에서 View로 객체를 전달하는데 사용된다.
+* 명명된 객체들의 집합이라고 할 수 있다.
+    * Key-Value 형식의 하나의 쌍(하나의 열)을 명명된 객체라고 부른다.
+    * 또한 이 명명된 객체는 model attribute라고 부른다.
+    * 여러 개의 attribute가 모여 Table 형식을 이룬다.
+* view에서 attribute의 key 값을 통해 value 값을 사용할 수 있다.
+
+| Key(name) | Value |
+| key1 | value |
+| key2 | value2 | 
+
+Model Inplementations
+* Model을 표현하기 위해 여러 자료구조를 사용할 수 있다.
+* Controller 메서드에 input argument로 값을 넣어주면 Spring Frmework가 자동으로 Model을 만들어주고 해당 Model의 주솟값만 넘겨준다.
+
+1. java.util.map의 구현
+```java
+@RequestMapping("/greeting")
+public String getGreeting(Map<String, Object> model) { 
+	String greeting = service.getRandomGreeting();
+	model.put("greeting", greeting);
+
+	return "home";
+}
+```
+    1. service 객체의 메서드를 호출하여 결과를 가져온다.
+    2. model에 첫 번째 인자 "name"과 결과에 대한 값인 두 번째 인자 value를 넣는다.
+        * view에서 해당 이름("name")으로 value에 접근한다.
+    3. 해당하는 value를 보여줄 View name을 반환한다.
+2. Spring에서 제공하는 Model 인터페이스 구현
+```java
+@RequestMapping("/special-deals")
+public String getSpecialDeals(Model model) { 
+
+	List<SpecialDial> specialDeals = service.getSpecialDeals();
+	model.addAttribute(specialDeals); // value만 넣으면 name은 자동 생성
+
+	return "home";
+}
+```
+    * Map을 사용하는 것의 단점은 "name"을 반드시 지정해야하는 것이다.
+    * Model 인터페이스는 addAttribute()와 같은 편리한 메소드를 제공한다.
+        * addAttribute()는 Map 속성의 이름("name")을 자동으로 생성한다는 점을 제외하면 Map의 put()과 동일하다.
+        * 자동으로 생성하고 싶지 않은 모델의 속성 이름을 결정하는 것은 여전히 가능하다.
+        * **가장 자주 사용하는 Model 형식**
+3. Spring에서 제공하는 ModelMap 객체
+```java
+@RequestMapping("/fullname")
+public String getFullname(ModelMap model) { 
+
+	// chained calls are handy!
+	model.addAttribute("name", "Jon")
+         .addAttribute("surname", "Snow");
+
+	return "home";
+}
+```
+    * 추가적인 기능을 제공한다.
+        * chain으로 사용 가능
+
 ### Controller
+```java
+@Controller
+public class HomeController {
+    private static final Logget Logger = LoggerFactory.getLogger(HomeController.class);
+
+    @RequestMapping(value = "/home", method = RequestMethod.GET)
+    public String home(Locale locale, Model model) {
+        Logger.info("Welcome {}.", locale);
+
+        // Business Logic
+        Date date = new Date();
+        DateFormat = dateFormat = DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.LONG, locale);
+        String formattedDate = dateFormat.format(date);
+
+        // BL의 결과를 Model에 저장 
+        model.addAttribute("serverTime", formattedDate);
+
+        // Return logical view name
+        return "home";
+    }
+
+    @RequestMapping(value = "/login", method = RequestMethod.GET)
+    public String doLogin(@RequestParam String username, @RequestParam String password) {
+        ...
+	    return success;
+    }
+}
+```
+* @Controller
+    * bean으로 등록
+    * 해당 클래스가 Controller로 사용됨을 Spring Framework에 알림
+    * @Component ---구체화---> @Controller, @Service, @Repository
+* @RequestMapping
+    * value: 해당 url로 요청이 들어오면 이 메서드가 수행된다.
+    * method: 요청 method를 명시한다.
+    * 즉, 위의 예시에서는 "/home" url로 HTTP GET 요청이 들어오면 home() 메서드가 실행된다.
+    ```java
+    @Controller
+    @RequestMapping("/home") // 1) Class Level
+    public class HomeController {
+            /* an HTTP GET for /home */ 
+            @RequestMapping(method = RequestMethod.GET) // 2) Handler Level
+            public String getAllEmployees(Model model) {
+                ...
+            }
+            /* an HTTP POST for /home/employees */ 
+            @RequestMapping(value = "/employees", method = RequestMethod.POST) 
+            public String addEmployee(Employee employee) {
+                ...
+            }
+    }
+    ```
+    * 1) Class Level Mapping
+        * 모든 메서드에 적용되는 경우
+        * "/home"로 들어오는 모든 요청에 대한 처리를 해당 클래스에서 한다는 것을 의미한다.
+    * 2) Handler Level Mapping
+        * 요청 url에 대해 해당 메서드에서 처리해야 되는 경우
+        * "/home/employees" POST 요청에 대한 처리를 addEmployee()에서 한다는 것을 의미한다.
+* model.addAttribute()
+    * Business Logic의 처리 결과 값을 model attribute에 지정하면 Spring이 Model 객체를 만들어 해당 Model의 주솟값을 넘겨준다.
+    * 하나의 요청 안에서만 Controller와 View가 Model을 공유한다.
+* @RequestParam
+    * HTTP GET 요청에 대해 매칭되는 request parameter 값이 자동으로 들어간다.
+    * Ex) ` http://localhost:8080/login?username=scott&password=tiger`
+
+### View
+* View를 생성하는 방법은 여러 가지가 있다.
+    * JSP 이외에도 Thymeleaf, Groovy, Freemarker 등 여러 [Tempate Engine](https://gmlwjd9405.github.io/2018/12/21/template-engine.html)이 있다.
+* [JSP(Java Server Pages)](https://gmlwjd9405.github.io/2018/11/03/jsp.html)
+    * [JSP 제한 사항](https://docs.spring.io/spring-boot/docs/2.0.0.RELEASE/reference/htmlsingle/#boot-features-jsp-limitations)
+    * Java EE에 종속적이라는 단점이 있다.
+    * SpringBoot에서는 공식적으로 jsp를 지원하지 않는다.
+        * SpringBoot의 내장 Tomcat에 하드코딩 패턴때문에 jar형식으로는 webapp 내용을 가져올 수 없다.
+        * 따라서 SpringBoot에서는 war가 아닌 jar로 사용할 때는 jsp를 사용할 수 없다.
+* JSTL(JSP Standard Tag Library)
+    * 많은 JSP 애플리케이션의 공통적인 핵심 기능을 캡슐화하는 유용한 JSP 태그 모음
+    * 즉, JSP 페이지를 작성할 때 유용하게 사용할 수 있는 여러 가지 action과 함수가 포함된 라이브러리
+    * 가장 많이 사용하는 태그 확장 라이브러리
+    * 자신만의 Custom Tag를 추가할 수 있는 기능을 제공한다.
+    * 사용하는 이유?
+        * JSP에 Java Code가 들어가는 것을 막기 위해서 사용한다.
+        * 즉, Java Code(JSP Scriptlet)대신 Tag를 사용하여 프로그래밍할 수 있도록 하기 위해 도입되었다.
 
 ---
 
@@ -334,6 +476,8 @@ Web Application Structure(웹 서비스 기본 설정 구조)
 # 관련된 Post
 * MVC Architecture에 대해 알고 싶으시면 [MVC Architecture 이해하기](https://gmlwjd9405.github.io/2018/11/05/mvc-architecture.html)를 참고하시기 바랍니다.
 * Web Application Structure와 web.xml의 역할에 대해 알고 싶으시면 [Web Application Structure 이해하기](https://gmlwjd9405.github.io/2018/10/29/web-application-structure.html)를 참고하시기 바랍니다.
+* Template Engin에 대해 알고 싶으시면 [Template Engin 이해하기](https://gmlwjd9405.github.io/2018/12/21/template-engine.html)를 참고하시기 바랍니다.
 
 # References
-> - []()
+> - [https://www.tutorialspoint.com/spring/spring_web_mvc_framework.htm](https://www.tutorialspoint.com/spring/spring_web_mvc_framework.htm)
+> - [http://istoryful.tistory.com/5](http://istoryful.tistory.com/5)

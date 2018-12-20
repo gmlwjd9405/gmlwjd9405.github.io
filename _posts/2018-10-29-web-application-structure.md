@@ -214,6 +214,7 @@ sitemap :
 * Web Server와 WAS의 개념과 차이에 대해 알고 싶으시면 [Web Server VS WAS](https://gmlwjd9405.github.io/2018/10/27/webserver-vs-was.html)를 참고하시기 바랍니다.
 * Web Service의 기본적인 동작 과정과 Servlet에 대해 알고 싶으시면 [Servlet 이란](https://gmlwjd9405.github.io/2018/10/28/servlet.html)을 참고하시기 바랍니다.
 * JSP의 개념과 기본 문법에 대해 알고 싶으시면 [JSP 란](https://gmlwjd9405.github.io/2018/11/03/jsp.html)을 참고하시기 바랍니다.
+* Spring MVC Framework에 대해 알고 싶으시면 [Spring MVC 이해하기](http://gmlwjd9405.github.io/2018/12/20/spring-mvc-framework.html)를 참고하시기 바랍니다.
 
 # References
 > - [https://www.javatpoint.com/jsp-tutorial](https://www.javatpoint.com/jsp-tutorial)

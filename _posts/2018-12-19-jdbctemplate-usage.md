@@ -175,5 +175,5 @@ jdbcTemplateObject.update(SQL, new Object[]{20});
 * Data Access Layer에 대해 알고 싶으시면 [Data Access Layer 이해하기](https://gmlwjd9405.github.io/2018/05/15/setting-for-db-programming.html)를 참고하시기 바랍니다.
 * Annotation 활성화에 대해 알고 싶으시면 [Spring Annotation 활성화](https://gmlwjd9405.github.io/2018/12/18/spring-annotation-enable.html)를 참고하시기 바랍니다.
 
-<!-- # References
-> - []() -->
+# References
+> - [https://www.tutorialspoint.com/spring/spring_jdbc_framework.htm](https://www.tutorialspoint.com/spring/spring_jdbc_framework.htm)

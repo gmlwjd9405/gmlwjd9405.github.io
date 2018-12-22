@@ -5,7 +5,7 @@ subtitle: 'IntelliJ에서 Gradle 프로젝트를 생성하고 SpringMVC를 위�
 date: 2018-10-24
 author: heejeong Kwon
 cover: '/images/springMVC-project/springMVC-project-setting1-main.png'
-tags: springMVC project example setting gradle
+tags: springMVC project example setting gradle intellij
 comments: true
 sitemap :
   changefreq : daily
@@ -189,7 +189,7 @@ bin/
 
 # 관련된 Post
 * Eclipse에서 Spring MVC 프로젝트 생성하기에 대해 알고 싶으시면 [Eclipse에서 Spring MVC 프로젝트 생성하기](https://gmlwjd9405.github.io/2018/05/07/spring-project-eclipse-setting.html)를 참고하시기 바랍니다.
-
+* Tomcat Server를 통해 "Hello World" 띄우기에 대해 알고 싶으시면 [IntelliJ에서 SpringMVC, Tomcat 설정하기](https://gmlwjd9405.github.io/2018/10/25/intellij-springmvc-tomcat-setting.html)를 참고하시기 바랍니다.
 
 # References
 > - [https://johngrib.github.io/wiki/groupId-artifactId/](https://johngrib.github.io/wiki/groupId-artifactId/)

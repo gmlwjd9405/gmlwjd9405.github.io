@@ -476,7 +476,7 @@ public class HomeController {
 # 관련된 Post
 * MVC Architecture에 대해 알고 싶으시면 [MVC Architecture 이해하기](https://gmlwjd9405.github.io/2018/11/05/mvc-architecture.html)를 참고하시기 바랍니다.
 * Web Application Structure와 web.xml의 역할에 대해 알고 싶으시면 [Web Application Structure 이해하기](https://gmlwjd9405.github.io/2018/10/29/web-application-structure.html)를 참고하시기 바랍니다.
-* Template Engin에 대해 알고 싶으시면 [Template Engin 이해하기](https://gmlwjd9405.github.io/2018/12/21/template-engine.html)를 참고하시기 바랍니다.
+* Template Engine에 대해 알고 싶으시면 [Template Engine 이해하기](https://gmlwjd9405.github.io/2018/12/21/template-engine.html)를 참고하시기 바랍니다.
 
 # References
 > - [https://www.tutorialspoint.com/spring/spring_web_mvc_framework.htm](https://www.tutorialspoint.com/spring/spring_web_mvc_framework.htm)

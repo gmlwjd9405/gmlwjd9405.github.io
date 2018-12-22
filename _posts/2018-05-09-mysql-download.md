@@ -5,7 +5,7 @@ subtitle: 'Windows에서의 MySQL 설치 방법'
 date: 2018-05-09
 author: heejeong Kwon
 cover: '/images/mysql-download/mysql-download-main.png'
-tags: MySQL 설치 PlugIn 다운로드
+tags: mysql 설치 plugin 다운로드
 comments: true
 sitemap :
   changefreq : daily

@@ -130,7 +130,7 @@ sitemap :
   * ` <init-param>`부분은 생략이 가능하다.
     * ` <servlet-name>` 에 설정한 이름 + -servlet.xml 형식으로 설정 파일 이름을 만들고, web.xml과 같은 위치(/WEB-INF 하위)에 있어야 contextLoader가 해당 파일을 찾아서 읽을 수 있다.
     * 위와 같이 설정하면 init-param으로 dispatcher xml 파일의 이름 설정하지 않아도 자동으로 로드된다.
-    * Ex) salesServlet-servlet.xm
+    * Ex) salesServlet-servlet.xml
   * salesServlet-servlet.xml 안의 설정 내용 <mark>(* 아래 참고)</mark>
 
 ### ContextLoaderListener

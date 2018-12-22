@@ -5,7 +5,7 @@ subtitle: 'IntelliJ에서 Tomcat을 이용하여 SpringMVC Server를 띄울 수 
 date: 2018-10-25
 author: heejeong Kwon
 cover: '/images/springMVC-project/springMVC-project-setting2-main.png'
-tags: springMVC project example setting tomcat
+tags: springMVC project example setting tomcat intellij
 comments: true
 sitemap :
   changefreq : daily
@@ -165,6 +165,8 @@ public class HomeController {
 
 # 관련된 Post
 * Eclipse에서 Spring MVC 프로젝트 생성하기에 대해 알고 싶으시면 [Eclipse에서 Spring MVC 프로젝트 생성하기](https://gmlwjd9405.github.io/2018/05/07/spring-project-eclipse-setting.html)를 참고하시기 바랍니다.
+* IntelliJ에서 Gradle 프로젝트 생성 및 SpringMVC를 위한 설정하기에 대해 알고 싶으시면 [IntelliJ에서 Spring MVC 프로젝트 생성하기](https://gmlwjd9405.github.io/2018/10/24/intellij-springmvc-gradle-setting.html)를 참고하시기 바랍니다.
+
 
 
 # References

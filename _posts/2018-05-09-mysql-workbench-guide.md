@@ -5,7 +5,7 @@ subtitle: 'MySQL Workbench 사용법'
 date: 2018-05-09
 author: heejeong Kwon
 cover: '/images/mysql-workbench-guide/mysql-workbench-guide-main.png'
-tags: MySQL 사용법
+tags: mysql 사용법 usage
 comments: true
 sitemap :
   changefreq : daily

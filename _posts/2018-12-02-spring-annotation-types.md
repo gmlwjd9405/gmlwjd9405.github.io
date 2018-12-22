@@ -16,9 +16,41 @@ sitemap :
 ---
 
 ### @Component
+* component-scan을 선언에 의해 특정 패키지 안의 **클래스들을 스캔하고, @Component Annotation이 있는 클래스에 대하여 bean 인스턴스를 생성**한다.
 
 ### @Controller, @Service, @Repository
+* @Component ---구체화---> @Controller, @Service, @Repository
+* bean으로 등록
+* 해당 클래스가 Controller/Service/Repository로 사용됨을 Spring Framework에 알린다.
 
+### @WebServlet 
+
+### @RequestMapping
+```java
+@Controller
+@RequestMapping("/home") // 1) Class Level
+public class HomeController {
+    /* an HTTP GET for /home */ 
+    @RequestMapping(method = RequestMethod.GET) // 2) Handler Level
+    public String getAllEmployees(Model model) {
+        ...
+    }
+    /* an HTTP POST for /home/employees */ 
+    @RequestMapping(value = "/employees", method = RequestMethod.POST) 
+    public String addEmployee(Employee employee) {
+        ...
+    }
+}
+```
+* @RequestMapping에 대한 모든 매핑 정보는 Spring에서 제공하는 HandlerMapping Class가 가지고 있다.
+* 1) Class Level Mapping
+    * 모든 메서드에 적용되는 경우
+    * "/home"로 들어오는 모든 요청에 대한 처리를 해당 클래스에서 한다는 것을 의미한다.
+* 2) Handler Level Mapping
+    * 요청 url에 대해 해당 메서드에서 처리해야 되는 경우
+    * "/home/employees" POST 요청에 대한 처리를 addEmployee()에서 한다는 것을 의미한다.
+* **value**: 해당 url로 요청이 들어오면 이 메서드가 수행된다.
+* **method**: 요청 method를 명시한다. 없으면 모든 http method 형식에 대해 수행된다.
 
 ### @RestController
 * @Controller + @ResponseBody
@@ -68,12 +100,25 @@ sitemap :
     * @Resource를 사용하기 위해서는 class path 내에 jsr250-api.jar 파일을 추가해야 한다.
 * 필드, 입력 파라미터가 한 개인 bean property setter method에 적용 가능
 
-### @RequestBody
-* RequestData를 바로 Model이나 클래스로 매핑한다.
+---
 
+## [Parameter를 받는 방법]
 ### @RequestParam
+* HTTP GET 요청에 대해 매칭되는 **request parameter** 값이 자동으로 들어간다.
+    * Ex) ` http://localhost:8080/login?username=scott&password=tiger`
 
-### @PathVariable 
+
+### @PathVariable
+
+### @RequestBody
+* 반드시 HTTP POST 요청에 대해서만 처리한다.
+    * HTTP POST 요청에 대해 **request body**에 있는 request message에서 값을 얻어와 매칭한다.
+* RequestData를 바로 Model이나 클래스로 매핑한다.
+    * 이를테면 JSON 이나 XML같은 데이터를 적절한 messageConverter로 읽을 때 사용하거나 POJO 형태의 데이터 전체로 받는 경우에 사용한다.
+
+### @ModelAttribute
+* @RequestParam과 비슷하다.
+    * form 값
 
 --- 
 

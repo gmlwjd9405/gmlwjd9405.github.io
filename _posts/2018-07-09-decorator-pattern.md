@@ -186,7 +186,7 @@ public class Client {
 * 즉, 어떤 기능을 추가하느냐에 관계없이 Client 클래스는 동일한 Display 클래스만을 통해 **일관성 있는 방식으로** 도로 정보를 표시할 수 있다.
 * 이렇게 Decorator 패턴을 이용하면 추가 기능 조합별로 별도의 클래스를 구현하는 대신 각 추가 기능에 해당하는 클래스의 객체를 조합해 추가 기능의 조합을 구현할 수 있게 된다.
   * 이 설계는 추가 기능의 수가 많을수록 효과가 크다.
-* ![](/images/design-pattern-command/command-solution2.png)
+* ![](/images/design-pattern-decorator/decorator-solution2.png)
 
 ### 추가 예시
 * 기본 도로 표시 + 차선 표시 + 교통량 표시

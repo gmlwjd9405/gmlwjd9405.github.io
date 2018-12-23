@@ -35,7 +35,7 @@ Model, View, Controller를 분리한 디자인 패턴 (개발자가 직접 구�
     * 디스플레이 데이터 또는 프리젠테이션 
     * Model data의 렌더링을 담당하며, HTML ouput을 생성한다.
     * **JSP**
-    * JSP 이외에도 Thymeleaf, Groovy, Freemarker 등 여러 [Tempate Engine](https://gmlwjd9405.github.io/2018/12/21/template-engine.html)이 있다.
+    * JSP 이외에도 Thymeleaf, Groovy, Freemarker 등 여러 [Template Engine](https://gmlwjd9405.github.io/2018/12/21/template-engine.html)이 있다.
 * Controller
     * View와 Model 사이의 인터페이스 역할
     * Model/View에 대한 사용자 입력 및 요청을 수신하여 그에 따라 적절한 결과를 Model에 담아 View에 전달한다.

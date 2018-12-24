@@ -1,7 +1,7 @@
 ---
 layout: post
-title: '[MySQL] MySQL 설치, 실행, 환경 설정, 접속 오류, 접속 권한, 한글 설정'
-subtitle: 'MySQL 깨알 팁 모음!'
+title: '[MySQL] MySQL 깨알 팁 모음!'
+subtitle: 'MySQL 설치, 실행, 환경 설정, 접속 오류, 접속 권한, 한글 설정'
 date: 2018-12-23
 author: heejeong Kwon
 cover: '/images/mysql-download/mysql-download-main.png'
@@ -67,6 +67,8 @@ export PKG_CONFIG_PATH="/usr/local/opt/mysql@5.7/lib/pkgconfig"
 $ brew services start mysql@5.7
 # background에서 실행시킬 필요가 없는 경우 아래 이용 
 $ /usr/local/opt/mysql@5.7/bin/mysql.server start
+# 하나의 버전만 깔려 있는 경우는 이 명령어도 사용 가능 
+# $ mysql.server start
 ```
 * `ERROR! The server quit without updating PID file...` [Error 해결 방법](https://gmlwjd9405.github.io/2018/12/23/error-mysql-start.html)
 
@@ -179,9 +181,9 @@ $ mysql -uroot -p
 alias mysqlserver="sudo /usr/local/mysql/support-files/mysql.server"
 ```
 * alias 설정 후 아래와 같이 사용 가능
-  * `sudo mysqlserver start`
-  * `sudo mysqlserver stop`
-  * `sudo mysqlserver restart`
+  * `mysqlserver start`
+  * `mysqlserver stop`
+  * `mysqlserver restart`
 * alias 설정 시 주의 사항
   * alias 축약이름 = "실행내용" (X) 띄어쓰기 주의!
   * alias 축약이름="실행내용" (O)
@@ -210,25 +212,41 @@ $ mysql -V
 ---
 ## MySQL 한글 설정 (UTF-8)
 ### charset utf-8
-추가 예정
-
-<!-- **CLI**
-* `mysql -uroot -p`로 접속
-* `status;` 입력해서 설정 확인
-  * latin이 있다면 vi /etc/my.cnf에 아래의 내용 추가
-  * my.cnf가 기본적으로 존재하지 않으므로 $ vi /etc/my.cnf 등을 통해 새로 생성
-```s
-[client]
-default-character-set=utf8  
-[mysql]
-default-character-set=utf8  
-[mysqld]
-collation-server = utf8_unicode_ci
-init-connect='SET NAMES utf8'
-character-set-server = utf8
+1. mysql 접속
+```bash
+$ mysql -uroot -p
 ```
-
-**Sequel** -->
+2. `mysql> status;` 명령어 입력해서 설정 확인
+  * ![](/images/mysql-download/mysql-charset-before.png)
+  * latin이 있다면 mysql을 나간 후 터미널을 다시 실행
+3. 관리자 권한으로 /etc/my.cnf 파일 생성
+```bash
+# my.cnf가 기본적으로 존재하지 않으므로 아래 명령어를 통해 새로 생성
+$ sudo vi /etc/my.cnf
+Password: 
+```
+4. my.cnf 파일에 아래 내용 넣기 
+```bash
+[mysqld]
+init_connect="SET collation_connection=utf8_general_ci"
+init_connect="SET NAMES utf8"
+character-set-server=utf8
+collation-server=utf8_general_ci
+skip-character-set-client-handshake
+[client]
+default-character-set=utf8
+[mysql]
+default-character-set=utf8
+```
+5. mysql 서버 정지 후 재실행 
+```bash
+# alias 설정 후 아래와 같이 사용 가능
+$ sudo mysqlserver stop
+$ sudo mysqlserver start
+```
+6. mysql 재접속
+7. `mysql> show variables like 'c%';` 명령어를 이용해서 정상적으로 utf-8로 설정되었는지 확인 
+  * ![](/images/mysql-download/mysql-charset-after2.png)
 
 ---
 
@@ -265,7 +283,11 @@ $ sudo rm -rf /private/var/db/receipts/*mysql*
 * **문제 원인:** 
   * 아이디/패스워드가 다르거나 접근 권한이 없을 경우!
 * **해결책** 
-  * 아래의 과정 수행 
+  * 비밀번호를 알고 있는 경우: 아래의 명령어 입력 후 기억하는 비밀번호로 접속해본다.
+```bash
+$ /usr/local/mysql/bin/mysql -uroot -p
+```
+  * 비밀번호 분실한 경우: 아래의 과정 수행 
 
 * 1) MySQL 서버 실행
 ```bash
@@ -371,8 +393,7 @@ mysql> drop user '사용자'@'localhost';
 > - [http://googry.tistory.com/31](http://googry.tistory.com/31)
 > - [brew를 통해 mysql-version 변경](https://github.com/helloheesu/SecretlyGreatly/wiki/%EB%A7%A5%EC%97%90%EC%84%9C-mysql-%EC%84%A4%EC%B9%98-%ED%9B%84-%ED%99%98%EA%B2%BD%EC%84%A4%EC%A0%95%ED%95%98%EA%B8%B0)
 > - [루트 비밀번호 변경](https://www.howtoforge.com/setting-changing-resetting-mysql-root-passwords)
-> - [charset 설정 참고1](https://zzsza.github.io/development/2018/01/18/Install-MySQL-mac/)
-> - [charset 설정 참고2](http://mirwebma.tistory.com/5)
+> - [charset 설정 참고](http://www.nextstep.co.kr/250)
 > - [https://gomdoreepooh.github.io/notes/mysql-reset-password](https://gomdoreepooh.github.io/notes/mysql-reset-password)
 > - [http://codingisgame.tistory.com/12](http://codingisgame.tistory.com/12)
 > - [MySQL 접속 권한 설정 참고](https://cjh5414.github.io/mysql-create-user)

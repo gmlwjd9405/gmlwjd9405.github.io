@@ -1,10 +1,10 @@
 ---
 layout: post
-title: '[MySQL] MySQL 깨알 팁 모음!'
-subtitle: 'MySQL의 설치, 실행, 접속 오류 및 접속 권한'
+title: '[MySQL] MySQL 설치, 실행, 환경 설정, 접속 오류, 접속 권한, 한글 설정'
+subtitle: 'MySQL 깨알 팁 모음!'
 date: 2018-12-23
 author: heejeong Kwon
-cover: '/images/mysql-workbench-guide/mysql-workbench-guide-main.png'
+cover: '/images/mysql-download/mysql-download-main.png'
 tags: mysql plugin error 
 comments: true
 sitemap :
@@ -35,12 +35,12 @@ sitemap :
 ```bash
 $ brew install mysql
 ```
-  * ![](/images/mysql-workbench-guide/mysql-install-8.png)
+  * ![](/images/mysql-download/mysql-install-8.png)
 * 5.7 버전 설치
 ```bash
 $ brew install mysql@5.7
 ```
-  * ![](/images/mysql-workbench-guide/mysql-install-57.png)
+  * ![](/images/mysql-download/mysql-install-57.png)
 * 다른 버전 설치 방법
   * `$ brew search mysql`로 검색, 원하는 버전의 formula 이름을 확인한다.
   * `$ brew install <설치할 formula>`으로 mysql을 설치한다.
@@ -93,7 +93,7 @@ $ mysql_secure_installation
 ```bash
 $ mysql -uroot -p
 ```
-* 위에서 설정한 root 비밀번호를 입력한다.
+* 접속 후 위에서 설정한 root 비밀번호를 입력한다.
 
 5. mysql [버전 변경하기](https://gist.github.com/benlinton/d24471729ed6c2ace731)
 * mysql 8.0 -> mysql 5.7
@@ -118,7 +118,7 @@ $ brew switch mysql 8.0.13
 ### 2. 사이트에서 직접 다운로드를 통한 설치 (dmg 파일)
 1. MySQL 설치 
 * [MySQL 사이트](https://dev.mysql.com/downloads/mysql/)에서 원하는 버전의 .dmg 파일을 다운로드 (로그인 없이도 다운로드 가능)
-  * 자세한 내용: [https://dev.mysql.com/doc/mysql-osx-excerpt/5.7/en/osx-installation-pkg.html](https://dev.mysql.com/doc/mysql-osx-excerpt/5.7/en/osx-installation-pkg.html) 참고
+  * 자세한 내용: [https://dev.mysql.com/ - 버전 5.7 기준](https://dev.mysql.com/doc/mysql-osx-excerpt/5.7/en/osx-installation-pkg.html) 참고
 * 중요! 설치할 때 주어지는 <span style="background-color: #e1e1e1">임시 비밀번호 기억</span>
   * 분실했다면 (아래 MySQL 접속 오류 설명 참고)
 
@@ -134,7 +134,7 @@ $ sudo /usr/local/mysql/support-files/mysql.server restart
 * (6. MySQL alias 설정 참고)
 
 3. MySQL 접속
-```bas류
+```bash
 # 디렉터리로 이동 후
 $ cd /usr/local/mysql/bin/
 # MySQL 접속 
@@ -144,7 +144,7 @@ $ ./mysql -u root -p
 
 4. MySQL 기본 환경 설정 (root 사용자 비밀번호 변경)
 * MySQL을 실행시키고 접속한 후(3번 과정)에 설정한다. [참고1](http://0719s.tistory.com/2), [참고2](https://to-dy.tistory.com/58)
-```bash
+```sql
 # 둘 중 하나 
 mysql> alter user 'root'@'localhost' identified by 'newpassword';
 mysql> alter user 'root'@'localhost' identified with mysql_native_password by 'newpassword';
@@ -202,7 +202,7 @@ alias mysqlserver="sudo /usr/local/mysql/support-files/mysql.server"
     * root 사용자의 비밀번호를 변경하기 전이면 mysql 설치할 때 받았던 임시 비밀번호
 
 <mark>참고</mark> MySQL 버전 확인
-```bash
+```sql
 $ mysql -V
 /usr/local/mysql/bin/mysql  Ver 14.14 Distrib 5.7.20, for macos10.12 (x86_64) using  EditLine wrapper
 ```
@@ -268,11 +268,11 @@ $ sudo rm -rf /private/var/db/receipts/*mysql*
   * 아래의 과정 수행 
 
 * 1) MySQL 서버 실행
-```s
+```bash
 $ sudo /usr/local/mysql/support-files/mysql.server start
 ```
 * 2) 터미널에서 접속하기
-```s
+```bash
 $ cd /usr/local/mysql/bin/
 $ sudo ./mysql
 또는
@@ -280,19 +280,19 @@ $ /usr/local/mysql/bin/mysql -uroot
 ```
   * MySQL 실행은 "/usr/local/mysql/bin/" 디렉터리에서 할 수 있다. 
 * 3) 안전모드로 MySQL 데몬(mysqld)을 실행
-```s
+```bash
 $ sudo /usr/local/mysql/bin/mysqld_safe --skip-grant-tables
 ```
   * 위와 같이 입력하면 인증을 생략하고 안전모드로 데몬을 실행한다. 
   * 입력할 비밀번호: MySQL 비밀번호가 아닌 **맥의 관리자 비밀번호**이다.
   * 위 명령어는 실행된 상태로 유지되므로 새로운 터미널 창을 열어서 MySQL에 접속한다. 
 * 4) MySQL 접속
-```s
+```bash
 $ /usr/local/mysql/bin/mysql -uroot
 ```
   * 위의 명령어가 제대로 실행되었다면 비밀번호를 묻지 않고 바로 접속이 가능하다.
 * 5) 비밀번호 재설정
-```s
+```sql
 mysql> use mysql; 
 mysql> update user set authentication_string=password('root') where user='root';
 // 마지막으로 변경사항을 적용하기 위해 flush privileges 명령어 실행
@@ -302,7 +302,7 @@ mysql> flush privileges;
   * password=(‘root’)에 root 대신 원하는 비밀번호를 입력해도 된다. 
   * (참고로 5.7 버전 이전에는 set password=password(‘원하는 비밀번호’)였는데 컬럼명이 바꼈다.
 * 6) MySQL 접속
-```s
+```bash
 $ /usr/local/mysql/bin/mysql -uroot
 $ /usr/local/mysql/bin/mysql -uroot -proot
 ```
@@ -311,7 +311,7 @@ $ /usr/local/mysql/bin/mysql -uroot -proot
   * 접속 후 명령을 실행하게 되면 다음과 같은 에러가 발생한다. 
     * `ERROR 1820 (HY000): You must reset your password using ALTER USER statement before executing this statement.`
 * 7) 에러 해결 
-```s
+```sql
 mysql> use mysql; 
 mysql> set password = password('원하는 비밀번호');
 ```
@@ -322,7 +322,7 @@ mysql> set password = password('원하는 비밀번호');
 * **문제 원인** 
   * MySQL 서버가 켜져 있는지 확인!
 * **해결책** 
-  ```s
+  ```bash
   $ sudo /usr/local/mysql/support-files/mysql.server start
   ```
   * MySQL 서버 실행 후 다시 접속
@@ -331,32 +331,33 @@ mysql> set password = password('원하는 비밀번호');
 
 ## MySQL 접속 권한 설정 
 * MySQL 서버 실행
-```s
+```bash
 $ sudo /usr/local/mysql/support-files/mysql.server start
 ```
 * 사용자를 추가를 위해 MySQL 서버에 로그인 (root 권한)
-```s
+```bash
 $ mysql -u root -p
 Enter password:
 ```
 * 사용자 추가
-```s
-// 로컬에서 접속 가능한 사용자
-$ create user '사용자'@'localhost' identified by '비밀번호';
-// 원격에서 접속 가능한 사용자
-$ create user '사용자'@'원격IP주소' identified by '비밀번호';
+```sql
+# 로컬에서 접속 가능한 사용자
+mysql> create user '사용자'@'localhost' identified by '비밀번호';
+# 원격에서 접속 가능한 사용자
+mysql> create user '사용자'@'원격IP주소' identified by '비밀번호';
 ```
-    * `mysql ERROR 1819 (HY000): Your password does not satisfy the current policy requirements` 라는 에러가 발생하면 Mysql password policy requirements 에러 validation 제거하여 해결하기 을 참고하자.
+
+    <!-- * `mysql ERROR 1819 (HY000): Your password does not satisfy the current policy requirements` 라는 에러가 발생하면 Mysql password policy requirements 에러 validation 제거하여 해결하기 을 참고하자. -->
 * 사용자에게 DB 권한 부여하기
-```s
-// 모든 DB에 접근 가능하도록 권한 부여
-$ grant all privileges on *.* to '사용자'@'localhost';
-// 특정 DB(DB이름)에만 접근 가능하도록 권한 부여 
-$ grant all privileges on DB이름.* to '사용자'@'localhost';
+```sql
+# 모든 DB에 접근 가능하도록 권한 부여
+mysql> grant all privileges on *.* to '사용자'@'localhost';
+# 특정 DB(DB이름)에만 접근 가능하도록 권한 부여 
+mysql> grant all privileges on DB이름.* to '사용자'@'localhost';
 ```
 * 사용자 계정 삭제
-```s
-$ drop user '사용자'@'localhost';
+```sql
+mysql> drop user '사용자'@'localhost';
 ```
 
 # 관련된 Post

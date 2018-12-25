@@ -397,4 +397,4 @@ mysql> drop user '사용자'@'localhost';
 > - [https://gomdoreepooh.github.io/notes/mysql-reset-password](https://gomdoreepooh.github.io/notes/mysql-reset-password)
 > - [http://codingisgame.tistory.com/12](http://codingisgame.tistory.com/12)
 > - [MySQL 접속 권한 설정 참고](https://cjh5414.github.io/mysql-create-user)
-> - [https://coderwall.com/p/os6woq/uninstall-all-those-broken-versions-of-mysql-and-re-install-it-with-brew-on-mac-mavericks(https://coderwall.com/p/os6woq/uninstall-all-those-broken-versions-of-mysql-and-re-install-it-with-brew-on-mac-mavericks)]
+> - [MySQL 삭제 참고](https://coderwall.com/p/os6woq/uninstall-all-those-broken-versions-of-mysql-and-re-install-it-with-brew-on-mac-mavericks)

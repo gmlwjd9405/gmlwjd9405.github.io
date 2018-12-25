@@ -38,20 +38,7 @@ DAO(Data Access Object)는 실제로 DB에 접근하는 객체이다.
   * 이런 miss match는 해결해줘야 한다.
 
 참고) <mark>DAO vs DTO</mark>
-* DAO(Data Access Object)
-  * 실제 DB의 테이블과 매칭될 객체
-  * 즉, 테이블과 링크될 클래스임을 나타낸다.
-    * Entity 클래스 또는 가장 Core한 클래스
-* DTO(Data Transfer Object)
-  * 계층간 데이터 교환을 위한 객체
-    * 로직을 갖고 있지 않는 순수한 데이터 객체이며, getter/setter 메서드만을 갖는다.
-  * VO(Value Object)는 DTO와 동일한 개념이지만 read only 속성을 갖는다.
-  * Request와 Response용 DTO는 View를 위한 클래스
-    * 자주 변경이 필요한 클래스
-    * Controller에서 사용
-* Entity 클래스와 DTO 클래스를 분리하는 이유
-  * View Layer와 DB Layer의 역할을 철저하게 분리하기 위해서
-  * 테이블과 매핑되는 Entity 클래스가 변경되면 여러 클래스에 영향을 끼치게 되는 반면 View와 통신하는 DTO 클래스(Request / Response 클래스)는 자주 변경되므로 분리해야 한다.
+* [https://gmlwjd9405.github.io/2018/12/25/difference-dao-dto-entity.html](https://gmlwjd9405.github.io/2018/12/25/difference-dao-dto-entity.html)
 
 ### # DataSource 란?
 DataSource는 JDBC 명세의 일부분이면서 일반화된 연결 팩토리이다. 즉 DB와 관계된 connection 정보를 담고 있으며, bean으로 등록하여 인자로 넘겨준다. 이 과정을 통해 Spring은 DataSource로 DB와의 연결을 획득한다.

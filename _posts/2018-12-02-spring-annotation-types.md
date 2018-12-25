@@ -22,8 +22,7 @@ sitemap :
 * @Component ---구체화---> @Controller, @Service, @Repository
 * bean으로 등록
 * 해당 클래스가 Controller/Service/Repository로 사용됨을 Spring Framework에 알린다.
-
-### @WebServlet 
+* 참고) [@WebServlet vs @Controller](https://gmlwjd9405.github.io/2018/12/22/webservlet-vs-controller.html)
 
 ### @RequestMapping
 ```java
@@ -56,6 +55,16 @@ public class HomeController {
 * @Controller + @ResponseBody
 * @ResponseBody를 모든 메소드에서 적용한다. 
     * 메소드의 반환 결과(문자열)를 JSON 형태로 반환한다.
+* @Controller 와 @RestController 의 차이
+    * @Controller
+        * API와 view를 동시에 사용하는 경우에 사용
+        * 대신 API 서비스로 사용하는 경우는 @ResponseBody를 사용하여 객체를 반환한다.
+        * view(화면) return이 주목적
+    * @RestController
+        * view가 필요없는 API만 지원하는 서비스에서 사용 (Spring 4.0.1부터 제공)
+        * @RequestMapping 메서드가 기본적으로 @ResponseBody 의미를 가정한다.
+        * data(json, xml 등) return이 주목적
+        * 즉, @RestController = @Controller + @ResponseBody
 
 ### @Required
 * setter method에 사용한다.

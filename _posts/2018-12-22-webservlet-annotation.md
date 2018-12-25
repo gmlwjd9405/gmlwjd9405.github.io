@@ -13,7 +13,7 @@ sitemap :
 ---
 
 ## @WebServlet 이란
-* @WebServlet의 속성 같을 통해 해당 Servlet과 매핑될 URL 패턴을 지정한다.
+* @WebServlet의 속성 값을 통해 해당 Servlet과 매핑될 URL 패턴을 지정한다.
 * 이 Annotation을 통해 web.xml 파일에 별로의 설정을 하지 않더라도 해당 Servlet을 실행할 수 있다.
   ```xml
   <Servlet>
@@ -63,7 +63,7 @@ sitemap :
   ```
 
 # 관련된 Post
-* @WebServlet과 @Controller Annotation의 차이에 대해 알고 싶으시면 [@WebServlet vs @Controller](https://gmlwjd9405.github.io/2018/12/22/webservlet-annotation.html)를 참고하시기 바랍니다.
+* @WebServlet과 @Controller Annotation의 차이에 대해 알고 싶으시면 [@WebServlet vs @Controller](https://gmlwjd9405.github.io/2018/12/22/webservlet-vs-controller.html)를 참고하시기 바랍니다.
 
 # References
 > - [http://cocoballl.blogspot.com/2014/07/webservlet.html](http://cocoballl.blogspot.com/2014/07/webservlet.html)

@@ -70,14 +70,18 @@ Persistence Framework는 SQL Mapper와 ORM으로 나눌 수 있다.
 
 ## 2. [JPA(Java Persistent API)](https://terasolunaorg.github.io/guideline/5.1.0.RELEASE/en/ArchitectureInDetail/DataAccessJpa.html)
 * ![](/images/spring-framework/spring-jpa-architecture.png)
-자바 ORM 기술에 대한 API 표준 명세로, Java에서 제공하는 API이다.
-* JPA는 ORM을 사용하기 위한 표준 인터페이스를 모아둔 것이다.
+* 자바 ORM 기술에 대한 API 표준 명세로, Java에서 제공하는 API이다.
+    * 자바 플랫폼 SE와 자바 플랫폼 EE를 사용하는 응용프로그램에서 관계형 데이터베이스의 관리를 표현하는 자바 API이다.
+    * 즉, JPA는 ORM을 사용하기 위한 표준 인터페이스를 모아둔 것이다.
+    * 기존에 EJB에서 제공되던 엔터티 빈(Entity Bean)을 대체하는 기술이다.
 * JPA 구성 요소 (세 가지)
   * `javax.persistance` 패키지로 정의된 API 그 자체
-  * 자바 퍼시스턴스 쿼리 언어(Java Persistence Query Language, JPQL)
+  * [JPQL(Java Persistence Query Language)](http://happygrammer.tistory.com/149)
   * 객체/관계 메타데이터
-* JPA의 대표적인 구현체로는 Hibernate, EclipseLink, DataNucleus, OpenJPA, TopLink Essentials 등이 있다.
+* 사용자가 원하는 JPA 구현체를 선택해서 사용할 수 있다.
+  * JPA의 대표적인 구현체로는 Hibernate, EclipseLink, DataNucleus, OpenJPA, TopLink Essentials 등이 있다.
   * 이 구현체들을 ORM Framework라고 부른다.
+  
 
 <!-- JPQL 이란?
 즉시, 지연 로딩 전략
@@ -92,11 +96,10 @@ N+1 질의 문제 (query)
 
 ### [Hibernate](https://howtodoinjava.com/hibernate-tutorials/)
 * ![](/images/spring-framework/spring-hibernate-architecture.png)
-* JPA와 MyBatis 모두 Persistance API 이다.
-  * JPA의 구현체 중 하나 
+* Hibernate는 JPA의 구현체 중 하나이다.
 * Hibernate가 SQL을 직접 사용하지 않는다고 해서 JDBC API를 사용하지 않는다는 것은 아니다.
   * Hibernate가 지원하는 메서드 내부에서는 JDBC API가 동작하고 있으며, 단지 개발자가 직접 SQL을 직접 작성하지 않을 뿐이다.
-* HQL이라 불리는 매우 강력한 쿼리 언어를 포함하고 있다. 
+* HQL(Hibernate Query Language)이라 불리는 매우 강력한 쿼리 언어를 포함하고 있다. 
   * HQL은 SQL과 매우 비슷하며 추가적인 컨벤션을 정의할 수도 있다. 
   * HQL은 완전히 객체 지향적이며 이로써 상속, 다형성, 관계등의 객체지향의 강점을 누릴 수 있다. 
   * HQL쿼리는 자바 클래스와 프로퍼티의 이름을 제외하고는 대소문자를 구분한다.

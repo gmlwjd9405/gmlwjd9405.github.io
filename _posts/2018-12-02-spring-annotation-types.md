@@ -108,6 +108,7 @@ public class HomeController {
 * Annotation 사용으로 인해 특정 Framework에 종속적인 어플리케이션을 구성하지 않기 위해서는 @Resource를 사용할 것을 권장한다. 
     * @Resource를 사용하기 위해서는 class path 내에 jsr250-api.jar 파일을 추가해야 한다.
 * 필드, 입력 파라미터가 한 개인 bean property setter method에 적용 가능
+* [](https://blog.outsider.ne.kr/777)
 
 ---
 
@@ -198,12 +199,45 @@ public class HomeController {
     * 생성자로 protected Posts() {}와 같은 효과
     * Entity 클래스를 프로젝트 코드상에서 기본생성자로 생성하는 것은 막되, JPA에서 Entity 클래스를 생성하는것은 허용하기 위해 추가한다.
 
+### @AllArgsConstructor 
+* 모든 필드 값을 파라미터로 받는 생성자를 추가한다.
+
+### @RequiredArgsConstructor 
+* final이나 @NonNull인 필드 값만 파라미터로 받는 생성자를 추가한다.
+    * final: 값이 할당되면 더 이상 변경할 수 없다.
+
 ### @Getter
 * 클래스 내 모든 필드의 Getter 메소드를 자동으로 생성한다.
 
 ### @Setter
 * Controller에서 @RequestBody로 외부에서 데이터를 받는 경우엔 기본생성자 + set메소드를 통해서만 값이 할당된다.
 * 그래서 이때만 setter를 허용한다.
+
+### @ToString
+* `@ToString(exclude = "password")`
+    * 특정 필드를 toString() 결과에서 제외한다.
+* 클래스명(필드1명=필드1값, 필드2명=필드2값, ...) 식으로 출력된다.
+
+### @EqualsAndHashCode
+* equals와 hashCode 메소드 오버라이딩
+
+```java
+User user1 = new User();
+user1.setId(1L);
+user1.setUsername("user");
+user1.setPassword("pass");
+
+User user2 = new User();
+user1.setId(2L); // 부모 클래스의 필드가 다름
+user2.setUsername("user");
+user2.setPassword("pass");
+
+user1.equals(user2);
+// callSuper = true 이면 false, callSuper = false 이면 true
+```
+* `@EqualsAndHashCode(callSuper = true)`
+    * callSuper 속성을 통해 equals와 hashCode 메소드 자동 생성 시 부모 클래스의 필드까지 감안할지 안 할지에 대해서 설정할 수 있다.
+    * 즉, callSuper = true로 설정하면 부모 클래스 필드 값들도 동일한지 체크하며, callSuper = false로 설정(기본값)하면 자신 클래스의 필드 값들만 고려한다.
 
 ### @Builder 
 * 어느 필드에 어떤 값을 채워야 할지 명확하게 정하여 생성 시점에 값을 채워준다.
@@ -216,6 +250,60 @@ public class HomeController {
 ### @Data
 * @Getter @Setter @EqualsAndHashCode @AllArgsConstructor 을 포함한 Lombok에서 제공하는 필드와 관련된 모든 코드를 생성한다.
 
+---
+
+## [Java Config를 위한 Annotation]
+### @Configuration
+* `import org.springframework.context.annotation.Configuration;`
+
+---
+
+## [Spring AOP를 위한 Annotation]
+[](https://jojoldu.tistory.com/71?category=635883)
+### @EnableAspectJAutoProxy
+* `import org.springframework.context.annotation.EnableAspectJAutoProxy;`
+* aop
+
+### @Aspect
+* `import org.aspectj.lang.annotation.Aspect;`
+
+```java
+@Aspect
+public class Logger {
+    @Pointcut("execution( void spring.aop.*.sound())")
+    private void selectSound() {}  // signature
+
+    @Before("selectSound()")
+    public void aboutToSound() {
+        System.out.println("before advice: about to sound() ");
+    }
+
+    @After("selectSound()")
+    public void afterSound() {
+        System.out.println("after advice: after sound() ");
+    }
+}
+```
+
+### @PointCut
+* execution
+* xml에서의 id: method 이름 // signature 
+
+### @Before (이전)
+* 어드바이스 타겟 메소드가 호출되기 전에 어드바이스 기능을 수행
+
+### @After (이후)
+* 타겟 메소드의 결과에 관계없이(즉 성공, 예외 관계없이) 타겟 메소드가 완료 되면 어드바이스 기능을 수행
+
+### @Around (메소드 실행 전후)
+* 어드바이스가 타겟 메소드를 감싸서 타겟 메소드 호출전과 후에 어드바이스 기능을 수행
+
+### @AfterReturning (정상적 반환 이후)
+* 타겟 메소드가 성공적으로 결과값을 반환 후에 어드바이스 기능을 수행
+
+### @AfterThrowing (예외 발생 이후)
+* 타겟 메소드가 수행 중 예외를 던지게 되면 어드바이스 기능을 수행
+
 --- 
 
 # 관련된 Post
@@ -227,3 +315,4 @@ public class HomeController {
 > - [https://jeong-pro.tistory.com/151](https://jeong-pro.tistory.com/151)
 > - [component-scan 참고](https://docs.spring.io/spring/docs/current/spring-framework-reference/web.html#mvc)
 > - [mvc:annotation-driven 참고](http://docs.spring.io/spring/docs/current/spring-framework-reference/html/mvc.html#mvc-config)
+> - [lombok annotation 참고](http://www.daleseo.com/lombok-popular-annotations/)

@@ -72,6 +72,9 @@ public class WebConfig { ... }
 * 이 태그를 설정하면 @Required @Autowired @Resource @PostConstruct @PreDestroy @Configuration 기능을 각각 설정하지 않아도 된다.
 
 
+<br><mark>참고</mark> tx:annotation-driven
+* 등록된 빈 중에서 @Transactional이 붙은 클래스/인터페이스/메소드를 찾아 트랜잭션 어드바이스를 적용한다.
+
 # 관련된 Post
 * Spring Annotation 종류에 대해 알고 싶으시면 [Spring Annotation의 종류](https://gmlwjd9405.github.io/2018/12/02/spring-annotation-types.html)을 참고하시기 바랍니다.
 

@@ -253,8 +253,13 @@ user1.equals(user2);
 ---
 
 ## [Java Config를 위한 Annotation]
+[](https://www.slipp.net/wiki/pages/viewpage.action?pageId=22282242)
 ### @Configuration
 * `import org.springframework.context.annotation.Configuration;`
+
+### @EnableTransactionManagement
+
+### @PropertySource("classpath:application-properties.xml")
 
 ---
 

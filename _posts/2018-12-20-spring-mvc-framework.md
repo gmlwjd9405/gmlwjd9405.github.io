@@ -66,6 +66,14 @@ Web Application Structure(웹 서비스 기본 설정 구조)
 * src
     * 개발자가 작성한 Servlet 코드가 저장된다.
     * Controller, Model, Service, Dao
+    * src/main/java
+        * 개발되는 Java 코드의 경로
+    * src/main/resources
+        * 서버가 실행될 때 필요한 파일들의 경로
+    * src/test/java
+        * 테스트 전용 경로 (각 테스트 코드 작성 경로)
+    * src/test/resource
+        * 테스트 시에만 사용되는 파일들의 경로
 * Libraries
     * Servlet이나 JSP에서 추가로 사용하는 라이브러리 또는 드라이버
     * jar로 압축한 파일이어야 한다.
@@ -77,11 +85,11 @@ Web Application Structure(웹 서비스 기본 설정 구조)
         * classes: 작성한 Java Servlet 파일이 나중에 .class로 이곳에 모두 저장된다. 
         * lib: 추가한 모든 라이브러리 또는 드라이버가 이곳에 모두 저장된다.
         * props: property file을 저장한다.
-        * spring: <span style="background-color: #e1e1e1">**spring configuration files**</span>을 저장한다. (spring과 관련된 설정을 모아둔 것)
+        * spring: <span style="background-color: #e1e1e1">**spring configuration files**</span>을 저장한다. (Spring과 관련된 설정 파일을 모아둔 것)
             * dispatcher-servlet.xml
             * applicationContext.xml
             * dao-context.xml, service-context.xml 등 
-        * views: Controller와 매핑되는 .jsp 파일들을 저장한다.
+        * views: Controller와 매핑되는 .jsp 파일들을 저장한다. (JSP 파일의 경로)
         * web.xml: web application의 설정을 위한 <span style="background-color: #e1e1e1">**web deployment descriptor**</span>
             * DispatcherServlet, ContextLoadListener 설정
 * pom.xml

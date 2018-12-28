@@ -56,6 +56,8 @@ sitemap :
 
 ## 관련된 Post
 * MySQL Workbench 사용법을 알고 싶으시면 [MySQL Workbench 사용법](https://gmlwjd9405.github.io/2018/05/09/mysql-workbench-guide.html) 을 참고하시기 바랍니다.
+* CLI를 이용한 MySQL 설치, 실행 등을 알고 싶으시면 [MySQL 깨알 팁 모음](https://gmlwjd9405.github.io/2018/12/23/mysql-tips.html)을 참고하시기 바랍니다.
+* MySQL Workbench에서 DB 백업 방법을 알고 싶으시면 [MySQL Workbench DB 백업하기](https://gmlwjd9405.github.io/2018/12/28/mysql-workbench-guide-db-backup.html)를 참고하시기 바랍니다.
 
 
 # References

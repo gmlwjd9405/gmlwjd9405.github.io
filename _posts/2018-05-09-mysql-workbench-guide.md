@@ -108,7 +108,7 @@ sitemap :
   * ![](/images/mysql-workbench-guide/mac-guide13.png) 
 
 ### 3) 'select * from table이름'으로 table에 들어간 columns를 확인한다.
-* Ex) select * from product; 입력 후 columns들을 확인한다.
+* Ex) select * from user; 입력 후 columns들을 확인한다.
 * ![](/images/mysql-workbench-guide/mac-guide12-3.png)
 
 

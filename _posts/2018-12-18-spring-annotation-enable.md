@@ -75,6 +75,18 @@ public class WebConfig { ... }
 <br><mark>참고</mark> tx:annotation-driven
 * 등록된 빈 중에서 @Transactional이 붙은 클래스/인터페이스/메소드를 찾아 트랜잭션 어드바이스를 적용한다.
 
+<br><mark>참고</mark> mvc:resources mapping
+* 정적인 data files들의 위치 mapping 해준다.
+    * Controller가 처리할 필요 없이 해당 위치의 디렉터리에서 바로 접근할 수 있다.
+    * HTTP GET 요청에서의 정적인 data에 바로 매핑이 가능하다.
+* `<mvc:resources mapping="/static/**" location="/static/" />` 
+    * WebContent/webapp/static/(ex. image file, css, js, fonts)
+    * web/static/(ex. image file, css, js, fonts)
+* `<mvc:resources mapping="/resources/**" location="/resources/" />`
+    * WebContent/webapp/resources/(ex. image file, css, js, fonts)
+    * web/resources/(ex. image file, css, js, fonts)
+
+https://gmlwjd9405.github.io/2018/12/20/spring-mvc-framework.html
 # 관련된 Post
 * Spring Annotation 종류에 대해 알고 싶으시면 [Spring Annotation의 종류](https://gmlwjd9405.github.io/2018/12/02/spring-annotation-types.html)을 참고하시기 바랍니다.
 

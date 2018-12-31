@@ -111,12 +111,29 @@ public class HomeController {
 * [](https://blog.outsider.ne.kr/777)
 
 ---
+## [Data Validation]
+
+### @Vaild
+* `import javax.validation.Valid;`
+
+* @Size(max=10, min=2, message="errMsg")
+* @Email(message="errMsg")
+* @NotEmpty(message="errMsg")
+
+---
+
+### @RestControllerAdvice
+
+### @ExceptionHandler
+
+### @ResponseStatus
+
+---
 
 ## [Parameter를 받는 방법]
 ### @RequestParam
 * HTTP GET 요청에 대해 매칭되는 **request parameter** 값이 자동으로 들어간다.
     * Ex) ` http://localhost:8080/login?username=scott&password=tiger`
-
 
 ### @PathVariable
 

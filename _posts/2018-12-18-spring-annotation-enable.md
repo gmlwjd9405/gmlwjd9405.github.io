@@ -85,6 +85,8 @@ public class WebConfig { ... }
 * `<mvc:resources mapping="/resources/**" location="/resources/" />`
     * WebContent/webapp/resources/(ex. image file, css, js, fonts)
     * web/resources/(ex. image file, css, js, fonts)
+    * jsp에서 사용하기 위해서 
+        * `<link rel="stylesheet" type="text/css" href="/resources/css/main.css">` 추가 
 
 https://gmlwjd9405.github.io/2018/12/20/spring-mvc-framework.html
 # 관련된 Post

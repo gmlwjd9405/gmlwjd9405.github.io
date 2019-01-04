@@ -5,7 +5,7 @@ subtitle: 'Spring MVC WebForm을 이해한다.'
 date: 2019-01-02
 author: heejeong Kwon
 cover: '/images/spring-framework/spring-framework-main.png'
-tags: springMVC mvc web webform data-binding data-validation
+tags: spring springMVC mvc web webform data-binding data-validation
 comments: true
 sitemap :
   changefreq : daily

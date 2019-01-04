@@ -133,9 +133,43 @@ public class HomeController {
 ## [Parameter를 받는 방법]
 ### @RequestParam
 * HTTP GET 요청에 대해 매칭되는 **request parameter** 값이 자동으로 들어간다.
-    * Ex) ` http://localhost:8080/login?username=scott&password=tiger`
+    * url 뒤에 붙는 parameter 값을 가져올 때 사용한다.
+    * Ex) ` http://localhost:8080/home?index=1&page=2`
+* 
+```java
+@GetMapping("/home")
+public String show(@RequestParam("page") int pageNum {
+}
+```
+    * 위의 경우 GET /home?index=1&page=2와 같이 uri가 전달될 때 page parameter를 받아온다.
+    * @RequestParam 어노테이션의 괄호 안의 문자열이 전달 인자 이름(실제 값을 표시)이다.
 
 ### @PathVariable
+* HTTP 요청에 대해 매칭되는 **request parameter** 값이 자동으로 들어간다.
+    * uri에서 각 구분자에 들어오는 값을 처리해야 할 때 사용한다.
+    * Ex) ` http://localhost:8080/index/1`
+    * REST API에서 값을 호출할 때 주로 많이 사용한다.
+* 
+```java
+@PostMapping("/index/{idx}")
+@ResponseBody
+public boolean deletePost(@PathVariable("idx") int postNum) {
+	return postService.deletePost(postNum);
+}
+```
+    * 위의 경우 POST /index/{idx}와 같이 uri가 전달될 때 해당하는 구분자 {idx}를 받아온다.
+
+
+<mark>참고</mark> @RequestParam와 @PathVariable 동시 사용 예제 
+```java
+@GetMapping("/user/{userId}/invoices")
+public List<Invoice> listUsersInvoices(@PathVariable("userId") int user,
+	                                  @RequestParam(value = "date", required = false) Date dateOrNull) {
+}
+```
+* 위의 경우 GET /user/{userId}invoices?date=190101 와 같이 uri가 전달될 때 
+* 구분자 {userId}는 @PathVariable("userId")로, 
+* 뒤에 이어붙은 parameter는 @RequestParam("date")로 받아온다.
 
 ### @RequestBody
 * 반드시 HTTP POST 요청에 대해서만 처리한다.

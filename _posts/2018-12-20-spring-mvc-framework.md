@@ -314,7 +314,7 @@ public class HomeController {
 * [구체적인 설정 내용](https://gmlwjd9405.github.io/2018/10/29/web-application-structure.html)
     * DispatcherServlet
     * ContextLoaderListener
-    * encodingFilter
+    * Filter: encodingFilter, springSecurityFilterChain
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -382,16 +382,24 @@ public class HomeController {
 **# dispatcher-servlet.xml**
 * *주요 설정 내용:* Controller 관련, ViewResolver, [mvc:annotation-driven 설정](https://gmlwjd9405.github.io/2018/12/18/spring-annotation-enable.html) 등
 * [Annotation 활성화](https://gmlwjd9405.github.io/2018/12/18/spring-annotation-enable.html)
-  * ` <mvc:annotation-driven />`
+  ```xml 
+  <mvc:annotation-driven />
+  ```     
 * Component 패키지 지정 
-  * ` <context:component-scan base-package="controller"/>`
+  ```xml 
+  <context:component-scan base-package="controller"/>
+  ```   
   * 이 패키지를 스캔하며 annotaion이 달린 것을 bean으로 생성하여 Container에 담아둔다.
-  * 이 내용은 service, dao 설정에도 필요하다.
+  * 참고) 이 내용은 service, dao 설정에도 필요하다.
     * ` <context:component-scan base-package="service"/>`
     * ` <context:component-scan base-package="dao"/>`
 * 정적인 data 위치 mapping
-  * ` <mvc:resources mapping="/static/**" location="/static/" />`
-  * ` <mvc:resources mapping="/resources/**" location="/resources/" />`
+  ```xml 
+  <mvc:resources mapping="/resources/**" location="/resources/" />
+  또는 
+  <mvc:resources mapping="/static/**" location="/static/" />
+  ```   
+  * **web/resources/ 하위**에 정적인 데이터(css, js, img, font)가 존재 
   * Controller가 처리할 필요 없이 해당 위치의 디렉터리에서 바로 접근할 수 있다.
   * HTTP GET 요청에서의 정적인 data에 바로 매핑이 가능하다.
 * ViewResolver
@@ -405,9 +413,12 @@ public class HomeController {
 **# applicationContext.xml**
 * *주요 설정 내용:* DataSource 관련, properties 등록, SessionFactory, TransactionManager 등 
 * properties 등록
+  ```xml 
+  <context:property-placeholder location="/WEB-INF/props/jdbc.properties" />
+  동일 
+  <context:property-placeholder location="classpath:props/jdbc.properties" />
+  ```  
     * properties file에서 읽어와 주입한다.
-    * ` <context:property-placeholder location="/WEB-INF/props/jdbc.properties" />`
-    * ` <context:property-placeholder location="classpath:props/jdbc.properties" />`
 * DataSource 주입 
   ```xml
   <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource"
@@ -419,7 +430,9 @@ public class HomeController {
   </bean>
   ```
 * 어노테이션에 기반한 트랜잭션 동작의 설정을 활성화
-    * ` <tx:annotation-driven />`
+  ```xml 
+  <tx:annotation-driven />
+  ```
 * Session Factory 등록 및 Transaction Manager 설정
   ```xml
 	<bean id="sessionFactory"

@@ -25,7 +25,7 @@ sitemap :
 * 애플리케이션 실행에 대한 추적을 기록하기 위해 어딘가에 메시지 (콘솔, 파일, 데이터베이스 등)를 작성하는 것
 * Logging을 어디에 이용할까
     * 디버깅
-    * 사용자 상호 작용 기록
+    * 사용자 상호 작용 기록 (발생하는 이벤트 기록)
 * Java의 주요 Logging Framework
     * **native java.util.logging**: 별로 사용하지 않는다.
     * **Log4J**: 몇 년 전까지 사실상 표준으로 사용했다.
@@ -159,7 +159,7 @@ SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further detail
             <artifactId>slf4j-api</artifactId>
         </exclusion>
     </exclusions>
-    <scope>test</scope>
+    <scope>compile</scope>
 </dependency>
 <!-- https://mvnrepository.com/artifact/ch.qos.logback/logback-core -->
 <dependency>

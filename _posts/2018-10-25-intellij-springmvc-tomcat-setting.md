@@ -39,7 +39,7 @@ sitemap :
 </servlet-mapping>
 ```
 **2) Artifacts에서 Spring Library 추가**
-* 1) File - Project Structure 선택 또는 단축키 (cmg + ;) 이용 
+* 1) File - Project Structure 선택 또는 단축키 (cmd + ;) 이용 
 * 2) Project Setting의 Artifacts 선택 
   * Spring Library 사용을 위한 추가적인 설정 
     * (참고) Maven Library도 마찬가지로 dependency를 추가한 후 아래와 같은 추가적인 설정을 해야 Library를 사용할 수 있다.

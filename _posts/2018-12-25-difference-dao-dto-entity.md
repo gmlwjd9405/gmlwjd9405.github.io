@@ -128,7 +128,7 @@ public class User implements Serializable {
 ---
 
 ## 전체 구조 (package 기준)
-Client **<---dto--->** controller(web) - service - repository(dao) **<---domain(entity)--->** DB
+![](/images/spring-framework/spring-package-flow.png)
 
 ### controller(web)
 * 기능

@@ -23,14 +23,14 @@ sitemap :
 ![](/images/network/rest.png)
 ### REST란
 * REST의 정의
-  * **"Representational State Transfer(대표적인 상태 전달)"** 의 약자
-    * 자원을 이름(자원의 대표)으로 구분하여 해당 자원의 상태(정보)를 주고 받는 모든 것을 의미한다.
-    * 즉, *자원(resource)의 대표(representation)* 에 의한 *상태 전달*
-      1. 자원(resource)의 대표(representation)
+  * **"Representational State Transfer"** 의 약자
+    * 자원을 이름(자원의 표현)으로 구분하여 해당 자원의 상태(정보)를 주고 받는 모든 것을 의미한다.
+    * 즉, *자원(resource)의 표현(representation)* 에 의한 *상태 전달*
+      1. 자원(resource)의 표현(representation)
         * 자원: 해당 소프트웨어가 관리하는 모든 것
         * -> Ex) 문서, 그림, 데이터, 해당 소프트웨어 자체 등
-        * 자원의 대표: 그 자원을 대표하기 위한 이름
-        * -> Ex) DB의 학생 정보가 자원일 때, 'students'를 자원의 대표라 정한다.
+        * 자원의 표현: 그 자원을 표현하기 위한 이름
+        * -> Ex) DB의 학생 정보가 자원일 때, 'students'를 자원의 표현으로 정한다.
       2. 상태(정보) 전달
         * 데이터가 요청되어지는 시점에서 자원의 상태(정보)를 전달한다.
         * JSON 혹은 XML를 통해 데이터를 주고 받는 것이 일반적이다.

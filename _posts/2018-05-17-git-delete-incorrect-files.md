@@ -41,8 +41,10 @@ $ git rm --cached [File Name]
 따라서 아래와 같이 <span style="background-color: #e1e1e1">git rm --cached [File Name]</span> 명령어를 이용하여 원격 저장소에서 잘못 올라간 파일을 삭제해야 한다.
 
 ~~~javascript
-// .out 폴더 삭제
-$ git rm --cached .out
+// .idea/modules.xml 파일 삭제
+$ git rm --cached .idea/modules.xml
+// .idea 폴더 하위의 모든 파일 삭제 
+$ git rm --cached -r .idea/
 ~~~
 
 ### 2. .gitignore 설정하기
@@ -60,6 +62,8 @@ $ git commit -m "Fixed untracked files"
 $ git push origin master
 ~~~
 
+### [참고] Github에 올라간 Commit 내역까지 삭제하는 방법 
+[git 명령어 실수 해결하기](https://gmlwjd9405.github.io/2018/05/25/git-add-cancle.html)에서 **git push 취소하기**를 참고하시기 바랍니다. 
 
 ## git rm 옵션 참고
 ![](/images/git-delete-incorrect-files/rm-options.png)
@@ -67,6 +71,7 @@ $ git push origin master
 
 # 관련된 Post
 * .gitignore 설정하는 방법에 대해 알고 싶으시면 [.gitignore 설정하기](https://gmlwjd9405.github.io/2017/10/06/make-gitignore-file.html)를 참고하시기 바랍니다.
+* git add / git commit / git push를 취소하는 방법에 대해 알고 싶으시면 [git 명령어 실수 해결하기](https://gmlwjd9405.github.io/2018/05/25/git-add-cancle.html)를 참고하시기 바랍니다. 
 
 
 # References

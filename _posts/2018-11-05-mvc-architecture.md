@@ -133,13 +133,14 @@ protected void doGet(HttpServletRequest request, HttpServletResponse response) t
         * data는 다른 사용자 또는 다른 페이지에서 볼 수 없다.
         * 가장 일반적인 Scope
     * **session**
-        * 요청에 저장된 data는 Servlet과 Servlet이 서블릿이 전달하는 페이지에 표시된다. 
+        * 요청에 저장된 data는 Servlet과 Servlet이 전달하는 *JSP 페이지*에  표시된다. 
         * 동일한 사용자인 경우 data를 다른 페이지 또는 나중에 볼 수 있다. 
         * 다른 사용자는 data를 볼 수 없다.
         * 흔하게 사용하는 Scope
     * **application** (Servlet Context)
         * Servlet Context에 저장된 데이터는 모든 사용자와 응용 프로그램의 모든 페이지에서 볼 수 있다.
         * 거의 사용하지 않는 Scope
+* [Spring Bean Scope](https://gmlwjd9405.github.io/2018/11/10/spring-beans.html) 참고 
 
 <mark>참고</mark>  **Bean 객체**
 * 특정 규칙을 따르는 Java Class 
@@ -171,6 +172,7 @@ public class StringBean {
 * JSP의 개념과 기본 문법에 대해 알고 싶으시면 [JSP 란](https://gmlwjd9405.github.io/2018/11/03/jsp.html)을 참고하시기 바랍니다.
 * Servlet과 JSP의 차이에 대해 알고 싶으시면 [Servlet과 JSP의 차이](https://gmlwjd9405.github.io/2018/11/04/servlet-vs-jsp.html)을 참고하시기 바랍니다.
 * Spring MVC Framework에 대해 알고 싶으시면 [Spring MVC 이해하기](http://gmlwjd9405.github.io/2018/12/20/spring-mvc-framework.html)를 참고하시기 바랍니다.
+* Spring Bean의 개념과 Bean Scope에 대해 알고 싶으시면 [Spring Bean 이해하기](https://gmlwjd9405.github.io/2018/11/10/spring-beans.html)를 참고하시기 바랍니다.
 
 
 # References

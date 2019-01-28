@@ -54,7 +54,7 @@ public class Printer {
 * 자기 자신 프린터에 대한 인스턴스를 하나 만들어 외부에 제공해줄 메서드가 필요하다.
   * static 메서드 / static 변수
     * 구체적인 인스턴스에 속하는 영역이 아니고 클래스 자체에 속한다.
-    * 클래스의 인스턴스를 통하지 않고서도 메스드를 실행할 수 있고 변수를 참조할 수 있다.
+    * 클래스의 인스턴스를 통하지 않고서도 메서드를 실행할 수 있고 변수를 참조할 수 있다.
   * 만약 new Printer()가 호출되기 전이면 인스턴스 메서드인 print() 메서드는 호출할 수 없다.
 ~~~Java
 public class Printer {
@@ -155,10 +155,10 @@ public class Client {
 
 
 ### 해결책
-프린터 관리자는 사실 **다중 스레드 애플리케이션이 아닌 경우에는 아무런 문제가 되지 않는다.**
+프린터 관리자(Lazy Initialization)는 사실 **다중 스레드 애플리케이션이 아닌 경우에는 아무런 문제가 되지 않는다.**
 * 다중 스레드 애플리케이션에서 발생하는 문제를 해결하는 방법
-1. 정적 변수에 인스턴스를 만들어 바로 초기화하는 방법
-2. 인스턴스를 만드는 메서드에 동기화하는 방법
+1. 정적 변수에 인스턴스를 만들어 바로 초기화하는 방법 (Eager Initialization)
+2. 인스턴스를 만드는 메서드에 동기화하는 방법 (Thread-Safe Initialization)
 
 1. 정적 변수에 인스턴스를 만들어 바로 초기화하는 방법
 ~~~Java
@@ -206,7 +206,7 @@ public class Printer {
   * 다중 스레드 환경에서 동시에 여러 스레드가 getPrinter 메서드를 소유하는 객체에 접근하는 것을 방지한다.
 * 공유 변수에 접근하는 부분을 **임계 구역으로 변경**
   * 여러 개의 스레드가 하나뿐인 counter 변수 값에 동시에 접근해 갱신하는 것을 방지한다.
-
+* getInstance()에 Lock을 하는 방식이라 속도가 느리다.
 
 ## 정적 클래스
 정적 메서드로만 이루어진 정적 클래스를 사용하면 싱글턴과 동일한 효과를 얻을 수 있다.
@@ -248,7 +248,21 @@ public class Client {
   * 인터페이스를 구현해야 하는 경우, 정적 메서드는 인터페이스에서 사용할 수 없다.
 * 인터페이스를 사용하는 주된 이유?
   * 대체 구현이 필요한 경우
-  * 예를 들어 모의 객체를 사용해 단위 테스트를 수행하는 경우
+  * 예를 들어 Mock 객체를 사용해 단위 테스트를 수행하는 경우
+
+## Enum 클래스 
+```java
+public enum SingletonTest {
+	INSTANCE;
+  
+	public static SingletonTest getInstance() {		
+		return INSTANCE;
+	}
+}
+```
+* Thread-safety와 Serialization이 보장된다.
+* Reflection을 통한 공격에도 안전하다.
+* 따라서 Enum을 이용해서 Singleton을 구현하는 것이 가장 좋은 방법이다.
 
 
 # 관련된 Post
@@ -263,3 +277,4 @@ public class Client {
 
 # References
 > - [JAVA 객체지향 디자인 패턴, 한빛미디어](http://www.kyobobook.co.kr/product/detailViewKor.laf?mallGb=KOR&ejkGb=KOR&barcode=9788968480911&orderClick=JAj)
+> - [https://blog.vjvj.net/2017/04/effective-java-3-private-enum-singleton.html](https://blog.vjvj.net/2017/04/effective-java-3-private-enum-singleton.html)

@@ -86,16 +86,22 @@ sitemap :
 ![](/images/springMVC-project/setting3/setting3-5.png)
 
 
-<!-- <mark>참고</mark> 빌드 결과물이 위치할 디렉터리 
+<mark>참고</mark> 빌드 결과물이 위치할 폴더  
 * out/
-  * web application을 생성하고 run server을 하면 out이라는 폴더???
-  * 프로젝트(워크스페이스) 상단에 out 이라는 폴더 안에 위치
+  * IntellJ 프로젝트 출력 폴더
+  * IntellJ IDE 프로젝트에서 모든 모듈은 표준 출력 폴더 (out/classes/production/module_name)를 사용한다.
+  * 예를 들어, IntellJ에서 프로젝트를 생성하고 Run을 하면 
+    * 1) 프로젝트(work space) 상단에 **"out"**이라는 디렉터리가 생성된다.
+    * 2) 해당 디렉터리 안에 컴파일된 클래스 파일이 들어간다. (src와 비슷한 계층으로 구성)
+  * *IntellJ*와 관련된 프로젝트의 .gitignore에 해당 내용을 추가한다.
 * target/
-  * Maven으로 빌드하면 생기는 디렉터리 (jar 파일을 저장하는 것이 주용도)??
-  target 폴더에 빌드된 파일과 war를 자동으로 넣어주지만 ???????
-  
-* 나중에 프로젝트 결과물을 실서버에 반영할 때 target 밑에 있는 내용을 배포하게 된다. -->
-
+  * Java 기반 프로젝트의 라이프사이클 관리를 목적으로 하는 빌드 도구인 Maven의 빌드 결과물 저장 폴더 
+  * Maven으로 빌드하면 **"target"**이라는 디렉터리가 생성된다.
+    * .jar 파일을 저장하는 것이 주용도
+    * 그 외에도 빌드된 파일들을 자동으로 넣어준다.
+  * 나중에 프로젝트 결과물(jar 또는 war)을 실서버에 반영할 때 target 밑에 있는 내용을 배포하게 된다.
+    * 개발할 때는 이클립스 안에서 모든 것이 이루어지기 때문에 별로 중요성이 없지만
+  * *Maven*과 관련된 프로젝트의 .gitignore에  해당 내용을 추가한다.
 
 <br><mark>참고</mark> Eclipse에서 War 파일 추출
 * Eclipse에서 프로젝트 우클릭 > Export - Web - WAR file 선택 > Next 버튼 클릭

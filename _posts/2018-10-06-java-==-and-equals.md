@@ -5,7 +5,7 @@ subtitle: '== equals compareTo 의 차이점을 이해하고 사용할 수 있�
 date: 2018-10-06
 author: heejeong Kwon
 cover: '/images/java-programming/equals-compareto-main.png'
-tags: Java equals compareTo
+tags: java equals compareTo
 comments: true
 sitemap :
   changefreq : daily

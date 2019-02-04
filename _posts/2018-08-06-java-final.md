@@ -5,7 +5,7 @@ subtitle: 'java final 키워드의 활용 및 사용법을 이해한다.'
 date: 2018-08-06
 author: heejeong Kwon
 cover: '/images/oop-solid/java-main.png'
-tags: Java final
+tags: java final finally finalize
 comments: true
 sitemap :
   changefreq : daily

@@ -129,3 +129,4 @@ public class Main {
 > - [wikipedia -이분 그래프](https://ko.wikipedia.org/wiki/%EC%9D%B4%EB%B6%84_%EA%B7%B8%EB%9E%98%ED%94%84)
 > - [http://www.techiedelight.com/topological-sorting-dag/](http://www.techiedelight.com/topological-sorting-dag/)
 > - [https://medium.com/100-days-of-algorithms/day-81-topological-sort-7a317e0c1dde](https://medium.com/100-days-of-algorithms/day-81-topological-sort-7a317e0c1dde)
+> - [C언어로 쉽게 풀어 쓴 자료구조](http://www.kyobobook.co.kr/product/detailViewKor.laf?ejkGb=KOR&barcode=9788970506432)

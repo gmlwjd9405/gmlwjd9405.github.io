@@ -193,3 +193,4 @@ void heap_sort(element a[], int n){
 # References
 > - [힙 정렬 - 위키백과](https://ko.wikipedia.org/wiki/%ED%9E%99_%EC%A0%95%EB%A0%ACC)
 > - [https://ratsgo.github.io/data%20structure&algorithm/2017/09/27/heapsort/](https://ratsgo.github.io/data%20structure&algorithm/2017/09/27/heapsort/)
+> - [C언어로 쉽게 풀어 쓴 자료구조](http://www.kyobobook.co.kr/product/detailViewKor.laf?ejkGb=KOR&barcode=9788970506432)

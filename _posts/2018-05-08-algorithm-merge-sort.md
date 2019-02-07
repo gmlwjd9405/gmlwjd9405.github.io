@@ -199,3 +199,4 @@ void main(){
 > - [https://ratsgo.github.io/data%20structure&algorithm/2017/10/03/mergesort/](https://ratsgo.github.io/data%20structure&algorithm/2017/10/03/mergesort/)
 > - [https://xmfpes.github.io/algorithm-study/daily-algorithm-09/](https://xmfpes.github.io/algorithm-study/daily-algorithm-09/)
 > - [http://wkdgusdn3.tistory.com/entry/MergeSort%EB%B3%91%ED%95%A9%EC%A0%95%EB%A0%AC](http://wkdgusdn3.tistory.com/entry/MergeSort%EB%B3%91%ED%95%A9%EC%A0%95%EB%A0%AC)
+> - [C언어로 쉽게 풀어 쓴 자료구조](http://www.kyobobook.co.kr/product/detailViewKor.laf?ejkGb=KOR&barcode=9788970506432)

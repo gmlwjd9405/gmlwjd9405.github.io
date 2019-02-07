@@ -221,3 +221,4 @@ int union2(int x, int y){
 > - [http://bowbowbow.tistory.com/26](http://bowbowbow.tistory.com/26)
 > - [https://ratsgo.github.io/data%20structure&algorithm/2017/11/12/disjointset/](https://ratsgo.github.io/data%20structure&algorithm/2017/11/12/disjointset/)
 > - [https://vancexu.github.io/2015/07/13/intro-to-union-find-data-structure.html](https://vancexu.github.io/2015/07/13/intro-to-union-find-data-structure.html)
+> - [C언어로 쉽게 풀어 쓴 자료구조](http://www.kyobobook.co.kr/product/detailViewKor.laf?ejkGb=KOR&barcode=9788970506432)

@@ -161,3 +161,4 @@ public class Main {
 > - [http://sanghoon9939.tistory.com/33](http://sanghoon9939.tistory.com/33)
 > - [http://stack07142.tistory.com/104](http://stack07142.tistory.com/104)
 > - [http://mathworld.wolfram.com/BipartiteGraph.html](http://mathworld.wolfram.com/BipartiteGraph.html)
+> - [C언어로 쉽게 풀어 쓴 자료구조](http://www.kyobobook.co.kr/product/detailViewKor.laf?ejkGb=KOR&barcode=9788970506432)

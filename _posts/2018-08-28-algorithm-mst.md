@@ -110,5 +110,5 @@ Spanning Tree 중에서 사용된 간선들의 가중치 합이 최소인 트리
 * Kruskal MST 알고리즘에 대해 알고 싶으시면 [Kruskal 알고리즘이란](https://gmlwjd9405.github.io/2018/08/29/algorithm-kruskal-mst.html)을 참고하시기 바랍니다.
 * Prim MST 알고리즘에 대해 알고 싶으시면 [Prim 알고리즘이란](https://gmlwjd9405.github.io/2018/08/30/algorithm-prim-mst.html)을 참고하시기 바랍니다.
 
-<!-- # References
-> - []() -->
+# References
+> - [C언어로 쉽게 풀어 쓴 자료구조](http://www.kyobobook.co.kr/product/detailViewKor.laf?ejkGb=KOR&barcode=9788970506432)

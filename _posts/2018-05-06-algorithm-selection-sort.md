@@ -150,3 +150,4 @@ void main(){
 # References
 > - [https://jongmin92.github.io/2017/11/06/Algorithm/Concept/basic-sort/](https://jongmin92.github.io/2017/11/06/Algorithm/Concept/basic-sort/)
 > - [선택 정렬 - 위키백과](https://ko.wikipedia.org/wiki/%EC%84%A0%ED%83%9D_%EC%A0%95%EB%A0%AC)
+> - [C언어로 쉽게 풀어 쓴 자료구조](http://www.kyobobook.co.kr/product/detailViewKor.laf?ejkGb=KOR&barcode=9788970506432)

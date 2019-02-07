@@ -158,3 +158,4 @@ void main(){
 
 # References
 > - [셸 정렬 - 위키백과](https://ko.wikipedia.org/wiki/%EC%85%B8_%EC%A0%95%EB%A0%AC)
+> - [C언어로 쉽게 풀어 쓴 자료구조](http://www.kyobobook.co.kr/product/detailViewKor.laf?ejkGb=KOR&barcode=9788970506432)

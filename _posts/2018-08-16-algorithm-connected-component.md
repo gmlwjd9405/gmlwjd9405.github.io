@@ -52,4 +52,5 @@ for (int i = 1; i <= N; i++) {
 * 너비 우선 탐색(BFS, Breadth-First Search): [너비 우선 탐색(BFS)이란](https://gmlwjd9405.github.io/2018/08/15/algorithm-bfs.html) 을 참고하시기 바랍니다.
 
 
-<!-- # References-->
+# References
+> - [C언어로 쉽게 풀어 쓴 자료구조](http://www.kyobobook.co.kr/product/detailViewKor.laf?ejkGb=KOR&barcode=9788970506432)

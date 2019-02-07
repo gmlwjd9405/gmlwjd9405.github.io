@@ -59,5 +59,5 @@ Prim 알고리즘을 이용하여 MST(최소 비용 신장 트리)를 만드는 
 * 자료구조 트리(Tree)에 대해 알고 싶으시면 [트리(Tree)란](https://gmlwjd9405.github.io/2018/08/12/data-structure-tree.html)을 참고하시기 바랍니다.
 
 
-<!-- # References
-> - []() -->
+# References
+> - [C언어로 쉽게 풀어 쓴 자료구조](http://www.kyobobook.co.kr/product/detailViewKor.laf?ejkGb=KOR&barcode=9788970506432)

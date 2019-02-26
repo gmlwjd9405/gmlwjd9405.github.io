@@ -122,6 +122,18 @@ public class HomeController {
 
 ---
 
+## [Configuration]
+
+### @Configuration
+
+### @EnableWebSecurity
+
+### @SpringBootApplication
+
+### @EnableWebMvc
+
+---
+
 ### @RestControllerAdvice
 
 ### @ExceptionHandler
@@ -211,6 +223,10 @@ public List<Invoice> listUsersInvoices(@PathVariable("userId") int user,
 ## [JPA에서 제공하는 Annotation]
 * JPA를 사용하면 DB 데이터에 작업할 경우 실제 쿼리를 날리지 않고 Entity 클래스의 수정을 통해 작업한다.
 
+### @Table
+* 엔티티 클래스에 매핑할 테이블 정보를 알려준다.
+* 이 어노테이션을 생략하면 클래스 이름을 테이블정보로 매핑한다.
+
 ### @Entity
 * 실제 DB의 테이블과 매칭될 클래스임을 명시한다.
 * 즉, 테이블과 링크될 클래스임을 나타냅니다. 
@@ -236,6 +252,7 @@ public List<Invoice> listUsersInvoices(@PathVariable("userId") int user,
 
 ### @Column
 * 테이블의 컬럼을 나타내면, 굳이 선언하지 않더라도 해당 클래스의 필드는 모두 컬럼이 된다.
+    * @Column을 생략하면 필드명을 사용해서 컬럼명과 매핑하게 된다.
 * 이 Annotation을 사용하는 이유는, 기본값 외에 추가로 변경이 필요한 옵션이 있을 경우 사용한다.
 * Ex) 문자열의 경우 VARCHAR(255)가 기본값인데, 사이즈를 500으로 늘리고 싶거나(ex: title), 타입을 TEXT로 변경하고 싶거나(ex: content) 등의 경우에 사용된다.
 

@@ -99,8 +99,8 @@ sitemap :
   3. 여러 대의 WAS를 연결 가능
     * Load Balancing을 위해서 Web Server를 사용
     * fail over(장애 극복), fail back 처리에 유리
-    - 특히, 대용량 웹 어플리케이션의 경우(여러 개의 서버 사용) Web Server와 WAS를 분리하여 무중단 운영을 위한 장애 극복에 쉽게 대응할 수 있다.
-      - 예를 들어, 앞 단의 Web Server에서 오류가 발생한 WAS를 이용하지 못하도록 한 후 WAS를 재시작함으로써 사용자는 오류를 느끼지 못하고 이용할 수 있다.
+    - 특히 대용량 웹 어플리케이션의 경우(여러 개의 서버 사용) Web Server와 WAS를 분리하여 무중단 운영을 위한 장애 극복에 쉽게 대응할 수 있다.
+    - 예를 들어, 앞 단의 Web Server에서 오류가 발생한 WAS를 이용하지 못하도록 한 후 WAS를 재시작함으로써 사용자는 오류를 느끼지 못하고 이용할 수 있다.
   4. 여러 웹 어플리케이션 서비스 가능
     * 예를 들어, 하나의 서버에서 PHP Application과 Java Application을 함께 사용하는 경우
   5. 기타
@@ -135,21 +135,21 @@ sitemap :
 <mark>참고</mark> **DBMS와 MiddleWare의 개념**
 - DBMS(Database Management System)
   - 다수의 사용자들이 DB 내의 데이터를 접근할 수 있도록 해주는 소프트웨어
-  - DBMS는 보통 Server 형태로 서비스를 제공하기 때문에 해당 Server에 접속해서 
+  - DBMS는 보통 Server 형태로 서비스를 제공한다.
   - Ex) MySQL, MariaDB, Oracle, PostgreSQL 등
-  - DBMS Server에 직접 접속해서 동작하는 Client Program의 문제점?
+  - Q) DBMS Server에 직접 접속해서 동작하는 Client Program의 문제점?
     - Client에 로직이 많아지고 이에 따라 Client Program의 크기가 커진다.
     - 로직이 변경될 때마다 매번 배포가 되어야 한다.
     - Client에 대부분의 로직이 포함되어 배포가 되기 때문에 보안에 취약하다.
-    - 이를 해결하기 위해 아래와 같은 MiddlWare가 등장했다.
+  - A) => 이를 해결하기 위해 아래와 같은 MiddlWare가 등장했다.
 - MiddleWare
   - Client - **MiddleWare Server** - DB Server(DBMS)
   - 동작 과정
-    - Client는 단순히 요청만 중앙에 있는 MiddleWare Server에게 보낸다.
-    - MiddleWare Server에서 대부분의 로직이 수행된다.
-    - 이때, 데이터를 조작할 일이 있으면 DBMS에 부탁한다.
-    - 로직의 결과를 Client에게 전송한다.
-    - Client는 그 결과를 화면에 보여준다.
+    - 1. Client는 단순히 요청만 중앙에 있는 MiddleWare Server에게 보낸다.
+    - 2. MiddleWare Server에서 대부분의 로직이 수행된다.
+    - 3. 이때, 데이터를 조작할 일이 있으면 DBMS에 부탁한다.
+    - 4. 로직의 결과를 Client에게 전송한다.
+    - 5. Client는 그 결과를 화면에 보여준다.
   - 즉, 비즈니스 로직을 Client와 DBMS 사이의 MiddleWare Server에서 동작하도록 함으로써 Client는 입력과 출력만 담당하게 된다.
   
   

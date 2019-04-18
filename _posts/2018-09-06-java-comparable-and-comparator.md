@@ -5,7 +5,7 @@ subtitle: 'Comparable, Comparator을 이용하여 Java 객체를 정렬할 수 �
 date: 2018-09-06
 author: heejeong Kwon
 cover: '/images/java-programming/comparable-and-comparator-main.png'
-tags: Java comparable comparator
+tags: java comparable comparator
 comments: true
 sitemap :
   changefreq : daily

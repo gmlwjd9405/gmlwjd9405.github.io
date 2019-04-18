@@ -68,7 +68,7 @@ sitemap :
     - 따라서 데이터의 적절한 보호를 보장한다. 
     - HTTPS의 기본 TCP/IP포트는 443이다.
 
-### HTTP 동작 방식
+### HTTP 통신 과정 
 - HTTP는 서버/클라이언트 모델을 따른다.
   - 클라이언트 -> **요청** -> 서버 -> **응답** -> 클라이언트
   - **특징**
@@ -83,17 +83,17 @@ sitemap :
     - 연결을 끊어버리기 때문에, 클라이언트의 이전 상황을 알 수가 없다.
     - 이러한 특징을 무상태(Stateless)라고 말한다.
     - 이러한 특징 때문에 정보를 유지하기 위해서 Cookie와 같은 기술이 등장하게 되었다.
-- // 그림 추가 예정
+- ![](/images/network/http-network-connect.png)
   - 클라이언트가 원하는 서버에 접속
   - 클라이언트가 서버에 요청
   - 요청에 따른 응답 결과를 다시 클라이언트에 응답
   - 응답이 끝나고 나면 서버와 클라이언트의 연결은 끊긴다.
 
 ## [HTTP 메시지 형식](https://developer.mozilla.org/ko/docs/Web/HTTP/Messages)
-// 그림 추가 예정
+![](/images/network/http-example.png)
 
 ### HTTP 요청 메시지 형식
-HTTP Request Message = Request Header + 빈 줄 + Request Body
+HTTP Request Message = **Request Header + 빈 줄 + Request Body**
 - Header
   - 첫 번째 줄 (start-line)
     - 요청 메서드 + 요청 URI + HTTP 프로토콜 버전 
@@ -108,10 +108,10 @@ HTTP Request Message = Request Header + 빈 줄 + Request Body
   - POST, PUT의 경우에만 존재  
   - 요청과 관련된 내용 (HTML 폼 콘텐츠 등)
 - Ex
-// 그림 추가 예정
+![](/images/network/http-request.png)
 
 ### HTTP 응답 메시지 형식
-HTTP Response Message = Response Header + 빈 줄 + Response Body
+HTTP Response Message = **Response Header + 빈 줄 + Response Body**
 - Header
   - 첫 번째 줄 (status-line)
     - HTTP 프로토콜 버전 + 응답 코드 + 응답 메시지 
@@ -120,11 +120,13 @@ HTTP Response Message = Response Header + 빈 줄 + Response Body
     - Header 정보들 ('Header Name: Header Value' 형태)
       - 날짜, 웹서버 이름, 웹서버 버전, 콘텐츠 타입, 콘텐츠 길이, 캐시 제어 방식 등
     - 각 줄은 Line Feed(LF)와 Carriage Return(CR)으로 구분된다.
+- 빈 줄 (empty-line)
+  - 요청에 대한 모든 메타 정보가 전송되었음을 알린다.
 - Body
   - 실제 응답 리소스 데이터
   - 201, 204와 같은 상태 코드를 가진 응답에는 보통 body가 존재하지 않는다.
 - Ex
-// 그림 추가 예정 
+![](/images/network/http-response.png)
 
 ### HTTP 기본 속성 개념
 - 요청 메서드

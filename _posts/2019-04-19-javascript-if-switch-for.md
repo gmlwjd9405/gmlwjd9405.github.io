@@ -1,7 +1,7 @@
 ---
 layout: post
-title: '[JavaScript] 자바스크립트의 비교문/분기문/반복문, 문자열 이해하기'
-subtitle: '자바스크립트의 변수, 연산자 및 타입의 종류와 개념을 이해한다.'
+title: '[JavaScript] 자바스크립트의 비교문/분기문/반복문, 문자열'
+subtitle: '자바스크립트의 비교문/분기문/반복문, 문자열에 대해 이해한다.'
 date: 2019-04-19 
 author: heejeong Kwon
 cover: '/images/javascript/javascript-main.png'

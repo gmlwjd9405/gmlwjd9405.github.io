@@ -46,8 +46,8 @@ sitemap :
     ```js
     // 함수의 호출.
     function printName(firstname) {
-        var myname = "HEEE";
-        return myname + " " +  firstname;
+          var myname = "HEEE";
+          return myname + " " +  firstname;
     }
     ``` 
 - **함수 참조** 
@@ -87,7 +87,7 @@ sitemap :
     - 따라서 배열의 메서드를 사용할 수 없다.
     ```js
     function a() {
-        console.log(arguments);
+          console.log(arguments);
     }
     a(1, 2, 3); // { '0':1, '1':2, '2':3 }
     ```
@@ -95,7 +95,7 @@ sitemap :
 - 자바스크립트의 가변인자를 받아서 처리하는 함수를 만드는 상황에서 arguments 속성을 유용하게 사용할 수 있다.(메서드에 넘겨 받을 인자의 개수를 모를 때)
     ```js
     function a() {
-        if(arguments.length < 3) { // 인자의 갯수가 중요한 경우 
+        if(arguments.length < 3) { // 인자의 개수가 중요한 경우 
             console.log("errer");
             return;
         }
@@ -151,49 +151,49 @@ var test2 = function test2() { // 기명 함수표현식
     - 함수표현식은 함수선언문과 달리 선언과 호출 순서에 따라서 정상적으로 함수가 실행되지 않을 수 있다.
 
 - 함수표현식 Error 예시 
-```js
-/* 정상 */
-function printName(firstname) { // 함수선언문
-    var inner = function() { // 함수표현식
-        return "inner value";
-    }
-    
-    var result = inner();
-    console.log("name is " + result);
-}
+  ```js
+  /* 정상 */
+  function printName(firstname) { // 함수선언문
+      var inner = function() { // 함수표현식
+          return "inner value";
+      }
 
-printName(); // "name is inner value"
-```
-```js
-/* 오류 */
-function printName(firstname) { // 함수선언문
-    console.log(inner); // "undefined": 선언은 되어 있지만 값이 할당되어있지 않은 경우
-    var result = inner(); // ERROR!!
-    console.log("name is " + result);
+      var result = inner();
+      console.log("name is " + result);
+  }
 
-    var inner = function() { // 함수표현식 
-        return "inner value";
-    }
-}
-printName(); // TypeError: inner is not a function
+  printName(); // "name is inner value"
+  ```
+  ```js
+  /* 오류 */
+  function printName(firstname) { // 함수선언문
+      console.log(inner); // "undefined": 선언은 되어 있지만 값이 할당되어있지 않은 경우
+      var result = inner(); // ERROR!!
+      console.log("name is " + result);
 
-/** --- JS Parser 내부의 호이스팅(Hoisting)의 결과 --- */
-/* 오류 */
-function printName(firstname) { // 함수선언문
-    var inner; // Hoisting - 변수값을 끌어올린다. (선언은 되어 있지만 값이 할당되어있지 않은 경우)
-    console.log(inner); // "undefined"
-    var result = inner(); // ERROR!!
-    console.log("name is " + result);
+      var inner = function() { // 함수표현식 
+          return "inner value";
+      }
+  }
+  printName(); // TypeError: inner is not a function
 
-    inner = function() { // 함수표현식 
-        return "inner value";
-    }
-}
-printName(); // TypeError: inner is not a function
-```
-  - **Q.** "printName이 is not defined" 이라고 오류가 나오지 않고, function이 아니라는 TypeError가 나오는 이유?
-  - **A.** printName이 실행되는 순간 ([Hoisting]()에 의해) inner는 'undefined'으로 지정되기 때문 
-  - inner가 undefined라는 것은 즉, 아직은 함수로 인식이 되지 않고 있다는 것을 의미한다.
+  /** --- JS Parser 내부의 호이스팅(Hoisting)의 결과 --- */
+  /* 오류 */
+  function printName(firstname) { // 함수선언문
+      var inner; // Hoisting - 변수값을 끌어올린다. (선언은 되어 있지만 값이 할당되어있지 않은 경우)
+      console.log(inner); // "undefined"
+      var result = inner(); // ERROR!!
+      console.log("name is " + result);
+
+      inner = function() { // 함수표현식 
+          return "inner value";
+      }
+  }
+  printName(); // TypeError: inner is not a function
+  ```
+    - **Q.** "printName이 is not defined" 이라고 오류가 나오지 않고, function이 아니라는 TypeError가 나오는 이유?
+    - **A.** printName이 실행되는 순간 ([Hoisting]()에 의해) inner는 'undefined'으로 지정되기 때문 
+    - inner가 undefined라는 것은 즉, 아직은 함수로 인식이 되지 않고 있다는 것을 의미한다.
 
 - 함수표현식보다 함수선언문을 더 자주 사용하지만, 어떤 코딩컨벤션에서는 함수표현식을 권장하기도 한다.
     - 즉, 어떤 컨벤션을 갖던지 한가지만 정해서 사용하는 게 좋다.

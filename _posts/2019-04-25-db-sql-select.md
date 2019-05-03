@@ -1,7 +1,7 @@
 ---
 layout: post
 title: '[DB] SQL문 기본 문법 - 검색편(select)'
-subtitle: ''
+subtitle: '데이터를 검색하는 select 쿼리문을 이해한다.'
 date: 2019-04-25
 author: heejeong Kwon
 cover: '/images/database/db-main.png'

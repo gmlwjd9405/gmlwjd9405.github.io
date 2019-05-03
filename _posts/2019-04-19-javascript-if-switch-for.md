@@ -89,7 +89,9 @@ function howMany(selectObject) {
 - 정규표현식으로도 문자열을 처리할 수 있다.
 
 # 관련된 Post
-- JavaScript의 변수, 연산자, 타입에 대해 알고 싶으시면 [자바스크립트의 변수, 연산자, 타입의 종류](https://gmlwjd9405.github.io/2019/04/18/javascript-variable-and-type.html)를 참고하시기 바랍니다.
+- JavaScript의 변수, 연산자, 타입에 대해 알고 싶으시면 [자바스크립트의 변수, 연산자, 타입의 종류](https://gmlwjd9405.github.io/2019/04/18/javascript-variable-and-type.html)를 참고하시기 바랍니다
+- JavaScript의 함수선언문과 함수표현식의 차이에 대해 알고 싶으시면 [함수표현식 vs 함수선언문](https://gmlwjd9405.github.io/2019/04/20/function-declaration-vs-function-expression.html)를 참고하시기 바랍니다.
+- JavaScript의 호이스팅에 대해 알고 싶으시면 [자바스크립트의 호이스팅이란](https://gmlwjd9405.github.io/2019/04/22/javascript-hoisting.html)을 참고하시기 바랍니다.
 
 # Reference
 > - [https://www.edwith.org/boostcourse-web/lecture/16693/](https://www.edwith.org/boostcourse-web/lecture/16694/)

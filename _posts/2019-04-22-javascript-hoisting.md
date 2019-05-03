@@ -21,10 +21,10 @@ sitemap :
 > - 같은 이름의 var 변수 선언과 함수 선언에서의 호이스팅에 대해 이해한다.
 
 ## 호이스팅(Hoisting)의 개념 
-호이스팅(Hoisting)이란 **함수 안에 있는 선언들을 모두 끌어올려서 해당 함수 유효 범위의 최상단에 선언하는 것** 을 말한다.
+<span style="background-color: #e1e1e1">함수 안에 있는 선언들을 모두 끌어올려서 해당 함수 유효 범위의 최상단에 선언하는 것</span>을 말한다.
 
 ### 호이스팅이란
-- 자바스크립트 함수는 실행되기 전에 함수 안에 필요한 변수값들을 미리 다 모아서 **유효 범위의 최상단**에 선언한다.
+- 자바스크립트 함수는 실행되기 전에 함수 안에 필요한 변수값들을 모두 모아서 **유효 범위의 최상단**에 선언한다.
     - 자바스크립트 Parser가 함수 실행 전 해당 함수를 한 번 훑는다.
     - 함수 안에 존재하는 변수/함수선언에 대한 정보를 기억하고 있다가 실행시킨다.
     - 유효 범위: 함수 블록 `{}` 안에서 유효
@@ -125,7 +125,7 @@ printName();
 - 함수표현식은 함수선언문과 달리 선언과 호출 순서에 따라서 정상적으로 함수가 실행되지 않을 수 있다.
     - 함수표현식에서는 선언과 할당의 분리가 발생한다.
 
-- 1. 함수표현식의 선언이 호출보다 위에 있는 경우 - 정상 출력 
+1. 함수표현식의 선언이 호출보다 위에 있는 경우 - 정상 출력 
     ```js
     /* 정상 */
     function printName(firstname) { // 함수선언문
@@ -156,8 +156,7 @@ printName();
 
     printName(); // > "name is inner value"
     ```
-
-- 2. 함수표현식의 선언이 호출보다 아래에 있는 경우 (*var 변수*에 할당) - ***TypeError***
+2. 함수표현식의 선언이 호출보다 아래에 있는 경우 (*var 변수*에 할당) - ***TypeError***
     ```js
     /* 오류 */
     function printName(firstname) { // 함수선언문
@@ -190,8 +189,7 @@ printName();
       - **Q.** printName에서 "inner is not defined" 이라고 오류가 나오지 않고, "inner is not a function"이라는 TypeError가 나오는 이유?
       - **A.** printName이 실행되는 순간 (Hoisting에 의해) inner는 'undefined'으로 지정되기 때문 
       - inner가 undefined라는 것은 즉, 아직은 함수로 인식이 되지 않고 있다는 것을 의미한다.
-
-- 3. 함수표현식의 선언이 호출보다 아래에 있는 경우 (*const/let 변수*에 할당) - ***ReferenceError***
+3. 함수표현식의 선언이 호출보다 아래에 있는 경우 (*const/let 변수*에 할당) - ***ReferenceError***
     ```js
     /* 오류 */
     function printName(firstname) { // 함수선언문
@@ -252,22 +250,22 @@ printName();
     console.log(typeof yourName); // > "string"
     ```
 - 값이 할당되어 있지 않은 변수와 값이 할당되어 있는 변수에서의 호이스팅 
- ```js
- var myName = "Heee"; // 값 할당 
- var yourName; // 값 할당 X
+    ```js
+    var myName = "Heee"; // 값 할당 
+    var yourName; // 값 할당 X
 
- function myName() { // 같은 이름의 함수 선언
-     console.log("myName Function");
- }
- function yourName() { // 같은 이름의 함수 선언
-     console.log("yourName Function");
- }
+    function myName() { // 같은 이름의 함수 선언
+        console.log("myName Function");
+    }
+    function yourName() { // 같은 이름의 함수 선언
+        console.log("yourName Function");
+    }
 
- console.log(typeof myName); // > "string"
- console.log(typeof yourName); // > "function"
- ```
-  - 값이 할당되어 있지 않은 변수의 경우, 함수선언문이 변수를 덮어쓴다.
-  - 값이 할당되어 있는 변수의 경우, 변수가 함수선언문을 덮어쓴다.
+    console.log(typeof myName); // > "string"
+    console.log(typeof yourName); // > "function"
+    ```
+    - 값이 할당되어 있지 않은 변수의 경우, 함수선언문이 변수를 덮어쓴다.
+    - 값이 할당되어 있는 변수의 경우, 변수가 함수선언문을 덮어쓴다.
 
 
 <mark>TIP</mark> 호이스팅 사용 시 주의 

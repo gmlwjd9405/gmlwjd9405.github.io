@@ -22,7 +22,7 @@ sitemap :
 
  
 ## SQL문
-SQL은 <span style="color:#4d0000">"관계형 데이터베이스" 관리 시스템(RDBMS, Relational Database Management System)을 조작</span>할 때 사용하는 언어이다.
+SQL은 <span style="background-color: #e1e1e1">"관계형 데이터베이스" 관리 시스템(RDBMS, Relational Database Management System)을 조작</span>할 때 사용하는 언어이다.
 - RDBMS: 행과 열을 가지는 **표 형식** 데이터(2차원 데이터)를 저장하는 형태의 DB
   - 행(레코드), 열(컬럼/필드), 셀(행과 열이 만나는 부분, 하나의 데이터 값)
   - 수치형, 문자열형, 날짜시간형, NULL(값이 없는 데이터) 등의 자료형이 존재 
@@ -62,12 +62,14 @@ SQL은 <span style="color:#4d0000">"관계형 데이터베이스" 관리 시스�
 
 ### 검색 조건 지정
 - **열 지정**
+
 ```sql
 > select 열1, 열2 from 테이블명 where 조건식
 > SELECT address, name FROM sample;
 ```
 
 - **행 지정**
+
 ```sql
 // select 구 -> from 구 -> where 구 (순서 중요)
 > select 열 from 테이블명 where 조건식
@@ -86,6 +88,7 @@ SQL은 <span style="color:#4d0000">"관계형 데이터베이스" 관리 시스�
 
 ### 검색 조건 조합 
 - **AND, OR, NOT**
+
 ```sql
 > 조건식1 AND 조건식2
 > SELECT * FROM sample WHERE a<>0 AND b<>0; // a열, b열이 모두 0이 아닌 행 검색
@@ -101,6 +104,7 @@ SQL은 <span style="color:#4d0000">"관계형 데이터베이스" 관리 시스�
 ### 패턴 매칭에 의한 검색
 - 특정 문자나 문자열이 포함되어 있는지를 검색하고 싶은 경우 **'패턴 매칭'**(부분 검색)을 사용 
 - **LIKE** 
+
 ```sql
 > 열 LIKE '패턴'
 

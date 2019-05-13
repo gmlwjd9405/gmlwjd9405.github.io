@@ -13,10 +13,7 @@ sitemap :
 ---
 
 ## Goal
-> - SELECT 명령문 (SQL 기본 문법)
->   - 검색 조건 지정
->   - 검색 조건 조합
->   - 패턴 매칭에 의한 검색 
+> - INSERT 명령문 (SQL 기본 문법)
 > - UPDATE 명령문 (SQL 기본 문법)
 > - DELETE 명령문 (SQL 기본 문법)
 
@@ -26,18 +23,18 @@ sitemap :
 - SELECT 명령의 경우 실행하면 그 결과가 클라이언트에게 반환되자만, INSERT 명령은 데이터가 클라이언트에서 서버로 전송되므로 반환되는 결과가 없다.
 
 - **기본 사용 예시**
-```sql
-> INSERT INTO 테이블명 VALUES(값1, 값2, ...);
-
-> INSERT INTO sample VALUES(1, 'HEEE', '2019-04-27');
-```
+ ```sql
+ > INSERT INTO 테이블명 VALUES(값1, 값2, ...);
+ 
+ > INSERT INTO sample VALUES(1, 'HEEE', '2019-04-27');
+ ```
 
 - **값을 저장할 열 지정**
-```sql
-> INSERT INTO 테이블명 (열1, 열2, ...) VALUES(값1, 값2, ...);
-
-> INSERT INTO sample (name, no) VALUES('HEEE2', 2);
-```
+ ```sql
+ > INSERT INTO 테이블명 (열1, 열2, ...) VALUES(값1, 값2, ...);
+ 
+ > INSERT INTO sample (name, no) VALUES('HEEE2', 2);
+ ```
 
 - **NOT NULL 제약**
   - NULL을 허용하고 싶지 않은 열에 NOT NULL 제약을 걸어둔다.
@@ -46,20 +43,20 @@ sitemap :
   - 명시적으로 값을 지정하지 않았을 경우 사용하는 초깃값을 말한다.
   - `DESC 테이블명`으로 테이블의 열 구성을 살펴보면 Default라는 항목에서 초깃값 확인 가능
 
-### DELETE 명령문
+### DELETE 명령문 (SQL의 DML)
 - DB의 테이블에서 행을 삭제
 - 삭제는 행 단위로 수행되며, 열을 지정하여 해당 열만 삭제할 수는 없다.
 - DELETE 명령을 실행할 때는 재확인을 위한 대화창 같은 것이 표시되지 않기 때문에 주의해야 한다.
 
 - **기본 사용 예시**
-```sql
-> DELETE FROM 테이블명 WHERE 조건식;
+ ```sql
+ > DELETE FROM 테이블명 WHERE 조건식;
 
-// sample 테이블의 모든 데이터 삭제
-> DELETE FROM sample;
-// sample 테이블의 no 열이 2인 행 삭제 
-> DELETE FROM sample where no=2;
-```
+ // sample 테이블의 모든 데이터 삭제
+ > DELETE FROM sample;
+ // sample 테이블의 no 열이 2인 행 삭제 
+ > DELETE FROM sample where no=2;
+ ```
 
 - **물리삭제와 논리삭제**
   - DB에서 데이터를 삭제하는 방법은 용도에 따라 크게 '물리삭제'와 '논리삭제'로 나뉜다.
@@ -72,7 +69,7 @@ sitemap :
     - 단점: 삭제해도 DB의 저장공간이 늘어나지 않는다. 이로 인해 DB 크기가 증가하여 검색속도가 떨어진다.
     - Ex) 쇼핑 사이트에서의 주문 취소 
 
-### UPDATE 명령문
+### UPDATE 명령문 (SQL의 DML)
 - DB의 테이블에서 데이터를 갱신
   - 웹 페이지에서 '등록'이나 '갱신'와 같은 버튼을 클릭했을 때 처리되는 데이터 갱신 기능 
 - DELETE 명령어와 달리 셀 단위로 데이터를 갱신할 수 있다.
@@ -81,13 +78,13 @@ sitemap :
 
 
 - **기본 사용 예시**
-```sql
-> UPDATE 테이블명 SET 열1=값1, 열2=값2, ... WHERE 조건식;
-
-> UPDATE sample SET name='HEEE' WHERE no=2;
-> UPDATE sample SET name='HEEE', date='2019-04-26' WHERE no=2;
-> UPDATE sample SET name=NULL; // NULL로 초기화 
-```
+ ```sql
+ > UPDATE 테이블명 SET 열1=값1, 열2=값2, ... WHERE 조건식;
+ 
+ > UPDATE sample SET name='HEEE' WHERE no=2;
+ > UPDATE sample SET name='HEEE', date='2019-04-26' WHERE no=2;
+ > UPDATE sample SET name=NULL; // NULL로 초기화 
+ ```
 
 - **SET 구의 실행순서**
 ```sql

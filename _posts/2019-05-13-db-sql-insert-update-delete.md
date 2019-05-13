@@ -23,18 +23,16 @@ sitemap :
 - SELECT 명령의 경우 실행하면 그 결과가 클라이언트에게 반환되자만, INSERT 명령은 데이터가 클라이언트에서 서버로 전송되므로 반환되는 결과가 없다.
 
 - **기본 사용 예시**
- ```sql
- > INSERT INTO 테이블명 VALUES(값1, 값2, ...);
- 
- > INSERT INTO sample VALUES(1, 'HEEE', '2019-04-27');
- ```
+  ```sql
+  > INSERT INTO 테이블명 VALUES(값1, 값2, ...);
+  > INSERT INTO sample VALUES(1, 'HEEE', '2019-04-27');
+  ```
 
 - **값을 저장할 열 지정**
- ```sql
- > INSERT INTO 테이블명 (열1, 열2, ...) VALUES(값1, 값2, ...);
- 
- > INSERT INTO sample (name, no) VALUES('HEEE2', 2);
- ```
+  ```sql
+  > INSERT INTO 테이블명 (열1, 열2, ...) VALUES(값1, 값2, ...);
+  > INSERT INTO sample (name, no) VALUES('HEEE2', 2);
+  ```
 
 - **NOT NULL 제약**
   - NULL을 허용하고 싶지 않은 열에 NOT NULL 제약을 걸어둔다.
@@ -49,14 +47,15 @@ sitemap :
 - DELETE 명령을 실행할 때는 재확인을 위한 대화창 같은 것이 표시되지 않기 때문에 주의해야 한다.
 
 - **기본 사용 예시**
- ```sql
- > DELETE FROM 테이블명 WHERE 조건식;
-
- // sample 테이블의 모든 데이터 삭제
- > DELETE FROM sample;
- // sample 테이블의 no 열이 2인 행 삭제 
- > DELETE FROM sample where no=2;
- ```
+  ```sql
+  > DELETE FROM 테이블명 WHERE 조건식;
+  ```
+  ```sql
+  // sample 테이블의 모든 데이터 삭제
+  > DELETE FROM sample;
+  // sample 테이블의 no 열이 2인 행 삭제 
+  > DELETE FROM sample where no=2;
+  ```
 
 - **물리삭제와 논리삭제**
   - DB에서 데이터를 삭제하는 방법은 용도에 따라 크게 '물리삭제'와 '논리삭제'로 나뉜다.
@@ -78,13 +77,14 @@ sitemap :
 
 
 - **기본 사용 예시**
- ```sql
- > UPDATE 테이블명 SET 열1=값1, 열2=값2, ... WHERE 조건식;
- 
- > UPDATE sample SET name='HEEE' WHERE no=2;
- > UPDATE sample SET name='HEEE', date='2019-04-26' WHERE no=2;
- > UPDATE sample SET name=NULL; // NULL로 초기화 
- ```
+  ```sql
+  > UPDATE 테이블명 SET 열1=값1, 열2=값2, ... WHERE 조건식;
+  ```
+  ```sql
+  > UPDATE sample SET name='HEEE' WHERE no=2;
+  > UPDATE sample SET name='HEEE', date='2019-04-26' WHERE no=2;
+  > UPDATE sample SET name=NULL; // NULL로 초기화 
+  ```
 
 - **SET 구의 실행순서**
 ```sql

@@ -273,6 +273,8 @@ public List<Invoice> listUsersInvoices(@PathVariable("userId") int user,
 ### @RequiredArgsConstructor 
 * final이나 @NonNull인 필드 값만 파라미터로 받는 생성자를 추가한다.
     * final: 값이 할당되면 더 이상 변경할 수 없다.
+- 생성자의 파라미터가 많아지는 경우에 주로 사용한다.
+- 주의!: 파라미터를 추가하거나 순서를 변경하면 생성자 클래스가 변경된다. 
 
 ### @Getter
 * 클래스 내 모든 필드의 Getter 메소드를 자동으로 생성한다.

@@ -13,7 +13,6 @@ sitemap :
 ---
 
 ## Goal
-> - vim의 단축키의 종류에 대한 정리한다.
 > - vim의 단축키 사용법에 대해 이해한다.
 >   - 이동
 >   - 편집 (삽입, 삭제, 수정, 복사, 붙여넣기 등)
@@ -21,6 +20,7 @@ sitemap :
 >   - 검색
 >   - 기타 (매크로, 이어 붙이기, 취소하기/되돌리기 및 들여쓰기/내어쓰기, 대소문자 전환, 숫자 증감, 창 열기/탭 이동 등 )
 
+![](/images/etc/vim-shortkey-keyboard.png)
 
 ## 이동
 ### 기본 이동 
@@ -189,9 +189,9 @@ sitemap :
 -  -->
 
 # Reference
-> - [http://vimdoc.sourceforge.net/https://kldp.org/node/102947](http://vimdoc.sourceforge.net/https://kldp.org/node/102947)
 > - [https://blog.outsider.ne.kr/540](https://blog.outsider.ne.kr/540)
 > - [https://vim.rtorr.com/lang/ko](https://vim.rtorr.com/lang/ko)
 > - [http://egloos.zum.com/kwon37xi/v/1501256](http://egloos.zum.com/kwon37xi/v/1501256)
 > - [https://vim.rtorr.com/lang/ko](https://vim.rtorr.com/lang/ko)
 > - [https://devanix.tistory.com/170](https://devanix.tistory.com/170)
+> - [http://ickhyun82.blogspot.com/2012/02/vi.html](http://ickhyun82.blogspot.com/2012/02/vi.html)

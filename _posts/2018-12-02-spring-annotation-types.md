@@ -333,6 +333,28 @@ user1.equals(user2);
 
 ---
 
+## [Jackson Property Inclusion Annotation]
+[](https://cheese10yun.github.io/jackson-annotation-03/)
+
+### @JsonIgnoreProperties
+- 무시할 속성이나 속성 목록을 표시할 때 사용한다.
+
+### @JsonIgnore
+- 필드 레벨에서 무시할 속성을 표시할 때 사용한다.
+
+### @JsonIgnoreType
+
+
+### @JsonInclude
+- 어노테이션 속성을 제외할 때 사용한다.
+- `@JsonInclude(JsonInclude.Include.NON_NULL)`
+  - NON_NULL 사용 시 name이 null인 경우에 제외된다.
+  
+### @JsonAutoDetect
+- `@JsonAutoDetect(fieldVisibility = JsonAutoDetect.Visibility.ANY)`
+
+---
+
 ## [Spring AOP를 위한 Annotation]
 [](https://jojoldu.tistory.com/71?category=635883)
 ### @EnableAspectJAutoProxy
@@ -391,3 +413,4 @@ public class Logger {
 > - [component-scan 참고](https://docs.spring.io/spring/docs/current/spring-framework-reference/web.html#mvc)
 > - [mvc:annotation-driven 참고](http://docs.spring.io/spring/docs/current/spring-framework-reference/html/mvc.html#mvc-config)
 > - [lombok annotation 참고](http://www.daleseo.com/lombok-popular-annotations/)
+> - [https://cheese10yun.github.io/jackson-annotation-03/](https://cheese10yun.github.io/jackson-annotation-03/)

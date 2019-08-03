@@ -46,7 +46,7 @@ Persistence Framework는 SQL Mapper와 ORM으로 나눌 수 있다.
 * SQL <---매핑---> Object 필드
 * SQL Mapper는 SQL 문장으로 직접 데이터베이스 데이터를 다룬다.
   * 즉, SQL Mapper는 SQL을 명시해줘야 한다.
-  * Ex) **Mybatis** 등
+  * Ex) **Mybatis, JdbcTempletes** 등
 
 ### # ORM(Object-Relational Mapping), 객체-관계 매핑
 * 데이터베이스 데이터 <---매핑---> Object 필드
@@ -75,9 +75,9 @@ Persistence Framework는 SQL Mapper와 ORM으로 나눌 수 있다.
     * 즉, JPA는 ORM을 사용하기 위한 표준 인터페이스를 모아둔 것이다.
     * 기존에 EJB에서 제공되던 엔터티 빈(Entity Bean)을 대체하는 기술이다.
 * JPA 구성 요소 (세 가지)
-  * `javax.persistance` 패키지로 정의된 API 그 자체
-  * [JPQL(Java Persistence Query Language)](http://happygrammer.tistory.com/149)
-  * 객체/관계 메타데이터
+  * 1) `javax.persistance` 패키지로 정의된 API 그 자체
+  * 2) [JPQL(Java Persistence Query Language)](http://happygrammer.tistory.com/149)
+  * 3) 객체/관계 메타데이터
 * 사용자가 원하는 JPA 구현체를 선택해서 사용할 수 있다.
   * JPA의 대표적인 구현체로는 Hibernate, EclipseLink, DataNucleus, OpenJPA, TopLink Essentials 등이 있다.
   * 이 구현체들을 ORM Framework라고 부른다.

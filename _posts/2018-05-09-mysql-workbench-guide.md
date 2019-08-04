@@ -130,8 +130,12 @@ sitemap :
 * 개발할 당시에는 main memory db를 사용 - 빠르다
   * <span style="color:#4d0000">memory DB의 예: **h2 database**</span>  
   * http://www.h2database.com/html/main.html
-  * Very fast, open source
-  * in-memory databases
+  - Very fast, open source
+  - in-memory databases
+  - 최고의 실습용 DB라고 할 수 있다.
+  - 웹용 쿼리툴을 제공한다.
+  - MySQL, Oracle DB 시뮬레이션 기능이 있다.
+  - 시퀀스, auto increment 두 가지 기능 모두 지원한다.
 * 실제 release하는 경우에 MySQL을 사용
 
 

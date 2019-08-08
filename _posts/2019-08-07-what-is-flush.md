@@ -1,7 +1,7 @@
 ---
 layout: post
 title: '[JPA] 플러시(Flush)란'
-subtitle: '플러시(Flush)의 개념과 '
+subtitle: '플러시(Flush)의 개념과 동작 과정'
 date: 2019-08-07
 author: heejeong Kwon
 cover: '/images/inflearn-jpa/jpa-main2.png'

@@ -329,7 +329,7 @@ System.out.println("address1 == address2: " + (address1 == address2)); // false
     - equals()에 맞게 `hashCode()`도 재정의 해줘야 한다.
 
 
-> [컬렉션 타입 참고 POST](https://gmlwjd9405.github.io/2019/09/13/value-type-of-collection.html)
+> [컬렉션 타입 참고 POST](https://gmlwjd9405.github.io/2019/09/13/value-type-of-collection-copy.html)
 
 
 # 관련된 Post

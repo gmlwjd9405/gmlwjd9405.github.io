@@ -51,7 +51,7 @@ public class MyQueue {
 
     if (last != null) last.next = t;
     last = t;
-    if (first != null) first = last;
+    if (first == null) first = last;
   }
 
   public T remove() {

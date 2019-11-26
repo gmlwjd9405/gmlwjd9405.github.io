@@ -4,7 +4,7 @@ title: '[JUnit] JUnit5 사용법 - Parameterized Tests'
 subtitle: 'junit5 Parameterized Tests의 기본 사용법을 이해할 수 있다.'
 date: 2019-11-27
 author: heejeong Kwon
-cover: '/images/etc/junit-main.png'
+cover: '/images/etc/junit5-main.png'
 tags: java test junit junit5
 comments: true
 sitemap :
